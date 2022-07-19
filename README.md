@@ -46,7 +46,10 @@ Além disso, quando é adicionado um novo usuário, é criado, por padrão, um g
     
 Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "cefet" recém criado.
 
-<td style="width: 20%;"><img src="/img/epaminondaslage_ssh_aluno.png" width="20%" /></td>
+	ssh aluno@ip_orangepi
+	senha:cefet
+
+<td style="width: 50%;"><img src="/img/epaminondaslage_ssh_aluno.png" width="50%" /></td>
 
 # Criação do shell script
 
