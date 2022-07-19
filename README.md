@@ -97,13 +97,13 @@ Para salvarmos o arquivo digitamos ESC e depois “:wq” para gravar as altera�
 
 Para executar o script, há dois pontos a considerar:
 
-1.	Se você tiver salvo o seu arquivo no diretório atual, basta executá-lo digitando no prompt: ./exemplo1.sh
-2.	Se você tiver salvo o seu arquivo em outro diretório qualquer, você precisará informar o path completo até ele. Considerando que ele esteja em /tmp/scripts: /tmp/scripts/exemplo1.sh
-•	O comando echo exibe na tela a string entre aspas duplas. Caso você não queira que ela fique entre aspas duplas, simplesmente não as forneça no comando echo; 
-•	O comando whoami exibe o usuário logado no sistema;
-•	O comando uptime exibe a hora atual, o tempo decorrido desde que o computador foi ligado, o número de usuários logados e uma média do número de processos carregados nos últimos um, cinco e 15 minutos;
-•	O comando pwd exibe o diretório no qual o arquivo está rodando.
-Toda string que contiver espaços deve estar entre aspas duplas.
+1.Se você tiver salvo o seu arquivo no diretório atual, basta executá-lo digitando no prompt: ./exemplo1.sh
+2.Se você tiver salvo o seu arquivo em outro diretório qualquer, você precisará informar o path completo até ele. Considerando que ele esteja em /tmp/scripts: /tmp/scripts/exemplo1.sh
+3.O comando echo exibe na tela a string entre aspas duplas. Caso você não queira que ela fique entre aspas duplas, simplesmente não as forneça no comando echo; 
+4.O comando whoami exibe o usuário logado no sistema;
+5.O comando uptime exibe a hora atual, o tempo decorrido desde que o computador foi ligado, o número de usuários logados e uma média do número de processos carregados nos últimos um, cinco e 15 minutos;
+6.O comando pwd exibe o diretório no qual o arquivo está rodando.
+7.Toda string que contiver espaços deve estar entre aspas duplas.
 
 # Inserindo comentários
 
@@ -128,11 +128,15 @@ Como pode ser observado, os comentários não são processados, portanto, não a
 # Declarando e utilizando variáveis
 
 Uma variável é um label (nome) que armazena um valor para ser utilizado posteriormente no código. Seu uso evita repetições de valores por parte do programador e torna o código mais informativo e limpo. 
+
 A linguagem do shell não é tipada, ou seja, pode-se armazenar qualquer tipo de valor em uma variável, desde strings a números.
+
 Para declará-las basta seguir a sintaxe nome_da_variavel=valor onde:
-•	nome_da_variavel: sequência de caracteres que deve começar por qualquer letra maiúscula ou minúscula ou underscore (_);
-•	valor: qualquer dado que deva ser valorado à variável.
+	1.nome_da_variavel: sequência de caracteres que deve começar por qualquer letra maiúscula ou minúscula ou underscore (_);
+	2.valor: qualquer dado que deva ser valorado à variável.
+
 Nota: Observe que não deve haver espaços entre o sinal de igual e o nome e o valor da variável.
+
 Para utilizarmos o valor da variável coloca-se o $ (cifrão) na frente de seu nome, como mostra o exemplo da Listagem 3.
 
 	#!/bin/bash
@@ -154,12 +158,13 @@ Vejamos um exemplo na Listagem 4.
 
 Listagem 4. Printando o nome de uma variável ao invés de seu conteúdo
 
-* Atribuindo saídas de comandos a variáveis
+# Atribuindo saídas de comandos a variáveis
 
 É possível armazenar o resultado de um comando em uma variável. Isso é muito útil em situações em que se usará este resultado em mais de um lugar ao longo do script.
 Há duas sintaxes para isso:
-1.	nome_da_variavel=$(comando)
-2.	nome_da_variavel=`comando`
+	1.nome_da_variavel=$(comando)
+	2.nome_da_variavel=`comando`
+
 Você pode escolher a que melhor lhe agrada ou empregar as duas nos seus scripts.
 
 O próximo exemplo lista as informações relativas a todos os discos e partições do sistema:
@@ -194,8 +199,8 @@ Na maioria das vezes precisamos seguir um determinado fluxo de execução basead
 Listagem 1. NOME
 
 Onde: 
-•	CONDICAO: teste que, se verdadeiro, passará o controle para o bloco dentro do then;
-•	AÇÕES: comandos a serem executados se o resultado de CONDICAO for verdadeiro.
+1.CONDICAO: teste que, se verdadeiro, passará o controle para o bloco dentro do then;
+2.AÇÕES: comandos a serem executados se o resultado de CONDICAO for verdadeiro.
 
 Nota: É muito comum o desenvolvedor esquecer de fechar o if. Lembre-se sempre que, para cada if aberto, você precisa fechá-lo com o fi.
 Nota: Lembre-se que, se utilizar o [, você deve fechá-lo com o ], e deixando sempre espaços ao redor. Isso é muito importante, pois eles são um “atalho” para o comando 'test'. Isso significa que, alternativamente, você poderia querer não utilizar os colchetes: 
@@ -221,19 +226,19 @@ Vamos a um exemplo em que o usuário deverá digitar um número e verificaremos 
 Listagem 6. Utilizando o condicional if...then
 
 Veja a seguir os parâmetros mais comuns utilizados com o comando test:
-•	n string1: o comprimento de string1 é diferente de 0;
-•	z string1: o comprimento de string1 é zero; 
-string1 = string2: string1 e string2 são idênticas; 
-string1 != string2: string1 e string2 são diferentes; 
-inteiro1 -eq inteiro2: inteiro1 possui o mesmo valor que inteiro2; 
-inteiro1 -ne inteiro2: inteiro1 não possui o mesmo valor que inteiro2; 
-inteiro1 -gt inteiro2: inteiro1 é maior que inteiro2; 
-inteiro1 -ge inteiro2: inteiro1 é maior ou igual a inteiro2; 
-inteiro1 -lt inteiro2: inteiro1 é menor que inteiro2; 
-inteiro1 -le inteiro2: inteiro1 é menor ou igual a inteiro2; 
-•	e nome_do_arquivo: verifica se nome_do_arquivo existe;
-•	d nome_do_arquivo: verifica se nome_do_arquivo é um diretório;
-•	f nome_do_arquivo: verifica se nome_do_arquivo é um arquivo regular (texto, imagem, programa, docs, planilhas).
+1.n string1: o comprimento de string1 é diferente de 0;
+2.z string1: o comprimento de string1 é zero; 
+  string1 = string2: string1 e string2 são idênticas; 
+  string1 != string2: string1 e string2 são diferentes; 
+  inteiro1 -eq inteiro2: inteiro1 possui o mesmo valor que inteiro2; 
+  inteiro1 -ne inteiro2: inteiro1 não possui o mesmo valor que inteiro2; 
+  inteiro1 -gt inteiro2: inteiro1 é maior que inteiro2; 
+  inteiro1 -ge inteiro2: inteiro1 é maior ou igual a inteiro2; 
+  inteiro1 -lt inteiro2: inteiro1 é menor que inteiro2; 
+  inteiro1 -le inteiro2: inteiro1 é menor ou igual a inteiro2; 
+3.e nome_do_arquivo: verifica se nome_do_arquivo existe;
+4.d nome_do_arquivo: verifica se nome_do_arquivo é um diretório;
+5.f nome_do_arquivo: verifica se nome_do_arquivo é um arquivo regular (texto, imagem, programa, docs, planilhas).
 
 # O comando else
 
@@ -247,9 +252,9 @@ Existe a possibilidade de também tratar o caso em que o nosso teste falha. Para
 	fi
 
 Onde:
-•	CONDICAO: teste que, se verdadeiro, passará o controle para o bloco dentro do then;
-•	AÇÕES_1: comandos a serem executados se o resultado de CONDICAO for verdadeiro;
-•	AÇÕES_2: comandos a serem executados se o resultado de CONDICAO for falso.
+1.CONDICAO: teste que, se verdadeiro, passará o controle para o bloco dentro do then;
+2.AÇÕES_1: comandos a serem executados se o resultado de CONDICAO for verdadeiro;
+3.AÇÕES_2: comandos a serem executados se o resultado de CONDICAO for falso.
 
 Vejamos um exemplo na Listagem 7 que verifica se um número digitado pelo usuário é positivo ou negativo.
 
@@ -288,8 +293,9 @@ Há casos em que temos mais de uma condição a ser testada, todas correlacionad
 	Fi
 
 Onde:
-•	CONDICAO_1 … CONDICAO_N: teste que, se verdadeiro, passará o controle para o bloco dentro do respectivo then;
-•	AÇÕES_1 … AÇÕES_N: comandos a serem executados se os resultados de CONDICAO_1 … CONDICAO_N forem verdadeiros.
+1.CONDICAO_1 … CONDICAO_N: teste que, se verdadeiro, passará o controle para o bloco dentro do respectivo then;
+2.AÇÕES_1 … AÇÕES_N: comandos a serem executados se os resultados de CONDICAO_1 … CONDICAO_N forem verdadeiros.
+
 A seguir temos um exemplo que apresenta um menu para o usuário escolher uma opção. Baseado nesta escolha, a hora e a data serão exibidas; uma divisão será efetuada e seu resultado será exibido, e uma mensagem será exibida com o nome que o usuário fornecer, como mostra a Listagem 8.
 
 	#!/bin/bash
@@ -337,9 +343,9 @@ O comando case tem a mesma funcionalidade do if...then...elif, com a diferença 
 	esac
 	
 Onde:
-•	VARIAVEL: variável que terá seu valor verificado;
-•	CASO_1 … CASO_N: possíveis estados da variável;
-•	AÇÕES_1 … AÇÕES_N: ações a serem tomadas caso a variável combine com CASO_1 … CASO_N, respectivamente.
+1.VARIAVEL: variável que terá seu valor verificado;
+2.CASO_1 … CASO_N: possíveis estados da variável;
+3.AÇÕES_1 … AÇÕES_N: ações a serem tomadas caso a variável combine com CASO_1 … CASO_N, respectivamente.
 
 Por exemplo, modificando o exemplo anterior temos o código da Listagem 9.
 
@@ -378,10 +384,12 @@ O primeiro deles é o for, cuja sintaxe é:
 	  done
 
 Onde:
-•	VARIAVEL: variável cujo valor será inicializado e incrementado, respeitando os limites dos valores do conjunto fornecido;
-•	VALOR_1, VALOR_2 … VALOR_N: valores que VARIAVEL poderá assumir durante o loop;
-•	AÇÕES: ações a serem tomadas repetidamente até que o valor de VARIAVEL ultrapasse o último valor informado no conjunto de valores fornecido.
+1.VARIAVEL: variável cujo valor será inicializado e incrementado, respeitando os limites dos valores do conjunto fornecido;
+2.VALOR_1, VALOR_2 … VALOR_N: valores que VARIAVEL poderá assumir durante o loop;
+3.AÇÕES: ações a serem tomadas repetidamente até que o valor de VARIAVEL ultrapasse o último valor informado no conjunto de valores fornecido.
+
 Nota: A sequência VALOR_1, VALOR_2 … VALOR_N; na sintaxe pode ser substituída por: {VALOR_1..VALOR_N};
+
 Observe que são apenas duas reticências.
 
 Quando o loop for começar, a variável é inicializada com o primeiro valor do conjunto, e ocorre a primeira iteração (entrada no laço e execução dos comandos). Para as iterações seguintes, os valores do conjunto serão atribuídos à variável, sucessivamente, até que se alcance o último e o loop termine a execução.
@@ -432,8 +440,9 @@ Enquanto o loop for é mais ideal para quando sabemos até quanto contar, o loop
 	  done
 
 Onde:
-•	CONDICAO: condição cuja veracidade determina a permanência no laço;
-•	AÇÕES: ações a serem tomadas enquanto CONDICAO for verdadeira.
+1.CONDICAO: condição cuja veracidade determina a permanência no laço;
+2.AÇÕES: ações a serem tomadas enquanto CONDICAO for verdadeira.
+
 Vamos na Listagem 13 um exemplo que exibe ao usuário o que ele digitou, enquanto ele não informar -1.
 
 	#!/bin/bash
@@ -521,10 +530,10 @@ Argumentos
 
 Normalmente um programa recebe argumentos como entrada, ou seja, dados fornecidos pelo usuário ou por outro programa, os quais devem ser “consumidos” para produzir as saídas desejadas.
 Em shell script não poderia ser diferente: temos nomes especiais para designar os argumentos recebidos por um script:
-•	$0 – contém o nome do script que foi executado;
-•	$1 … $n – contêm os argumentos na ordem em que foram passados (1º argumento em $1, 2º argumento em $2, etc.).
-•	$# - contém o número de argumentos que foi passado (ou seja, não considera o nome do script em $0);
-•	$* - retorna todos os argumentos de uma vez só.
+1.$0 – contém o nome do script que foi executado;
+2.$1 … $n – contêm os argumentos na ordem em que foram passados (1º argumento em $1, 2º argumento em $2, etc.).
+3.$# - contém o número de argumentos que foi passado (ou seja, não considera o nome do script em $0);
+4.$* - retorna todos os argumentos de uma vez só.
 
 Vamos ao exemplo da Listagem 16 e sua execução é exibida na Figura 3.
 
