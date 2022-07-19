@@ -97,13 +97,13 @@ Para salvarmos o arquivo digitamos ESC e depois “:wq” para gravar as altera�
 
 Para executar o script, há dois pontos a considerar:
 
-1.Se você tiver salvo o seu arquivo no diretório atual, basta executá-lo digitando no prompt: ./exemplo1.sh
-2.Se você tiver salvo o seu arquivo em outro diretório qualquer, você precisará informar o path completo até ele. Considerando que ele esteja em /tmp/scripts: /tmp/scripts/exemplo1.sh
-3.O comando echo exibe na tela a string entre aspas duplas. Caso você não queira que ela fique entre aspas duplas, simplesmente não as forneça no comando echo; 
-4.O comando whoami exibe o usuário logado no sistema;
-5.O comando uptime exibe a hora atual, o tempo decorrido desde que o computador foi ligado, o número de usuários logados e uma média do número de processos carregados nos últimos um, cinco e 15 minutos;
-6.O comando pwd exibe o diretório no qual o arquivo está rodando.
-7.Toda string que contiver espaços deve estar entre aspas duplas.
+* Se você tiver salvo o seu arquivo no diretório atual, basta executá-lo digitando no prompt: ./exemplo1.sh
+* Se você tiver salvo o seu arquivo em outro diretório qualquer, você precisará informar o path completo até ele. Considerando que ele esteja em /tmp/scripts: /tmp/scripts/exemplo1.sh
+* O comando echo exibe na tela a string entre aspas duplas. Caso você não queira que ela fique entre aspas duplas, simplesmente não as forneça no comando echo; 
+* O comando whoami exibe o usuário logado no sistema;
+*O comando uptime exibe a hora atual, o tempo decorrido desde que o computador foi ligado, o número de usuários logados e uma média do número de processos carregados nos últimos um, cinco e 15 minutos;
+* O comando pwd exibe o diretório no qual o arquivo está rodando.
+* Toda string que contiver espaços deve estar entre aspas duplas.
 
 # Inserindo comentários
 
