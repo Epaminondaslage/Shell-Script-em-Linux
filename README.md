@@ -1,4 +1,4 @@
-# Shell-Script-no-Linux
+# Shell Script no Linux com OrangePi
 
 # Introdução ao Shell Script no Linux
           	
