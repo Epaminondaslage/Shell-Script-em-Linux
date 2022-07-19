@@ -33,7 +33,7 @@ Além disso, quando é adicionado um novo usuário, é criado, por padrão, um g
 Portanto pode-se sair da sessão e fazer ssh com o usuário recém criado.
 
 
-* Introdução ao Shell Script no Linux
+# Introdução ao Shell Script no Linux
           	
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
 
@@ -41,7 +41,7 @@ Um script nada mais é do que um algoritmo projetado para realizar uma determina
 
 Lembre-se de executar os comandos como usuário comum e não como root, visto que, como root tudo será aceito e, dependendo do que você fizer, isto pode gerar danos ao sistema operacional. Uma maneira fácil de verificar é abrir o terminal e se o símbolo antes do cursor é o $, você está como usuário comum, mas se é o #, você está como root. Para sair do modo root, digite exit
 
-* Criação do shell script
+# Criação do shell script
 
 Em primeiro lugar precisaremos de um arquivo para escrever o nosso script. Podemos fazer isso via terminal ou via modo gráfico, sendo que, no último caso, basta apenas clicar com o botão direito do mouse em um diretório desejado e escolher criar novo arquivo de texto ou criar novo documento.
 
@@ -49,7 +49,7 @@ Para criar um arquivo via terminal, basta abrir o mesmo e digitar vi exemplo1.sh
 
 O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre. Posteriormente é possível abri-lo com um editor de sua preferência.
 
-* Concedendo permissões ao arquivo
+# Concedendo permissões ao arquivo
 
 Para editar o arquivo, precisamos dar permissão de escrita a ele.
 
@@ -63,7 +63,7 @@ O caractere ! força o vi a executar o que está sendo pedido (no caso, executar
 
 O caractere % faz referência ao arquivo atual. Pode-se também, ao invés de utilizá-lo, fornecer o nome do arquivo.
 
-* Edição e execução do arquivo
+# Edição e execução do arquivo
 
 Utilizaremos o vi, no terminal, mas você pode escolher qualquer outro editor, gráfico ou não.
 
@@ -82,13 +82,13 @@ Note que utilizamos o path completo de onde se encontra o shell, no caso, no dir
 
 Após isso, é hora de iniciarmos o nosso script. O exemplo imprimirá na tela algumas informações sobre o usuário e o computador, conforme o código da Listagem 1.
 
-#!/bin/bash
-echo "Seu nome de usuário é:"
-whoami
-echo "Info de hora atual e tempo que o computador está ligado:"
-uptime
-echo "O script está executando do diretório:"
-pwd
+	#!/bin/bash
+	echo "Seu nome de usuário é:"
+	whoami
+	echo "Info de hora atual e tempo que o computador está ligado:"
+	uptime
+	echo "O script está executando do diretório:"
+	pwd
 
 Listagem 1. Código do exemplo1.sh
 
@@ -112,10 +112,10 @@ Comentários em códigos são muito importantes. Explicar o que está sendo feit
 
 Para inserir comentários no seu script, basta iniciar a linha com o caractere #, como no código da Listagem 2 e execução na Figura 2.
 
-#!/bin/bash
-#Este é um comentário
-#Este é outro comentário
-  echo "Este script contém comentários."
+	#!/bin/bash
+	#Este é um comentário
+	#Este é outro comentário
+ 	echo "Este script contém comentários."
 
 Listagem 2. Shell script com comentários
 
@@ -126,7 +126,7 @@ Figura 2. Saída da execução do código da Listagem 2
 
 Como pode ser observado, os comentários não são processados, portanto, não aparecem para o usuário.
 
-* Declarando e utilizando variáveis
+# Declarando e utilizando variáveis
 
 Uma variável é um label (nome) que armazena um valor para ser utilizado posteriormente no código. Seu uso evita repetições de valores por parte do programador e torna o código mais informativo e limpo. 
 A linguagem do shell não é tipada, ou seja, pode-se armazenar qualquer tipo de valor em uma variável, desde strings a números.
@@ -136,22 +136,22 @@ Para declará-las basta seguir a sintaxe nome_da_variavel=valor onde:
 Nota: Observe que não deve haver espaços entre o sinal de igual e o nome e o valor da variável.
 Para utilizarmos o valor da variável coloca-se o $ (cifrão) na frente de seu nome, como mostra o exemplo da Listagem 3.
 
-#!/bin/bash
-site=www.devmedia.com.br
-meu_numero_favorito=13
-_cidade=”Porto Alegre”
-echo “Um ótimo site para você aprender a programar e se manter atualizado é: $site”
-echo “Meu número favorito é: $meu_numero_favorito”
-echo “Minha cidade natal é: $_cidade”
+	#!/bin/bash
+	site=www.devmedia.com.br
+	meu_numero_favorito=13
+	_cidade=”Porto Alegre”
+	echo “Um ótimo site para você aprender a programar e se manter atualizado é: $site”
+	echo “Meu número favorito é: $meu_numero_favorito”
+	echo “Minha cidade natal é: $_cidade”
 
 Listagem 3. Declarando e utilizando variáveis
 
 Agora, se você deseja printar o nome da própria variável, basta colocar uma barra invertida \ antes do $, assim, ela nega o caractere seguinte e normalmente é utilizada para caracteres de scape (ou seja, caracteres que já tem uma função específica, mas que você deseja somente utilizar em um nome ou valor, sem executá-los). 
 Vejamos um exemplo na Listagem 4.
 
-#!/bin/bash
-nome=fernanda
-echo “O nome da variável é \$nome”
+	#!/bin/bash
+	nome=fernanda
+	echo “O nome da variável é \$nome”
 
 Listagem 4. Printando o nome de uma variável ao invés de seu conteúdo
 
@@ -165,25 +165,25 @@ Você pode escolher a que melhor lhe agrada ou empregar as duas nos seus scripts
 
 O próximo exemplo lista as informações relativas a todos os discos e partições do sistema:
 
-#!/bin/bash
-system_info=`df -h` # Também poderia ser system_info=$(df -h)
-echo “$system_info”
+	#!/bin/bash
+	system_info=`df -h` # Também poderia ser system_info=$(df -h)
+	echo “$system_info”
 
 Veja que o comando df-h executará e a sua saída (resultado dessa execução) será armazenada na variável system_info.
 
-* Capturando a entrada de dados do usuário
+# Capturando a entrada de dados do usuário
 
 Pode ser que o seu script precise interagir com o usuário, pedindo para ele fornecer algum dado de entrada para processamento. Neste caso, é necessário que se leia o que o usuário digitou e isso é feito através do seguinte comando readnome_da_variavel_para_armazenar_o_valor_a_ser_lido
 Vejamos o exemplo da Listagem 5.
 
-#!/bin/bash
-echo “Qual o nome de uma de suas músicas favoritas?”
-read nome_musica;
-echo “Você gosta de ouvir $nome_musica!”
+	#!/bin/bash
+	echo “Qual o nome de uma de suas músicas favoritas?”
+	read nome_musica;
+	echo “Você gosta de ouvir $nome_musica!”
 
 Listagem 5. Utilizando o comando read para ler entrada do usuário
 
-* Comandos de seleção ou de tomada de decisão
+# Comandos de seleção ou de tomada de decisão
 
 Na maioria das vezes precisamos seguir um determinado fluxo de execução baseado em alguma decisão tomada pelo usuário ou outro sistema que esteja utilizando o nosso. O comando mais simples que permite isso é o condicional, que tem a seguinte sintaxe:
 
@@ -211,13 +211,13 @@ Nota: Em outras linguagens de programação o if testa uma condição, mas em sh
 
 Vamos a um exemplo em que o usuário deverá digitar um número e verificaremos se ele está em um determinado intervalo, como mostra a Listagem 6. 
 
-#!/bin/bash
-echo “Digite um número qualquer:”
-read numero;
-if [ “$numero” -gt 20 ];
-then
-  echo “Este número é maior que 20!”
-fi
+	#!/bin/bash
+	echo “Digite um número qualquer:”
+	read numero;
+	if [ “$numero” -gt 20 ];
+	then
+	  echo “Este número é maior que 20!”
+	fi
 
 Listagem 6. Utilizando o condicional if...then
 
@@ -236,16 +236,16 @@ inteiro1 -le inteiro2: inteiro1 é menor ou igual a inteiro2;
 •	d nome_do_arquivo: verifica se nome_do_arquivo é um diretório;
 •	f nome_do_arquivo: verifica se nome_do_arquivo é um arquivo regular (texto, imagem, programa, docs, planilhas).
 
-* O comando else
+# O comando else
 
 Existe a possibilidade de também tratar o caso em que o nosso teste falha. Para isso temos o comando else, cuja sintaxe é:
 
-if [ CONDICAO ];
-   then
-       AÇÕES_1
-  else
-      AÇÕES_2
-fi
+	if [ CONDICAO ];
+	   then
+	       AÇÕES_1
+	  else
+	      AÇÕES_2
+	fi
 
 Onde:
 •	CONDICAO: teste que, se verdadeiro, passará o controle para o bloco dentro do then;
@@ -254,65 +254,65 @@ Onde:
 
 Vejamos um exemplo na Listagem 7 que verifica se um número digitado pelo usuário é positivo ou negativo.
 
-#!/bin/bash
-  echo “Digite um número qualquer:”
-  read numero;
-  if [ “$numero” -ge 0 ];
-   then
-    echo “O número $numero é positivo!”
-  else
-   echo “O número $numero é negativo!”
-fi
+	#!/bin/bash
+	  echo “Digite um número qualquer:”
+	  read numero;
+	  if [ “$numero” -ge 0 ];
+   	then
+   	 echo “O número $numero é positivo!”
+  	else
+ 	  echo “O número $numero é negativo!”
+	fi
 
 Listagem 7. Utilizando o condicional if...then...else
 
-* O comando elif
+# O comando elif
 
 Há casos em que temos mais de uma condição a ser testada, todas correlacionadas. Para isso temos o comando elif, cuja sintaxe é:
 
-if [ CONDICAO_1 ];
- then
-  AÇÕES_1
- elif [ CONDICAO_2 ];
- then
-   AÇÕES_2
- elif [ CONDICAO_3 ];
- then
-   AÇÕES_3
-              .
-              .
-              .
-              .
- elif [ CONDICAO_N ];
- then
-  AÇÕES_N
-Fi
+	if [ CONDICAO_1 ];
+	 then
+	  AÇÕES_1
+	 elif [ CONDICAO_2 ];
+	 then
+	   AÇÕES_2
+	 elif [ CONDICAO_3 ];
+	 then
+	   AÇÕES_3
+   	           .
+   	           .
+   	           .
+   	           .
+	 elif [ CONDICAO_N ];
+ 	then
+ 	 AÇÕES_N
+	Fi
 
 Onde:
 •	CONDICAO_1 … CONDICAO_N: teste que, se verdadeiro, passará o controle para o bloco dentro do respectivo then;
 •	AÇÕES_1 … AÇÕES_N: comandos a serem executados se os resultados de CONDICAO_1 … CONDICAO_N forem verdadeiros.
 A seguir temos um exemplo que apresenta um menu para o usuário escolher uma opção. Baseado nesta escolha, a hora e a data serão exibidas; uma divisão será efetuada e seu resultado será exibido, e uma mensagem será exibida com o nome que o usuário fornecer, como mostra a Listagem 8.
 
-#!/bin/bash
-echo "Selecione uma opção:"
-echo "1 - Exibir data e hora do sistema"
-echo "2 - Exibir o resultado da divisão 10/2"
-echo "3 - Exibir uma mensagem”
-read opcao;
-if [ $opcao == "1" ];
-then
-  data=$(date +"%T, %d/%m/%y, %A")
-  echo "$data"
-elif [ $opcao == "2" ];
-then
-   result=$((10/2))
-   echo "divisao de 10/2 = $result"
-elif [ $opcao == "3" ];
- then
- echo "Informe o seu nome:"
- read nome;
- echo "Bem-vindo ao mundo do shell script, $nome!"
-fi
+	#!/bin/bash
+	echo "Selecione uma opção:"
+	echo "1 - Exibir data e hora do sistema"
+	echo "2 - Exibir o resultado da divisão 10/2"
+	echo "3 - Exibir uma mensagem”
+	read opcao;
+	if [ $opcao == "1" ];
+	then
+	  data=$(date +"%T, %d/%m/%y, %A")
+ 	 echo "$data"
+	elif [ $opcao == "2" ];
+	then
+	   result=$((10/2))
+	   echo "divisao de 10/2 = $result"
+	elif [ $opcao == "3" ];
+	 then
+	 echo "Informe o seu nome:"
+	 read nome;
+	 echo "Bem-vindo ao mundo do shell script, $nome!"
+	fi
 
 Listagem 8. Utilizando o comando elif
 
@@ -321,7 +321,7 @@ Nota: O bash não tem suporte nativo a divisões em ponto flutuante, apenas divi
 Nota: Observe a linha: result=$((10/2))
 Veja que utilizamos dois conjuntos de parênteses para encapsular a operação de divisão. Em shell script precisamos realizar operações matemáticas entre parênteses.
 
-* O comando case
+# O comando case
 
 O comando case tem a mesma funcionalidade do if...then...elif, com a diferença de sua sintaxe ser mais compacta e enxuta:
 case VARIAVEL in
