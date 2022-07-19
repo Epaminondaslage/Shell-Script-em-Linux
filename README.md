@@ -1,6 +1,11 @@
-# Shell Script no Linux com OrangePi
+<td style="width: 20%;"><img src="/img/Logo_CEFET-MG.png" width="20%" /></td>
 
 # Introdução ao Shell Script no Linux
+<p><strong><span style="color: #0000ff;">Internet das Coisas - Kit de desenvolvimento SBC com Linux</span></strong></p>
+<p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
+<a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> # Shell Script no Linux com OrangePi
+
+
           	
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
 
