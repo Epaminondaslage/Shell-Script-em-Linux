@@ -101,7 +101,7 @@ Após isso, é hora de iniciarmos o nosso script. O exemplo imprimirá na tela a
 	echo "Info de hora atual e tempo que o computador está ligado:"
 	uptime
 	echo "O script está executando do diretório:"
-	pwd
+	pwd 
 
 Listagem 1. Código do exemplo1.sh
 
