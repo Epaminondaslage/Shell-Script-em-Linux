@@ -24,26 +24,29 @@ Um script nada mais é do que um algoritmo projetado para realizar uma determina
     
 Além disso, quando é adicionado um novo usuário, é criado, por padrão, um grupo com o nome do mesmo usuário. Caso seja criado um novo grupo, o comando adduser cria uma entrada para o grupo no arquivo /etc/group. 
     
-    root@orangepione:/home# adduser epaminondas
-    Adding user `epaminondas' ...
-    Adding new group `epaminondas' (1001) ...
-    Adding new user `epaminondas' (1001) with group `epaminondas' ...
-    Creating home directory `/home/epaminondas' ...
-    Copying files from `/etc/skel' ...
-    Enter new UNIX password: 
-    Retype new UNIX password: 
-    passwd: password updated successfully
-    Changing the user information for epaminondas
-    Enter the new value, or press ENTER for the default
-	Full Name []: Epaminondas Lage
-	Room Number []: 
-	Work Phone []: 
-	Home Phone []: 
-	Other []: 
-    Is the information correct? [Y/n] Y
-    root@orangepione:/home# 
+    root@orangepione:~# adduser aluno
+	Adding user `aluno' ...
+	Adding new group `aluno' (1002) ...
+	Adding new user `aluno' (1002) with group `aluno' ...
+	Creating home directory `/home/aluno' ...
+	Copying files from `/etc/skel' ...
+	Enter new UNIX password: 
+	Retype new UNIX password: 
+	passwd: password updated successfully
+	Changing the user information for aluno
+	Enter the new value, or press ENTER for the default
+		Full Name []: 
+		Room Number []: 
+		Work Phone []: 
+		Home Phone []: 
+		Other []: 
+	Is the information correct? [Y/n] Y
+	root@orangepione:~# 
+
     
-Portanto pode-se sair da sessão e fazer ssh com o usuário recém criado.
+Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "cefet" recém criado.
+
+<td style="width: 20%;"><img src="/img/epaminondaslage_ssh_aluno.png" width="20%" /></td>
 
 # Criação do shell script
 
