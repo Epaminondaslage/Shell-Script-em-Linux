@@ -95,7 +95,7 @@ Este código nos fornece algumas informações sobre o usuário, algumas informa
 
 Para salvarmos o arquivo digitamos ESC e depois “:wq” para gravar as alterações e sair.
 
-Para executar o script, há dois pontos a considerar:
+Para executar o script, há alguns pontos a considerar:
 
 * Se você tiver salvo o seu arquivo no diretório atual, basta executá-lo digitando no prompt: ./exemplo1.sh
 * Se você tiver salvo o seu arquivo em outro diretório qualquer, você precisará informar o path completo até ele. Considerando que ele esteja em /tmp/scripts: /tmp/scripts/exemplo1.sh
