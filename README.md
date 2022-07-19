@@ -52,14 +52,17 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 
 Para editar o arquivo, precisamos dar permissão de escrita a ele.
 
-Para a primeira alternativa, em que o vi abriu direto o arquivo, precisamos pressionar ESC para editá-lo, assim, ao se fazer isso, o caractere : aparece, então digite !chmod777%
+Para a primeira alternativa, em que o vi abriu direto o arquivo, precisamos pressionar ESC para editá-lo, assim, ao se fazer isso, o caractere : aparece, então digite 
 
-Para a segunda alternativa, em que o touch não abriu o arquivo criado, basta digitar: chmod 777 exemplo1.sh.
+	!chmod777%
+
+Para a segunda alternativa, em que o touch não abriu o arquivo criado, basta digitar: 
+	
+	chmod 777 exemplo1.sh.
 
 O chmod é utilizado para setar permissões em arquivos e diretórios. O valor 777 concede todos os direitos (read, write, execute) para o usuário, o grupo e os outros. Ao invés de 777, outro modo de fazer isso é digitando +rwx.
 
 O caractere ! força o vi a executar o que está sendo pedido (no caso, executar o chmod). 
-
 O caractere % faz referência ao arquivo atual. Pode-se também, ao invés de utilizá-lo, fornecer o nome do arquivo.
 
 # Edição e execução do arquivo
