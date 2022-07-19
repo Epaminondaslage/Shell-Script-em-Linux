@@ -684,3 +684,4 @@ Editor joe – Comandos básicos
 Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
 
 	apt install joe
+	
