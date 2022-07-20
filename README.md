@@ -646,7 +646,7 @@ Botao - Ao ser pressionado o botão (PA11) o led (PA06) desliga. A leitura do va
 
 No primeiro exemplo, temos o pino PA12 configurado como saída e nele temos um led vermelho conectado para ilustrar melhor o funcionamento do script.
  
- 
+<p><img src="/img/gpio_orangepione.png" alt="gpio em orangepi one" width="400" height="400" /></p>
  
 Figura 1: Distribuição das GPIOs na barra de pinos da Orange Pi One.
 
