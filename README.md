@@ -5,6 +5,32 @@
 <p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
+# Índice deste Repositório
+
+* [Shell Script no Linux com OrangePi](#Shell-Script-no-Linux-com-OrangePi)
+* [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
+* [Criação do shell script](#Criação-do-shell-script)
+* [Editor vi – Comandos básicos](#Editor-vi–Comandos-básicos)
+* [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
+* [Edição e execução do arquivo](#Edição-e-execução-do-arquivo)
+* [Inserindo comentários](#Inserindo-comentários)
+* [Declarando e utilizando variáveis](#Declarando-e-utilizando-variáveis)
+* [Atribuindo saídas de comandos a variáveis](#Atribuindo-saídas-de-comandos-a-variáveis)
+* [Capturando a entrada de dados do usuário](#Capturando-a-entrada-de-dados-do-usuário)
+* [Comandos de seleção ou de tomada de decisão](#Comandos-de-seleção-ou-de-tomada-de-decisão)
+* [O comando if](#o-comando-if)
+* [O comando else](#o-comando-else)
+* [O comando elif](#O-comando-elif)
+* [O comando case](#O-comando-case)
+* [Loops condicionais](#Loops-condicionais)
+* [Loop while](#Loop-while)
+* [Funções](#Funções)
+* [Shell em Orangepi one](#Shell-em-Orangepi-one)
+* [Acrescentado comando trtrap para remover a exportação dos pinos](#Acrescentado-comando-trtrap-para-remover-a-exportação-dos-pinos)
+* [Status do Projeto](#Status-do-Projeto)
+* [Bibliogafia](#Bibliogafia)
+
+
 # Shell Script no Linux com OrangePi
           	
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
@@ -46,7 +72,10 @@ Além disso, quando é adicionado um novo usuário, é criado, por padrão, um g
     
 Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "cefet" recém criado.
 
-<td style="width: 20%;"><img src="/img/epaminondaslage_ssh_aluno.png" width="20%" /></td>
+	ssh aluno@ip_orangepi
+	senha:cefet
+
+<td style="width: 50%;"><img src="/img/epaminondaslage_ssh_aluno.png" width="50%" /></td>
 
 # Criação do shell script
 
@@ -56,6 +85,23 @@ Para criar um arquivo via terminal, basta abrir o mesmo e digitar vi exemplo1.sh
 
 O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre. Posteriormente é possível abri-lo com um editor de sua preferência.
 
+# Editor vi – Comandos básicos
+ 
+ 
+
+
+
+
+
+
+
+
+# Editor joe – Comandos básicos
+
+Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
+
+	apt install joe
+	
 # Concedendo permissões ao arquivo
 
 Para editar o arquivo, precisamos dar permissão de escrita a ele.
@@ -98,7 +144,7 @@ Após isso, é hora de iniciarmos o nosso script. O exemplo imprimirá na tela a
 	echo "Info de hora atual e tempo que o computador está ligado:"
 	uptime
 	echo "O script está executando do diretório:"
-	pwd
+	pwd 
 
 Listagem 1. Código do exemplo1.sh
 
@@ -152,8 +198,8 @@ Para utilizarmos o valor da variável coloca-se o $ (cifrão) na frente de seu n
 
 	#!/bin/bash
 	site=www.devmedia.com.br
-	meu_numero_favorito=13
-	_cidade=”Porto Alegre”
+	meu_numero_favorito=22
+	_cidade=”Belo Horizonte”
 	echo “Um ótimo site para você aprender a programar e se manter atualizado é: $site”
 	echo “Meu número favorito é: $meu_numero_favorito”
 	echo “Minha cidade natal é: $_cidade”
@@ -173,6 +219,7 @@ Listagem 4. Printando o nome de uma variável ao invés de seu conteúdo
 
 É possível armazenar o resultado de um comando em uma variável. Isso é muito útil em situações em que se usará este resultado em mais de um lugar ao longo do script.
 Há duas sintaxes para isso:
+
 	* nome_da_variavel=$(comando)
 	* nome_da_variavel=`comando`
 
@@ -200,6 +247,8 @@ Listagem 5. Utilizando o comando read para ler entrada do usuário
 
 # Comandos de seleção ou de tomada de decisão
 
+## O comando if
+
 Na maioria das vezes precisamos seguir um determinado fluxo de execução baseado em alguma decisão tomada pelo usuário ou outro sistema que esteja utilizando o nosso. O comando mais simples que permite isso é o condicional, que tem a seguinte sintaxe:
 
 	if [ CONDICAO ];
@@ -210,6 +259,7 @@ Na maioria das vezes precisamos seguir um determinado fluxo de execução basead
 Listagem 1. NOME
 
 Onde: 
+
 * CONDICAO: teste que, se verdadeiro, passará o controle para o bloco dentro do then;
 * AÇÕES: comandos a serem executados se o resultado de CONDICAO for verdadeiro.
 
@@ -237,6 +287,7 @@ Vamos a um exemplo em que o usuário deverá digitar um número e verificaremos 
 Listagem 6. Utilizando o condicional if...then
 
 Veja a seguir os parâmetros mais comuns utilizados com o comando test:
+
 * n string1: o comprimento de string1 é diferente de 0;
 * z string1: o comprimento de string1 é zero; 
   * string1 = string2: string1 e string2 são idênticas; 
@@ -586,7 +637,7 @@ Por exemplo, para acionar o GPIO 53:
 	# echo out > /sys/class/gpio/gpio53/direction
 	# echo 1 > /sys/class/gpio/gpio53/value
 
-# Shell_orange pi one
+# Shell em Orangepi one
 
 Exemplo básico da utilização de shell script
 
@@ -671,20 +722,9 @@ Listagem 17. Exemplo em script pisca_led.sh
 
 Listagem 18. Exemplo de uso script botão.sh
 
-# Editor vi – Comandos básicos
- 
- 
+# Status do Projeto
+
+# Bibliogafia
 
 
 
-
-
-
-
-
-Editor joe – Comandos básicos
-
-Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
-
-	apt install joe
-	
