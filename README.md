@@ -7,10 +7,11 @@
 
 # Índice deste Repositório
 
-* [Shell Script no Linux com OrangePi](#Shell-Script-no-Linux-com-OrangePi)
+* [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi-One)
 * [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
 * [Criação do shell script](#Criação-do-shell-script)
 * [Editor vi – Comandos básicos](#Editor-vi–Comandos-básicos)
+* [Editor joe – Comandos básicos](#Editor-joe–Comandos-básicos)
 * [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
 * [Edição e execução do arquivo](#Edição-e-execução-do-arquivo)
 * [Inserindo comentários](#Inserindo-comentários)
@@ -31,7 +32,7 @@
 * [Bibliogafia](#Bibliogafia)
 
 
-# Shell Script no Linux com OrangePi
+# Shell Script no Linux com OrangePi One
           	
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
 
@@ -69,13 +70,13 @@ Além disso, quando é adicionado um novo usuário, é criado, por padrão, um g
 	Is the information correct? [Y/n] Y
 	root@orangepione:~# 
 
-    
 Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "cefet" recém criado.
 
 	ssh aluno@ip_orangepi
 	senha:cefet
 
 <td style="width: 50%;"><img src="/img/epaminondaslage_ssh_aluno.png" width="50%" /></td>
+Figura 1. Tela de login via ssh
 
 # Criação do shell script
 
@@ -87,21 +88,18 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 
 # Editor vi – Comandos básicos
  
+ <p><img src="/img/vi_comandos-1.png" alt="comandos do VI-1" width="400" height="400" /></p>
+ Figura 2. Comandos Básicos do VI-I
+ <p><img src="/img/vi_comandos-2.png" alt="comandos do VI-2" width="400" height="400" /></p>
+ Figura 3. Comandos Básicos do VI-II
  
-
-
-
-
-
-
-
-
 # Editor joe – Comandos básicos
 
 Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
 
 	apt install joe
-	
+ Figura 4. Tela do Editor Joe
+ 
 # Concedendo permissões ao arquivo
 
 Para editar o arquivo, precisamos dar permissão de escrita a ele.
@@ -130,7 +128,7 @@ Um shell script começa (mas não necessariamente) definindo qual o interpretado
 	#!/bin/SHELL_ATUAL
 
 
-Figura 1. Execução do código bash 
+Figura 5. Execução do código bash 
 
 Como vemos na Figura 1, a primeira linha de um shell script define qual o interpretador de comandos será utilizado.
 
@@ -178,7 +176,7 @@ Listagem 2. Shell script com comentários
 
 
 
-Figura 2. Saída da execução do código da Listagem 2 
+Figura 6. Saída da execução do código da Listagem 2 
 
 Como pode ser observado, os comentários não são processados, portanto, não aparecem para o usuário.
 
@@ -624,7 +622,7 @@ Listagem 16. Exemplo de uso de argumentos em scripts
 
 
 
- Figura 3. Saída da execução do código da Listagem 16 
+ Figura 8. Saída da execução do código da Listagem 16 
 
 Conforme vimos no artigo, shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
 Lendo um pino de I/O por interrupção no Linux
@@ -646,9 +644,9 @@ Botao - Ao ser pressionado o botão (PA11) o led (PA06) desliga. A leitura do va
 
 No primeiro exemplo, temos o pino PA12 configurado como saída e nele temos um led vermelho conectado para ilustrar melhor o funcionamento do script.
  
+<p><img src="/img/gpio_orangepione.png" alt="gpio em orangepi one" width="400" height="400" /></p>
  
- 
-Figura 1: Distribuição das GPIOs na barra de pinos da Orange Pi One.
+Figura 9: Distribuição das GPIOs na barra de pinos da Orange Pi One.
 
 Um detalhe importante, que merece ser ressaltado, é o funcionamento do export das GPIO. Como não temos um mapeamento interno no kernel delas, o export deve ser realizado como base no port e pino. Eis que, desta forma, teremos uma conta que deve ser realizada para descobrirmos o valor correto da GPIO.
  
