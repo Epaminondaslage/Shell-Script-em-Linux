@@ -10,8 +10,8 @@
 * [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi-One)
 * [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
 * [Criação do shell script](#Criação-do-shell-script)
-* [Editor vi – Comandos básicos](#Editor-vi–Comandos-básicos)
-* [Editor joe – Comandos básicos](#Editor-joe–Comandos-básicos)
+* [Comandos básicos do editor vim](#Comandos-básicos-do-editor-vim)
+* [Comandos básicos do editor joe](#Comandos-básicos-do-editor-joe)
 * [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
 * [Edição e execução do arquivo](#Edição-e-execução-do-arquivo)
 * [Inserindo comentários](#Inserindo-comentários)
@@ -86,19 +86,22 @@ Para criar um arquivo via terminal, basta abrir o mesmo e digitar vi exemplo1.sh
 
 O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre. Posteriormente é possível abri-lo com um editor de sua preferência.
 
-# Editor vi – Comandos básicos
+# Comandos básicos do editor vim
+
+<td style="width: 50%;"><img src="/img/vi_comandos-1.png" width="50%" /></td>
+ Figura 2. Comandos Básicos do VIM
  
- <p><img src="/img/vi_comandos-1.png" alt="comandos do VI-1" width="400" height="400" /></p>
- Figura 2. Comandos Básicos do VI-I
- <p><img src="/img/vi_comandos-2.png" alt="comandos do VI-2" width="400" height="400" /></p>
- Figura 3. Comandos Básicos do VI-II
+ <td style="width: 50%;"><img src="/img/vi_comandos-2.png" width="50%" /></td>
+ Figura 3. Comandos Básicos do VII(cont)
  
-# Editor joe – Comandos básicos
+# Comandos básicos do editor joe
 
 Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
 
 	apt install joe
- Figura 4. Tela do Editor Joe
+	
+<td style="width: 50%;"><img src="/img/editor Joe.png" width="50%" /></td>	
+Figura 4. Tela do Editor Joe
  
 # Concedendo permissões ao arquivo
 
@@ -127,6 +130,7 @@ Um shell script começa (mas não necessariamente) definindo qual o interpretado
 
 	#!/bin/SHELL_ATUAL
 
+<td style="width: 50%;"><img src="/img/bash.png" width="50%" /></td>
 
 Figura 5. Execução do código bash 
 
