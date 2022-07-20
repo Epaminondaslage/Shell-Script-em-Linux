@@ -7,7 +7,7 @@
 
 # Índice deste Repositório
 
-* [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi One)
+* [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi-One)
 * [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
 * [Criação do shell script](#Criação-do-shell-script)
 * [Editor vi – Comandos básicos](#Editor-vi–Comandos-básicos)
