@@ -10,7 +10,7 @@
 * [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi-One)
 * [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
 * [Criação do shell script](#Criação-do-shell-script)
-* [Comandos básicos do editor vi](#Comandos-básicos-do-editor-vi)
+* [Comandos básicos do editor vim](#Comandos-básicos-do-editor-vim)
 * [Comandos básicos do editor joe](#Comandos-básicos-do-editor-joe)
 * [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
 * [Edição e execução do arquivo](#Edição-e-execução-do-arquivo)
@@ -86,13 +86,13 @@ Para criar um arquivo via terminal, basta abrir o mesmo e digitar vi exemplo1.sh
 
 O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre. Posteriormente é possível abri-lo com um editor de sua preferência.
 
-# Comandos básicos do editor vi
+# Comandos básicos do editor vim
 
 <td style="width: 50%;"><img src="/img/vi_comandos-1.png" width="50%" /></td>
- Figura 2. Comandos Básicos do VI-I
+ Figura 2. Comandos Básicos do VIM
  
  <td style="width: 50%;"><img src="/img/vi_comandos-2.png" width="50%" /></td>
- Figura 3. Comandos Básicos do VI-II
+ Figura 3. Comandos Básicos do VII(cont)
  
 # Comandos básicos do editor joe
 
