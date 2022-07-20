@@ -155,8 +155,8 @@ Para utilizarmos o valor da variável coloca-se o $ (cifrão) na frente de seu n
 
 	#!/bin/bash
 	site=www.devmedia.com.br
-	meu_numero_favorito=13
-	_cidade=”Porto Alegre”
+	meu_numero_favorito=22
+	_cidade=”Belo Horizonte”
 	echo “Um ótimo site para você aprender a programar e se manter atualizado é: $site”
 	echo “Meu número favorito é: $meu_numero_favorito”
 	echo “Minha cidade natal é: $_cidade”
@@ -176,6 +176,7 @@ Listagem 4. Printando o nome de uma variável ao invés de seu conteúdo
 
 É possível armazenar o resultado de um comando em uma variável. Isso é muito útil em situações em que se usará este resultado em mais de um lugar ao longo do script.
 Há duas sintaxes para isso:
+
 	* nome_da_variavel=$(comando)
 	* nome_da_variavel=`comando`
 
@@ -213,6 +214,7 @@ Na maioria das vezes precisamos seguir um determinado fluxo de execução basead
 Listagem 1. NOME
 
 Onde: 
+
 * CONDICAO: teste que, se verdadeiro, passará o controle para o bloco dentro do then;
 * AÇÕES: comandos a serem executados se o resultado de CONDICAO for verdadeiro.
 
@@ -240,6 +242,7 @@ Vamos a um exemplo em que o usuário deverá digitar um número e verificaremos 
 Listagem 6. Utilizando o condicional if...then
 
 Veja a seguir os parâmetros mais comuns utilizados com o comando test:
+
 * n string1: o comprimento de string1 é diferente de 0;
 * z string1: o comprimento de string1 é zero; 
   * string1 = string2: string1 e string2 são idênticas; 
