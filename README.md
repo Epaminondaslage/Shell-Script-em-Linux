@@ -5,6 +5,32 @@
 <p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
+# Índice deste Repositório
+
+* [Shell Script no Linux com OrangePi](#Shell-Script-no-Linux-com-OrangePi)
+* [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
+* [Criação do shell script](#Criação-do-shell-script)
+* [Editor vi – Comandos básicos](#Editor-vi–Comandos-básicos)
+* [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
+* [Edição e execução do arquivo](#Edição-e-execução-do-arquivo)
+* [Inserindo comentários](#Inserindo-comentários)
+* [Declarando e utilizando variáveis](#Declarando-e-utilizando-variáveis)
+* [Atribuindo saídas de comandos a variáveis](#Atribuindo-saídas-de-comandos-a-variáveis)
+* [Capturando a entrada de dados do usuário](#Capturando-a-entrada-de-dados-do-usuário)
+* [Comandos de seleção ou de tomada de decisão](#Comandos de seleção ou de tomada de decisão)
+* [O comando if](#o-comando-if)
+* [O comando else](#o-comando-else)
+* [O comando elif](#O-comando-elif)
+* [O comando case](#O-comando-case)
+* [Loops condicionais](#Loops-condicionais)
+* [Loop while](#Loop-while)
+* [Funções](#Funções)
+* [Shell em Orangepi one](#Shell em Orangepi one)
+* [Acrescentado comando trtrap para remover a exportação dos pinos](#Acrescentado-comando-trtrap-para-remover-a-exportação-dos-pinos)
+* [Status do Projeto](#Status-do-Projeto)
+* [Bibliogafia](#Bibliogafia)
+
+
 # Shell Script no Linux com OrangePi
           	
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
@@ -59,6 +85,23 @@ Para criar um arquivo via terminal, basta abrir o mesmo e digitar vi exemplo1.sh
 
 O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre. Posteriormente é possível abri-lo com um editor de sua preferência.
 
+# Editor vi – Comandos básicos
+ 
+ 
+
+
+
+
+
+
+
+
+# Editor joe – Comandos básicos
+
+Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
+
+	apt install joe
+	
 # Concedendo permissões ao arquivo
 
 Para editar o arquivo, precisamos dar permissão de escrita a ele.
@@ -203,6 +246,8 @@ Vejamos o exemplo da Listagem 5.
 Listagem 5. Utilizando o comando read para ler entrada do usuário
 
 # Comandos de seleção ou de tomada de decisão
+
+## O comando if
 
 Na maioria das vezes precisamos seguir um determinado fluxo de execução baseado em alguma decisão tomada pelo usuário ou outro sistema que esteja utilizando o nosso. O comando mais simples que permite isso é o condicional, que tem a seguinte sintaxe:
 
@@ -592,7 +637,7 @@ Por exemplo, para acionar o GPIO 53:
 	# echo out > /sys/class/gpio/gpio53/direction
 	# echo 1 > /sys/class/gpio/gpio53/value
 
-# Shell_orange pi one
+# Shell em Orangepi one
 
 Exemplo básico da utilização de shell script
 
@@ -677,20 +722,9 @@ Listagem 17. Exemplo em script pisca_led.sh
 
 Listagem 18. Exemplo de uso script botão.sh
 
-# Editor vi – Comandos básicos
- 
- 
+# Status do Projeto
+
+# Bibliogafia
 
 
 
-
-
-
-
-
-Editor joe – Comandos básicos
-
-Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
-
-	apt install joe
-	
