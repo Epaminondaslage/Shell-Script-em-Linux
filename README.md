@@ -7,7 +7,7 @@
 
 # Índice deste Repositório
 
-* [Shell Script no Linux com OrangePi](#Shell-Script-no-Linux-com-OrangePi)
+* [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi One)
 * [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
 * [Criação do shell script](#Criação-do-shell-script)
 * [Editor vi – Comandos básicos](#Editor-vi–Comandos-básicos)
@@ -32,7 +32,7 @@
 * [Bibliogafia](#Bibliogafia)
 
 
-# Shell Script no Linux com OrangePi
+# Shell Script no Linux com OrangePi One
           	
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
 
