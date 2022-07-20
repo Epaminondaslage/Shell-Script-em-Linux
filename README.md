@@ -87,11 +87,10 @@ Para criar um arquivo via terminal, basta abrir o mesmo e digitar vi exemplo1.sh
 O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre. Posteriormente é possível abri-lo com um editor de sua preferência.
 
 # Editor vi – Comandos básicos
- 
- <p><img src="/img/vi_comandos-1.png" alt="comandos do VI-1" width="400" height="400" /></p>
+ <td style="width: 50%;"><img src="/img/vi_comandos-1.png" width="50%" /></td>
  Figura 2. Comandos Básicos do VI-I
  
- <p><img src="/img/vi_comandos-2.png" alt="comandos do VI-2" width="400" height="400" /></p>
+ <td style="width: 50%;"><img src="/img/vi_comandos-2.png" width="50%" /></td>
  Figura 3. Comandos Básicos do VI-II
  
 # Editor joe – Comandos básicos
@@ -100,7 +99,7 @@ Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo
 
 	apt install joe
 	
-<p><img src="/img/editor Joe.png" alt="comandos editor Joe" width="400" height="400" /></p>	
+<td style="width: 50%;"><img src="/img/joe.png" width="50%" /></td>	
 Figura 4. Tela do Editor Joe
  
 # Concedendo permissões ao arquivo
@@ -130,7 +129,7 @@ Um shell script começa (mas não necessariamente) definindo qual o interpretado
 
 	#!/bin/SHELL_ATUAL
 
-<p><img src="/img/bash.png" alt="Bash" width="400" height="400" /></p>
+<td style="width: 50%;"><img src="/img/bash.png" width="50%" /></td>
 
 Figura 5. Execução do código bash 
 
