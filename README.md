@@ -10,7 +10,7 @@
 * [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi-One)
 * [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
 * [Criação do shell script](#Criação-do-shell-script)
-* [Comandos básicos do editor vi:](#Comandos-básicos-do-editor-vi)
+* [Comandos básicos do editor vi](#Comandos-básicos-do-editor-vi)
 * [Comandos básicos do editor joe](#Comandos-básicos-do-editor-joe)
 * [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
 * [Edição e execução do arquivo](#Edição-e-execução-do-arquivo)
