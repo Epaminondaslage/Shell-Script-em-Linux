@@ -90,6 +90,7 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
  
  <p><img src="/img/vi_comandos-1.png" alt="comandos do VI-1" width="400" height="400" /></p>
  Figura 2. Comandos Básicos do VI-I
+ 
  <p><img src="/img/vi_comandos-2.png" alt="comandos do VI-2" width="400" height="400" /></p>
  Figura 3. Comandos Básicos do VI-II
  
@@ -98,7 +99,9 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
 
 	apt install joe
- Figura 4. Tela do Editor Joe
+	
+<p><img src="/img/editor Joe.png" alt="comandos editor Joe" width="400" height="400" /></p>	
+Figura 4. Tela do Editor Joe
  
 # Concedendo permissões ao arquivo
 
@@ -127,6 +130,7 @@ Um shell script começa (mas não necessariamente) definindo qual o interpretado
 
 	#!/bin/SHELL_ATUAL
 
+<p><img src="/img/bash.png" alt="Bash" width="400" height="400" /></p>
 
 Figura 5. Execução do código bash 
 
