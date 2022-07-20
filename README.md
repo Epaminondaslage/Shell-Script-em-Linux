@@ -88,11 +88,11 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 
 # Comandos básicos do editor vim
 
-<td style="width: 50%;"><img src="/img/vi_comandos-1.png" width="50%" /></td>
+<td style="width: 50%;"><img src="/img/vi_comandos-1.png" width="80%" /></td>
  Figura 2. Comandos Básicos do VIM
  
- <td style="width: 50%;"><img src="/img/vi_comandos-2.png" width="50%" /></td>
- Figura 3. Comandos Básicos do VII(cont)
+ <td style="width: 50%;"><img src="/img/vim.png" width="50%" /></td>
+ Figura 3. Tela de help do VIM
  
 # Comandos básicos do editor joe
 
