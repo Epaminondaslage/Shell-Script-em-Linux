@@ -99,7 +99,7 @@ Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo
 
 	apt install joe
 	
-<td style="width: 50%;"><img src="/img/joe.png" width="50%" /></td>	
+<td style="width: 50%;"><img src="/img/editor Joe.png" width="50%" /></td>	
 Figura 4. Tela do Editor Joe
  
 # Concedendo permissões ao arquivo
