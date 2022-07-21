@@ -666,10 +666,18 @@ Pisca_led - Fica alternando o nível logico do pino PA12 a cada 1 segundo
 Botao - Ao ser pressionado o botão (PA11) o led (PA06) desliga. A leitura do valor de entrada do pino PA11 é realizada por Poll, num intervalo de 500 ms, evitando assim que seja consumido 100% do processador.
 
 No primeiro exemplo, temos o pino PA12 configurado como saída e nele temos um led vermelho conectado para ilustrar melhor o funcionamento do script.
- 
-<p><img src="/img/gpio_orangepione.png" alt="gpio em orangepi one" width="400" height="400" /></p>
- 
-Figura 10: Distribuição das GPIOs na barra de pinos da Orange Pi One.
+
+
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/gpio_orangepione.png" alt="" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 10: Distribuição das GPIOs na barra de pinos da Orange Pi One.</td>
+</tr>
+</tbody>
+</table>
 
 Um detalhe importante, que merece ser ressaltado, é o funcionamento do export das GPIO. Como não temos um mapeamento interno no kernel delas, o export deve ser realizado como base no port e pino. Eis que, desta forma, teremos uma conta que deve ser realizada para descobrirmos o valor correto da GPIO.
  
