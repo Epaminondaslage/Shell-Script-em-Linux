@@ -138,10 +138,18 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
 
 	apt install joe
-	
-<td style="width: 50%;"><img src="/img/editor Joe.png" width="50%" /></td>	
-Figura 6. Tela do Editor Joe
- 
+
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/editor Joe.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 6. Tela do Editor Joe.</td>
+</tr>
+</tbody>
+</table>
+
 # Concedendo permissões ao arquivo
 
 Para editar o arquivo, precisamos dar permissão de escrita a ele.
@@ -169,9 +177,17 @@ Um shell script começa (mas não necessariamente) definindo qual o interpretado
 
 	#!/bin/SHELL_ATUAL
 
-<td style="width: 50%;"><img src="/img/bash.png" width="50%" /></td>
 
-Figura 7. Execução do código bash 
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/bash.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 7. Execução do código bash.</td>
+</tr>
+</tbody>
+</table>
 
 Como vemos na Figura 7, a primeira linha de um shell script define qual o interpretador de comandos será utilizado.
 
@@ -216,8 +232,17 @@ Para inserir comentários no seu script, basta iniciar a linha com o caractere #
 
 Listagem 2. Shell script com comentários
 
-<td style="width: 50%;"><img src="/img/listagem2.jpg" width="50%" /></td>
-Figura 8. Saída da execução do código da Listagem 2 
+
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/listagem2.jpg" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 8. Saída da execução do código da Listagem 2.</td>
+</tr>
+</tbody>
+</table>
 
 Como pode ser observado, os comentários não são processados, portanto, não aparecem para o usuário.
 
