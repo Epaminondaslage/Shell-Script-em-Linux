@@ -38,7 +38,12 @@ Podemos utilizar a criação de arquivos de scripts para tornar mais simples as 
 
 Um script nada mais é do que um algoritmo projetado para realizar uma determinada tarefa, utilizando os comandos específicos do bash e os executáveis do sistema operacional.
 
-Lembre-se de executar os comandos como usuário comum e não como root, visto que, como root tudo será aceito e, dependendo do que você fizer, isto pode gerar danos ao sistema operacional. Uma maneira fácil de verificar é abrir o terminal e se o símbolo antes do cursor é o <p><span style="color: #ff0000;">&tilde;</span></p>, você está como usuário comum, mas se é o <p><span style="color: #ff0000;">#</span></p>, você está como root. Para sair do modo root, digite exit
+Lembre-se de executar os comandos como usuário comum e não como root, visto que, como root tudo será aceito e, dependendo do que você fizer, isto pode gerar danos ao sistema operacional. Uma maneira fácil de verificar é abrir o terminal e se o símbolo antes do cursor é o "˜", você está como usuário comum, mas se é o "#", você está como root. Para sair do modo root, digite exit.
+
+Para executar estes shell scripts vamos usar o Kit GPIO SBC Linux conforme Figura 1 , um ponto de acesso à rede ethernet na mesma faixa de rede dos microcomputadores que serão utilizados para acesso remoto às OrangePi One.
+
+<td style="width: 50%;"><img src="/img/kit2.jpg" width="25%" /></td>
+Figura 1. Kit GPIO SBC Linux
 
 # Introdução ao Scripts em Shell
 
