@@ -635,13 +635,14 @@ Vamos ao exemplo da Listagem 16 e sua execução é exibida na Figura 9.
 	 done
 
 Listagem 16. Exemplo de uso de argumentos em scripts
-<table border="o">
+
+<table border="0">
 <tbody>
 <tr>
-<td style="width: 50%;"><img src="/img/listagem16.jpg" width="50%" /></td
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/listagem16.jpg" width="50%" alt="" /></td>
 </tr>
 <tr>
-<td>Figura 9. Saída da execução do código da Listagem 16 </td>
+<td>Figura 9. Saída da execução do código da Listagem 16</td>
 </tr>
 </tbody>
 </table>
