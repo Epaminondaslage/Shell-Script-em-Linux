@@ -90,8 +90,16 @@ Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "ce
 	ssh aluno@ip_orangepi
 	senha:cefet
 
-<td style="width: 50%;"><img src="/img/epaminondaslage_ssh_aluno.png" width="50%" /></td>
-Figura 3. Tela de login via ssh
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/epaminondaslage_ssh_aluno.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 3. Tela de login via ssh.</td>
+</tr>
+</tbody>
+</table>
 
 # Criação do shell script
 
@@ -103,11 +111,27 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 
 # Comandos básicos do editor vim
 
-<td style="width: 50%;"><img src="/img/vi_comandos-1.png" width="80%" /></td>
- Figura 4. Comandos Básicos do Vim
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/vi_comandos-1.png" width="80%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 4. Comandos Básicos do Vim.</td>
+</tr>
+</tbody>
+</table>
  
- <td style="width: 50%;"><img src="/img/vim.png" width="50%" /></td>
- Figura 5. Tela de help do Vim
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/vim.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 5. Tela de help do Vim.</td>
+</tr>
+</tbody>
+</table>
  
 # Comandos básicos do editor joe
 
