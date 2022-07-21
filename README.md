@@ -91,7 +91,7 @@ Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "ce
 	senha:cefet
 
 <td style="width: 50%;"><img src="/img/epaminondaslage_ssh_aluno.png" width="50%" /></td>
-Figura 1. Tela de login via ssh
+Figura 3. Tela de login via ssh
 
 # Criação do shell script
 
@@ -104,10 +104,10 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 # Comandos básicos do editor vim
 
 <td style="width: 50%;"><img src="/img/vi_comandos-1.png" width="80%" /></td>
- Figura 2. Comandos Básicos do Vim
+ Figura 4. Comandos Básicos do Vim
  
  <td style="width: 50%;"><img src="/img/vim.png" width="50%" /></td>
- Figura 3. Tela de help do Vim
+ Figura 5. Tela de help do Vim
  
 # Comandos básicos do editor joe
 
@@ -116,7 +116,7 @@ Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo
 	apt install joe
 	
 <td style="width: 50%;"><img src="/img/editor Joe.png" width="50%" /></td>	
-Figura 4. Tela do Editor Joe
+Figura 6. Tela do Editor Joe
  
 # Concedendo permissões ao arquivo
 
@@ -147,9 +147,9 @@ Um shell script começa (mas não necessariamente) definindo qual o interpretado
 
 <td style="width: 50%;"><img src="/img/bash.png" width="50%" /></td>
 
-Figura 5. Execução do código bash 
+Figura 7. Execução do código bash 
 
-Como vemos na Figura 1, a primeira linha de um shell script define qual o interpretador de comandos será utilizado.
+Como vemos na Figura 7, a primeira linha de um shell script define qual o interpretador de comandos será utilizado.
 
 Note que utilizamos o path completo de onde se encontra o shell, no caso, no diretório /bin/.
 
@@ -183,7 +183,7 @@ Para executar o script, há alguns pontos a considerar:
 
 Comentários em códigos são muito importantes. Explicar o que está sendo feito e dar informações sobre o funcionamento do código permite ao desenvolvedor economizar tempo para entendê-lo. 
 
-Para inserir comentários no seu script, basta iniciar a linha com o caractere #, como no código da Listagem 2 e execução na Figura 2.
+Para inserir comentários no seu script, basta iniciar a linha com o caractere #, como no código da Listagem 2 e execução na Figura 8.
 
 	#!/bin/bash
 	#Este é um comentário
@@ -193,7 +193,7 @@ Para inserir comentários no seu script, basta iniciar a linha com o caractere #
 Listagem 2. Shell script com comentários
 
 <td style="width: 50%;"><img src="/img/listagem2.jpg" width="50%" /></td>
-Figura 6. Saída da execução do código da Listagem 2 
+Figura 8. Saída da execução do código da Listagem 2 
 
 Como pode ser observado, os comentários não são processados, portanto, não aparecem para o usuário.
 
@@ -618,7 +618,7 @@ Em shell script não poderia ser diferente: temos nomes especiais para designar 
 * $# - contém o número de argumentos que foi passado (ou seja, não considera o nome do script em $0);
 * $* - retorna todos os argumentos de uma vez só.
 
-Vamos ao exemplo da Listagem 16 e sua execução é exibida na Figura 3.
+Vamos ao exemplo da Listagem 16 e sua execução é exibida na Figura 9.
 
 	#!/bin/bash
  	 if [ $# -lt 1 ];
@@ -637,7 +637,7 @@ Vamos ao exemplo da Listagem 16 e sua execução é exibida na Figura 3.
 Listagem 16. Exemplo de uso de argumentos em scripts
 
 <td style="width: 50%;"><img src="/img/listagem16.jpg" width="50%" /></td
- Figura 8. Saída da execução do código da Listagem 16 
+ Figura 9. Saída da execução do código da Listagem 16 
 
 Conforme vimos no artigo, shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
 Lendo um pino de I/O por interrupção no Linux
@@ -661,7 +661,7 @@ No primeiro exemplo, temos o pino PA12 configurado como saída e nele temos um l
  
 <p><img src="/img/gpio_orangepione.png" alt="gpio em orangepi one" width="400" height="400" /></p>
  
-Figura 9: Distribuição das GPIOs na barra de pinos da Orange Pi One.
+Figura 10: Distribuição das GPIOs na barra de pinos da Orange Pi One.
 
 Um detalhe importante, que merece ser ressaltado, é o funcionamento do export das GPIO. Como não temos um mapeamento interno no kernel delas, o export deve ser realizado como base no port e pino. Eis que, desta forma, teremos uma conta que deve ser realizada para descobrirmos o valor correto da GPIO.
  
