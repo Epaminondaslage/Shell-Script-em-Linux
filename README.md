@@ -44,13 +44,13 @@ Para executar estes shell scripts vamos usar o Kit GPIO SBC Linux conforme Figur
 
 <table style="border-collapse: collapse; height: 321px;">
 <tbody>
-<tr style="width: 100%;">
+<tr >
 <td style="width: 50%;"><img src="/img/kit2.jpg" width="50%" /></td>
 <td style="width: 50%;"><img src="/img/rede_iot.png" width="100%" /></td>
 </tr>
 <tr style="width: 100%;">
-<td style="width: 50%;">Figura 1. Kit GPIO SBC Linux</td>
-<td style="width: 50%;">Figura 2. Rede Local IoT</td>
+<td style="width: 50%;">Figura 1. Kit GPIO SBC Linux.</td>
+<td style="width: 50%;">Figura 2. Rede Local IoT.</td>
 </tr>
 </tbody>
 </table>
