@@ -800,6 +800,24 @@ Listagem 17. Exemplo em script pisca_led.sh
 
 Listagem 18. Exemplo de uso script botão.sh
 
+# Pull-up
+
+O esquema de ligação padrão para esta configuração é ilustrado pela Figura 11. Quando o botão estiver solto, o Vcc fluirá pelo resistor R1 chegando na porta digital. Quando o botão for pressionado, o Gnd fluirá pelo contato da chave — sem maiores resistências — alcançando o pino do microcontrolador.
+
+Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nível lógico 1, por isso a nomenclatura pull-up (puxar para cima): normalmente para cima/nível lógico High. Todavia, enquanto a chave for pressionada, o microcontrolador reconhecerá nível lógico 0.
+
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/pull-up.jpg" alt="" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 11: Resistor de Pull Up.</td>
+</tr>
+</tbody>
+</table>
+
+
 # Status do Projeto
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 Atualizado em Julho de 2022
