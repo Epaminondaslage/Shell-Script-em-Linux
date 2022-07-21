@@ -177,7 +177,7 @@ Para inserir comentários no seu script, basta iniciar a linha com o caractere #
 
 Listagem 2. Shell script com comentários
 
-<td style="width: 50%;"><img src="/img/listagem2.png" width="50%" /></td>
+<td style="width: 50%;"><img src="/img/listagem2.jpg" width="50%" /></td>
 Figura 6. Saída da execução do código da Listagem 2 
 
 Como pode ser observado, os comentários não são processados, portanto, não aparecem para o usuário.
