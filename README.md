@@ -639,10 +639,10 @@ Listagem 16. Exemplo de uso de argumentos em scripts
 <table border="0">
 <tbody>
 <tr>
-<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/listagem16.jpg" width="50%" alt="" /></td>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/listagem16.jpg" alt="" width="50%" /></td>
 </tr>
 <tr>
-<td>Figura 9. Saída da execução do código da Listagem 16</td>
+<td style="text-align: center;">Figura 9. Sa&iacute;da da execu&ccedil;&atilde;o do c&oacute;digo da Listagem 16</td>
 </tr>
 </tbody>
 </table>
