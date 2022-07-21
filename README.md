@@ -635,9 +635,16 @@ Vamos ao exemplo da Listagem 16 e sua execução é exibida na Figura 9.
 	 done
 
 Listagem 16. Exemplo de uso de argumentos em scripts
-
-<td style="width: 50%;"><img src="/img/listagem16.jpg" width="50%" /></td	
-Figura 9. Saída da execução do código da Listagem 16 
+<table border="o">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="/img/listagem16.jpg" width="50%" /></td
+</tr>
+<tr>
+<td>Figura 9. Saída da execução do código da Listagem 16 </td>
+</tr>
+</tbody>
+</table>
 
 Conforme vimos no artigo, shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
 Lendo um pino de I/O por interrupção no Linux
