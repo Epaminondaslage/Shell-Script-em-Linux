@@ -42,11 +42,18 @@ Lembre-se de executar os comandos como usuário comum e não como root, visto qu
 
 Para executar estes shell scripts vamos usar o Kit GPIO SBC Linux conforme Figura 1 , um ponto de acesso à rede ethernet na mesma faixa de rede dos microcomputadores que serão utilizados para acesso remoto às OrangePi One conforme a Figura 2.
 
+<table style="border-collapse: collapse; height: 321px;">
+<tbody>
+<tr style="height: 303px;">
 <td style="width: 50%;"><img src="/img/kit2.jpg" width="25%" /></td>
-Figura 1. Kit GPIO SBC Linux
-
 <td style="width: 50%;"><img src="/img/rede_iot.png" width="25%" /></td>
-Figura 2. Rede Local IoT
+</tr>
+<tr style="height: 18px;">
+<td style="width: 300px; height: 18px;">Figura 1. Kit GPIO SBC Linux</td>
+<td style="width: 172px; height: 18px;">Figura 2. Rede Local IoT</td>
+</tr>
+</tbody>
+</table>
 
 # Introdução ao Scripts em Shell
 
