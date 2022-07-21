@@ -727,8 +727,11 @@ Listagem 17. Exemplo em script pisca_led.sh
 Listagem 18. Exemplo de uso script botão.sh
 
 # Status do Projeto
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+Atualizado em Julho de 2022
 
-# Bibliogafia
+# Bibliografia
 
+- Adaptado de https://www.devmedia.com.br/introducao-ao-shell-script-no-linux/25778 
 
 
