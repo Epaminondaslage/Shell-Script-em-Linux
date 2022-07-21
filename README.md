@@ -42,11 +42,18 @@ Lembre-se de executar os comandos como usuário comum e não como root, visto qu
 
 Para executar estes shell scripts vamos usar o Kit GPIO SBC Linux conforme Figura 1 , um ponto de acesso à rede ethernet na mesma faixa de rede dos microcomputadores que serão utilizados para acesso remoto às OrangePi One conforme a Figura 2.
 
-<td style="width: 50%;"><img src="/img/kit2.jpg" width="25%" /></td>
-Figura 1. Kit GPIO SBC Linux
-
-<td style="width: 50%;"><img src="/img/rede_iot.png" width="25%" /></td>
-Figura 2. Rede Local IoT
+<table style="border-collapse: collapse; height: 321px;">
+<tbody>
+<tr >
+<td style="width: 50%;"><img src="/img/kit2.jpg" width="50%" /></td>
+<td style="width: 50%;"><img src="/img/rede_iot.png" width="100%" /></td>
+</tr>
+<tr style="width: 100%;">
+<td style="width: 50%;">Figura 1. Kit GPIO SBC Linux.</td>
+<td style="width: 50%;">Figura 2. Rede Local IoT.</td>
+</tr>
+</tbody>
+</table>
 
 # Introdução ao Scripts em Shell
 
@@ -83,8 +90,16 @@ Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "ce
 	ssh aluno@ip_orangepi
 	senha:cefet
 
-<td style="width: 50%;"><img src="/img/epaminondaslage_ssh_aluno.png" width="50%" /></td>
-Figura 1. Tela de login via ssh
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/epaminondaslage_ssh_aluno.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 3. Tela de login via ssh.</td>
+</tr>
+</tbody>
+</table>
 
 # Criação do shell script
 
@@ -96,21 +111,45 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 
 # Comandos básicos do editor vim
 
-<td style="width: 50%;"><img src="/img/vi_comandos-1.png" width="80%" /></td>
- Figura 2. Comandos Básicos do Vim
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/vi_comandos-1.png" width="80%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 4. Comandos Básicos do Vim.</td>
+</tr>
+</tbody>
+</table>
  
- <td style="width: 50%;"><img src="/img/vim.png" width="50%" /></td>
- Figura 3. Tela de help do Vim
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/vim.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 5. Tela de help do Vim.</td>
+</tr>
+</tbody>
+</table>
  
 # Comandos básicos do editor joe
 
 Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
 
 	apt install joe
-	
-<td style="width: 50%;"><img src="/img/editor Joe.png" width="50%" /></td>	
-Figura 4. Tela do Editor Joe
- 
+
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/editor Joe.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 6. Tela do Editor Joe.</td>
+</tr>
+</tbody>
+</table>
+
 # Concedendo permissões ao arquivo
 
 Para editar o arquivo, precisamos dar permissão de escrita a ele.
@@ -138,11 +177,19 @@ Um shell script começa (mas não necessariamente) definindo qual o interpretado
 
 	#!/bin/SHELL_ATUAL
 
-<td style="width: 50%;"><img src="/img/bash.png" width="50%" /></td>
 
-Figura 5. Execução do código bash 
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/bash.png" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 7. Execução do código bash.</td>
+</tr>
+</tbody>
+</table>
 
-Como vemos na Figura 1, a primeira linha de um shell script define qual o interpretador de comandos será utilizado.
+Como vemos na Figura 7, a primeira linha de um shell script define qual o interpretador de comandos será utilizado.
 
 Note que utilizamos o path completo de onde se encontra o shell, no caso, no diretório /bin/.
 
@@ -176,7 +223,7 @@ Para executar o script, há alguns pontos a considerar:
 
 Comentários em códigos são muito importantes. Explicar o que está sendo feito e dar informações sobre o funcionamento do código permite ao desenvolvedor economizar tempo para entendê-lo. 
 
-Para inserir comentários no seu script, basta iniciar a linha com o caractere #, como no código da Listagem 2 e execução na Figura 2.
+Para inserir comentários no seu script, basta iniciar a linha com o caractere #, como no código da Listagem 2 e execução na Figura 8.
 
 	#!/bin/bash
 	#Este é um comentário
@@ -185,8 +232,17 @@ Para inserir comentários no seu script, basta iniciar a linha com o caractere #
 
 Listagem 2. Shell script com comentários
 
-<td style="width: 50%;"><img src="/img/listagem2.jpg" width="50%" /></td>
-Figura 6. Saída da execução do código da Listagem 2 
+
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/listagem2.jpg" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 8. Saída da execução do código da Listagem 2.</td>
+</tr>
+</tbody>
+</table>
 
 Como pode ser observado, os comentários não são processados, portanto, não aparecem para o usuário.
 
@@ -611,7 +667,7 @@ Em shell script não poderia ser diferente: temos nomes especiais para designar 
 * $# - contém o número de argumentos que foi passado (ou seja, não considera o nome do script em $0);
 * $* - retorna todos os argumentos de uma vez só.
 
-Vamos ao exemplo da Listagem 16 e sua execução é exibida na Figura 3.
+Vamos ao exemplo da Listagem 16 e sua execução é exibida na Figura 9.
 
 	#!/bin/bash
  	 if [ $# -lt 1 ];
@@ -629,8 +685,16 @@ Vamos ao exemplo da Listagem 16 e sua execução é exibida na Figura 3.
 
 Listagem 16. Exemplo de uso de argumentos em scripts
 
-<td style="width: 50%;"><img src="/img/listagem16.jpg" width="50%" /></td
- Figura 8. Saída da execução do código da Listagem 16 
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/listagem16.jpg" alt="" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 9. Sa&iacute;da da execu&ccedil;&atilde;o do c&oacute;digo da Listagem 16</td>
+</tr>
+</tbody>
+</table>
 
 Conforme vimos no artigo, shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
 Lendo um pino de I/O por interrupção no Linux
@@ -651,10 +715,18 @@ Pisca_led - Fica alternando o nível logico do pino PA12 a cada 1 segundo
 Botao - Ao ser pressionado o botão (PA11) o led (PA06) desliga. A leitura do valor de entrada do pino PA11 é realizada por Poll, num intervalo de 500 ms, evitando assim que seja consumido 100% do processador.
 
 No primeiro exemplo, temos o pino PA12 configurado como saída e nele temos um led vermelho conectado para ilustrar melhor o funcionamento do script.
- 
-<p><img src="/img/gpio_orangepione.png" alt="gpio em orangepi one" width="400" height="400" /></p>
- 
-Figura 9: Distribuição das GPIOs na barra de pinos da Orange Pi One.
+
+
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/gpio_orangepione.png" alt="" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 10: Distribuição das GPIOs na barra de pinos da Orange Pi One.</td>
+</tr>
+</tbody>
+</table>
 
 Um detalhe importante, que merece ser ressaltado, é o funcionamento do export das GPIO. Como não temos um mapeamento interno no kernel delas, o export deve ser realizado como base no port e pino. Eis que, desta forma, teremos uma conta que deve ser realizada para descobrirmos o valor correto da GPIO.
  
@@ -727,6 +799,24 @@ Listagem 17. Exemplo em script pisca_led.sh
 	done
 
 Listagem 18. Exemplo de uso script botão.sh
+
+# Pull-up
+
+O esquema de ligação padrão para esta configuração é ilustrado pela Figura 11. Quando o botão estiver solto, o Vcc fluirá pelo resistor R1 chegando na porta digital. Quando o botão for pressionado, o Gnd fluirá pelo contato da chave — sem maiores resistências — alcançando o pino do microcontrolador.
+
+Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nível lógico 1, por isso a nomenclatura pull-up (puxar para cima): normalmente para cima/nível lógico High. Todavia, enquanto a chave for pressionada, o microcontrolador reconhecerá nível lógico 0.
+
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/pull-up.jpg" alt="" width="50%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 11: Resistor de Pull Up.</td>
+</tr>
+</tbody>
+</table>
+
 
 # Status do Projeto
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
