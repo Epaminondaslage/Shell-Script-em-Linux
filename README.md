@@ -610,9 +610,9 @@ Listagem 14. Exemplo de uso do loop while com contador
 
 O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
 
-# Operadores Aritméticos 
+## Operadores Aritméticos 
 
-<td style="width: 20%;"><img src="/img/Operadores_aritméticos.png" width="20%" /></td>
+<td style="width: 30%;"><img src="/img/Operadores_aritméticos.png" width="30%" /></td>
 
 Para usar o operador de multiplicação, é necessário usar uma barra invertida antes do sinal de multiplicação \*, usando o comando de expressão aritméticas expr ou a expansão aritimética $( ( expressão ) ).
 
@@ -633,7 +633,7 @@ Exemplos:
 
 ## Operadores Relacionais 
 
-<td style="width: 20%;"><img src="/img/Operadores_relacionais.png" width="20%" /></td>
+<td style="width: 50%;"><img src="/img/Operadores_relacionais.png" width="50%" /></td>
 
 Exemplos: 
 alefjowjfjh sdfsdfsdf sdfgs d fsdfsdf sdfsf
@@ -654,7 +654,7 @@ As operações lógicas OR & AND são muito úteis quando várias condições s�
 	
 * !  (não) – Verdadeiro se a não é verdadeiro
 
-### Usando OR lógico (||) em scripts de shell
+### Usando OR lógico (||)
 
 O OR lógico no script bash é usado com o operador -o. Segue um pequeno script de shell que mostrará como usar o operador lógico OR (||) entre duas condições.
 
@@ -671,7 +671,7 @@ O OR lógico no script bash é usado com o operador -o. Segue um pequeno script 
 	  else
     		echo "Ambas condições são falsas"
 	fi
-### Usando o AND lógico (&&) em scripts de shell
+### Usando o AND lógico (&&)
 
 O AND lógico no script bash é usado com o operador -a. Abaixo, o script de shell mostrará como usar o AND lógico ( && ) entre duas condições.
 
