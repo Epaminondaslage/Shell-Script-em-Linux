@@ -31,7 +31,7 @@
 * [Funções](#Funções)
 * [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
 * [Status do Projeto](#Status-do-Projeto)
-* [Bibliografia](#Bibliografia)
+* [Referências](#Referências)
 
 # Shell Script no Linux com OrangePi One
 
@@ -1063,7 +1063,7 @@ Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nív
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 Atualizado em Julho de 2022
 
-# Bibliografia
+# Referências
 - http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-One.html
 - https://www.devmedia.com.br/introducao-ao-shell-script-no-linux/25778 
 - https://embarcados.com.br/orange-pi-one-gpios-shell-script/
