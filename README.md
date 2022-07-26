@@ -699,6 +699,50 @@ Listagem 16. Exemplo de uso de argumentos em scripts
 
 # Gerenciando a execução de um script
 
+* Executando um Script Bash
+
+Existem várias maneiras de executar um script Bash. Alguns deles são dados a seguir:
+
+    * Usando bash ou sh.
+    * Usando a fonte.
+    *Executando diretamente em um ambiente bash.
+    
+    Para fazer alguns desses métodos funcionarem, o script deve ter um shebang como cabeçalho para indicar que é um script de shell ou script bash neste caso. Portanto, certifique-se de incluir o comando abaixo na parte superior do arquivo.
+
+	#!/bin/bash
+
+Este comando fará o script rodar sob o interpretador bash. Recomenda-se escrever o cabeçalho shebang mesmo que funcione sem eles.
+
+* Usando bash ou sh
+
+Esta é a maneira mais padrão de executar o script bash. Para Linux e macOS, o bash é instalado por padrão. Neste método, digitamos bash seguido do nome do arquivo com extensão, ou seja, sh neste caso. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	bash filename.sh
+
+Também podemos usar sh para executar o script, pois ele direcionará para o shell padrão no ambiente de configuração. 
+
+	sh filename.sh
+	
+Se você não estiver na mesma pasta / diretório que o script, certifique-se de especificar o caminho relativo para o script.
+
+* Usando a fonte
+
+Este método é bastante fácil de executar um script bash, e todos eles são bastante simples. Precisamos apenas digitar “source” antes do nome do arquivo / script com uma extensão. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	source filename.sh
+	
+* Especificando o caminho para o script e chmod
+
+Este é um método independente para executar um script bash. Temos que executar o script como um executável, podemos executar o script em qualquer lugar, desde que tenhamos um shell bash em algum lugar do ambiente. Para torná-lo executável, precisamos ter certeza de que temos os direitos para executar o arquivo como um executável. Usaremos chmod para alterar os direitos no arquivo / script. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	chmod +x filename.sh  
+
+O comando acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
+
+Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
+
+	./filename.sh
+	
 * Executando um script em background
 
 Os processos podem ser executados de duas formas: em foreground (primeiro plano) ou background (segundo plano). Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário.
@@ -929,4 +973,5 @@ Atualizado em Julho de 2022
 - https://github.com/armbian/build 
 - https://www.dobitaobyte.com.br/varios-modos-de-interagir-com-o-gpio-do-raspberry-pi/
 - https://tecadmin.net/use-logical-or-and-in-shell-script/
+- https://acervolima.com/como-executar-o-script-bash-no-linux/
 
