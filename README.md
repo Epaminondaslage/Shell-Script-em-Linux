@@ -27,7 +27,7 @@
 * [Loop while](#Loop-while)
 * [Funções](#Funções)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
-* [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-I/O-por-interrupção-no-Linux)
+* [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
 * [Status do Projeto](#Status-do-Projeto)
 * [Bibliogafia](#Bibliogafia)
 
@@ -765,7 +765,7 @@ Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui u
 Shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Linux/Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
 
 
-# Lendo um pino de I/O por interrupção no Linux
+# Lendo um pino de IO por interrupção no Linux
 
 O acesso a pinos de I/O (GPIO) no Linux é feito através de arquivos exportados no diretório /sys/class/gpio/. Para acessar um pino de I/O, o primeiro passo é exportá-lo escrevendo o número do pino de I/O no arquivo export. Depois é necessário configurar a direção do pino de I/O no arquivo direction e por fim ler ou alterar o estado do pino de I/O no arquivo value.
 
