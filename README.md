@@ -1,7 +1,7 @@
 <td style="width: 20%;"><img src="/img/Logo_CEFET-MG.png" width="20%" /></td>
 
-# Introdução ao Shell Script no Linux
-<p><strong><span style="color: #0000ff;">Internet das Coisas - Kit de desenvolvimento SBC com Linux</span></strong></p>
+# Introdução ao Shell Script no Linux do OrangePi One
+<p><strong><span style="color: #0000ff;">Internet das Coisas - Kit de desenvolvimento SBC com Linux- OrangePi One</span></strong></p>
 <p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
@@ -612,7 +612,7 @@ O shell possui os principais operadores utilizados em linguagem de programação
 
 ## Operadores Aritméticos 
 
-<td style="width: 30%;"><img src="/img/Operadores_aritméticos.png" width="30%" /></td>
+<td style="width: 20%;"><img src="/img/Operadores_aritméticos.png" width="20%" /></td>
 
 Para usar o operador de multiplicação, é necessário usar uma barra invertida antes do sinal de multiplicação \*, usando o comando de expressão aritméticas expr ou a expansão aritimética $( ( expressão ) ).
 
@@ -633,7 +633,7 @@ Exemplos:
 
 ## Operadores Relacionais 
 
-<td style="width: 50%;"><img src="/img/Operadores_relacionais.png" width="50%" /></td>
+<td style="width: 70%;"><img src="/img/Operadores_relacionais.png" width="70%" /></td>
 
 Exemplos: 
 alefjowjfjh sdfsdfsdf sdfgs d fsdfsdf sdfsf
