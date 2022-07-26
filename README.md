@@ -58,7 +58,7 @@ Para executar estes shell scripts vamos usar o Kit GPIO SBC Linux conforme Figur
 </tbody>
 </table>
 
-# Introdução ao Scripts em Shell
+## Introdução ao Scripts em Shell
 
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
 Um script nada mais é do que um algoritmo projetado para realizar uma determinada tarefa, utilizando os comandos específicos do bash e os executáveis do sistema operacional.
@@ -104,7 +104,7 @@ Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "ce
 </tbody>
 </table>
 
-# Criando shell script
+## Criando shell script
 
 Em primeiro lugar precisaremos de um arquivo para escrever o nosso script. Podemos fazer isso via terminal ou via modo gráfico, sendo que, no último caso, basta apenas clicar com o botão direito do mouse em um diretório desejado e escolher criar novo arquivo de texto ou criar novo documento.
 
@@ -112,7 +112,7 @@ Para criar um arquivo via terminal, basta abrir o mesmo e digitar vi exemplo1.sh
 
 O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre. Posteriormente é possível abri-lo com um editor de sua preferência.
 
-## Comandos básicos do editor vim
+### Comandos básicos do editor vim
 
 <table border="0">
 <tbody>
@@ -136,7 +136,7 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 </tbody>
 </table>
  
-## Comandos básicos do editor joe
+### Comandos básicos do editor joe
 
 Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
 
@@ -153,7 +153,7 @@ Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo
 </tbody>
 </table>
 
-# Gerenciando a execução de um script
+## Gerenciando a execução de um script
 
 Para executar o script, há alguns pontos a considerar:
 
@@ -165,7 +165,7 @@ Para executar o script, há alguns pontos a considerar:
 * O comando pwd exibe o diretório no qual o arquivo está rodando.
 * Toda string que contiver espaços deve estar entre aspas duplas.
 
-## Executando um Script Bash
+### Executando um Script Bash
 
 Existem várias maneiras de executar um script Bash. Alguns deles são dados a seguir:
 
@@ -179,7 +179,7 @@ Para fazer alguns desses métodos funcionarem, o script deve ter um shebang como
 
 Este comando fará o script rodar sob o interpretador bash. Recomenda-se escrever o cabeçalho shebang mesmo que funcione sem eles.
 
-## Usando bash ou sh
+### Usando bash ou sh
 
 Esta é a maneira mais padrão de executar o script bash. Para Linux e macOS, o bash é instalado por padrão. Neste método, digitamos bash seguido do nome do arquivo com extensão, ou seja, sh neste caso. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
 
@@ -191,7 +191,7 @@ Também podemos usar sh para executar o script, pois ele direcionará para o she
 	
 Se você não estiver na mesma pasta / diretório que o script, certifique-se de especificar o caminho relativo para o script.
 
-## Usando a fonte
+### Usando a fonte
 
 Este método é bastante fácil de executar um script bash, e todos eles são bastante simples. Precisamos apenas digitar “source” antes do nome do arquivo / script com uma extensão. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
 
@@ -243,7 +243,7 @@ Para iniciar um programa em primeiro plano, basta digitar seu nome normalmente. 
 
 OBS: Mesmo que um usuário execute um programa em segundo plano e saia do sistema, o programa continuará sendo executado até que seja concluído ou finalizado pelo usuário que iniciou a execução (ou pelo usuário root). 
 
-## Enviando um comando para segundo plano
+### Enviando um comando para segundo plano
 
 Existem várias maneiras para enviar um comando para segundo plano, porém, a mais simples é colocando um & (E comercial) ao final do comando. Por exemplo:
 
@@ -265,7 +265,7 @@ Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o
 	root@orangepione:/home/aluno# bg
         [1]+ ./pisca.sh &
 
-## Listando os processos em execução - Comando "ps" 
+### Listando os processos em execução - Comando "ps" 
 
 	root@orangepione:/home/aluno# ps
   	PID TTY          TIME CMD
@@ -277,7 +277,7 @@ Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o
         root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
         root@orangepione:/home/aluno# 
 	
-## Encerrando um processo
+### Encerrando um processo
 
 Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill. Para encerramos um processo é necessário apenas digitar Kill PID onde PID é o numero do processo. o Parametro -9 força sua inte
 
