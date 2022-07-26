@@ -703,11 +703,11 @@ Listagem 16. Exemplo de uso de argumentos em scripts
 
 Existem várias maneiras de executar um script Bash. Alguns deles são dados a seguir:
 
-    * Usando bash ou sh.
-    * Usando a fonte.
-    *Executando diretamente em um ambiente bash.
+* Usando bash ou sh.
+* Usando a fonte.
+* Executando diretamente em um ambiente bash.
     
-    Para fazer alguns desses métodos funcionarem, o script deve ter um shebang como cabeçalho para indicar que é um script de shell ou script bash neste caso. Portanto, certifique-se de incluir o comando abaixo na parte superior do arquivo.
+Para fazer alguns desses métodos funcionarem, o script deve ter um shebang como cabeçalho para indicar que é um script de shell ou script bash neste caso. Portanto, certifique-se de incluir o comando abaixo na parte superior do arquivo.
 
 	#!/bin/bash
 
@@ -753,7 +753,6 @@ Existem várias maneiras para enviar um comando para segundo plano, porém, a ma
 
 	root@orangepione:/home/aluno# ./pisca.sh &
 	[1] 1287
-
 
 Perceba também que existe um sinal de – ou + na frente do número do processo, isso simplesmente indica que o processo com sinal de + foi iniciado por último e ele será trazido para o primeiro plano caso você digite apenas “fg”. O processo com um sinal de menos apenas indica que ele foi iniciado antes do processo com sinal de +. Se você iniciar mais tarefas, a próxima terá um sinal de +, a que estava com sinal de + ficará com um sinal de – e a primeira tarefa iniciada não terá nenhum sinal.
 
@@ -807,7 +806,6 @@ Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui u
 
 
 Shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Linux/Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
-
 
 # Lendo um pino de IO por interrupção no Linux
 
