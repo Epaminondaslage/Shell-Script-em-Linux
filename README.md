@@ -14,7 +14,6 @@
 * [Comandos básicos do editor joe](#Comandos-básicos-do-editor-joe)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
-* [Edição e execução do arquivo](#Edição-e-execução-do-arquivo)
 * [Inserindo comentários](#Inserindo-comentários)
 * [Declarando e utilizando variáveis](#Declarando-e-utilizando-variáveis)
 * [Atribuindo saídas de comandos a variáveis](#Atribuindo-saídas-de-comandos-a-variáveis)
@@ -114,7 +113,7 @@ Para criar um arquivo via terminal, basta abrir o mesmo e digitar vi exemplo1.sh
 
 O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre. Posteriormente é possível abri-lo com um editor de sua preferência.
 
-# Comandos básicos do editor vim
+## Comandos básicos do editor vim
 
 <table border="0">
 <tbody>
@@ -138,7 +137,7 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 </tbody>
 </table>
  
-# Comandos básicos do editor joe
+## Comandos básicos do editor joe
 
 Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
 
@@ -156,6 +155,16 @@ Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo
 </table>
 
 # Gerenciando a execução de um script
+
+Para executar o script, há alguns pontos a considerar:
+
+* Se você tiver salvo o seu arquivo no diretório atual, basta executá-lo digitando no prompt: ./exemplo1.sh
+* Se você tiver salvo o seu arquivo em outro diretório qualquer, você precisará informar o path completo até ele. Considerando que ele esteja em /tmp/scripts: /tmp/scripts/exemplo1.sh
+* O comando echo exibe na tela a string entre aspas duplas. Caso você não queira que ela fique entre aspas duplas, simplesmente não as forneça no comando echo; 
+* O comando whoami exibe o usuário logado no sistema;
+* O comando uptime exibe a hora atual, o tempo decorrido desde que o computador foi ligado, o número de usuários logados e uma média do número de processos carregados nos últimos um, cinco e 15 minutos;
+* O comando pwd exibe o diretório no qual o arquivo está rodando.
+* Toda string que contiver espaços deve estar entre aspas duplas.
 
 ## Executando um Script Bash
 
@@ -189,7 +198,7 @@ Este método é bastante fácil de executar um script bash, e todos eles são ba
 
 	source filename.sh
 	
-* Especificando o caminho para o script e chmod
+## Especificando o caminho para o script e chmod
 
 Este é um método independente para executar um script bash. Temos que executar o script como um executável, podemos executar o script em qualquer lugar, desde que tenhamos um shell bash em algum lugar do ambiente. Para torná-lo executável, precisamos ter certeza de que temos os direitos para executar o arquivo como um executável. Usaremos chmod para alterar os direitos no arquivo / script. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
 	
@@ -273,7 +282,7 @@ Depois de verificar a permissão do arquivo, podemos simplesmente executar o arq
 O caractere ! força o vi a executar o que está sendo pedido (no caso, executar o chmod). 
 O caractere % faz referência ao arquivo atual. Pode-se também, ao invés de utilizá-lo, fornecer o nome do arquivo.
 
-# Edição e execução do arquivo
+## Exemplo da edição e execução de um arquivo
 
 Utilizaremos o vi, no terminal, mas você pode escolher qualquer outro editor, gráfico ou não.
 
@@ -314,16 +323,6 @@ Listagem 1. Código do exemplo1.sh
 Este código nos fornece algumas informações sobre o usuário, algumas informações da máquina e sobre o local de armazenamento do nosso script.
 
 Para salvarmos o arquivo digitamos ESC e depois “:wq” para gravar as alterações e sair.
-
-Para executar o script, há alguns pontos a considerar:
-
-* Se você tiver salvo o seu arquivo no diretório atual, basta executá-lo digitando no prompt: ./exemplo1.sh
-* Se você tiver salvo o seu arquivo em outro diretório qualquer, você precisará informar o path completo até ele. Considerando que ele esteja em /tmp/scripts: /tmp/scripts/exemplo1.sh
-* O comando echo exibe na tela a string entre aspas duplas. Caso você não queira que ela fique entre aspas duplas, simplesmente não as forneça no comando echo; 
-* O comando whoami exibe o usuário logado no sistema;
-* O comando uptime exibe a hora atual, o tempo decorrido desde que o computador foi ligado, o número de usuários logados e uma média do número de processos carregados nos últimos um, cinco e 15 minutos;
-* O comando pwd exibe o diretório no qual o arquivo está rodando.
-* Toda string que contiver espaços deve estar entre aspas duplas.
 
 # Inserindo comentários
 
