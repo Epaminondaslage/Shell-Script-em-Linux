@@ -19,15 +19,16 @@
 * [Atribuindo saídas de comandos a variáveis](#Atribuindo-saídas-de-comandos-a-variáveis)
 * [Capturando a entrada de dados do usuário](#Capturando-a-entrada-de-dados-do-usuário)
 * [Comandos de seleção ou de tomada de decisão](#Comandos-de-seleção-ou-de-tomada-de-decisão)
-* [O comando if](#o-comando-if)
-* [O comando else](#o-comando-else)
+* [O comando if](#O-comando-if)
+* [O comando else](#O-comando-else)
 * [O comando elif](#O-comando-elif)
 * [O comando case](#O-comando-case)
 * [Loops condicionais](#Loops-condicionais)
 * [Loop while](#Loop-while)
-* [Operadores Aritméticos em Shell Script](#Operadores-Aritméticos-em-Shell-Script)
-* [Operadores Relacionais em Shell Script](#Operadores-Relacionais-em-Shell-Script)
-* [Operadores Lógicos em Shell Script](#Operadores-Lógicos-em-Shell-Script)
+* [Operadores em Shell Script](#Operadores-em-Shell-Script)
+* [Operadores Aritméticos](#Operadores-Aritméticos)
+* [Operadores Relacionais](#Operadores-Relacionais)
+* [Operadores Lógicos](#Operadores-Lógicos)
 * [Funções](#Funções)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
@@ -370,7 +371,7 @@ Veja a seguir os parâmetros mais comuns utilizados com o comando test:
 * d nome_do_arquivo: verifica se nome_do_arquivo é um diretório;
 * f nome_do_arquivo: verifica se nome_do_arquivo é um arquivo regular (texto, imagem, programa, docs, planilhas).
 
-# O comando else
+## O comando else
 
 Existe a possibilidade de também tratar o caso em que o nosso teste falha. Para isso temos o comando else, cuja sintaxe é:
 
@@ -401,7 +402,7 @@ Vejamos um exemplo na Listagem 7 que verifica se um número digitado pelo usuár
 
 Listagem 7. Utilizando o condicional if...then...else
 
-# O comando elif
+## O comando elif
 
 Há casos em que temos mais de uma condição a ser testada, todas correlacionadas. Para isso temos o comando elif, cuja sintaxe é:
 
@@ -458,7 +459,7 @@ Nota: O bash não tem suporte nativo a divisões em ponto flutuante, apenas divi
 Nota: Observe a linha: result=$((10/2))
 Veja que utilizamos dois conjuntos de parênteses para encapsular a operação de divisão. Em shell script precisamos realizar operações matemáticas entre parênteses.
 
-# O comando case
+## O comando case
 
 O comando case tem a mesma funcionalidade do if...then...elif, com a diferença de sua sintaxe ser mais compacta e enxuta:
 
@@ -506,7 +507,7 @@ Por exemplo, modificando o exemplo anterior temos o código da Listagem 9.
 
 Listagem 9. Utilizando o comando case
 
-# LOOPS Condicionais
+# Loops Condicionais
 
 Loops são muito úteis para ficar iterando sobre determinadas ações até que uma condição seja satisfeita e interrompa o laço.
 O primeiro deles é o for, cuja sintaxe é:
@@ -604,15 +605,18 @@ Vejamos um outro exemplo com contador na Listagem 14.
 	done
 
 Listagem 14. Exemplo de uso do loop while com contador
-
-# Operadores Aritméticos em Shell Script
+# Operadores em Shell Script
 
 O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
-Operadores aritméticos
 
-<td style="width: 50%;"><img src="/img/operadores_aritméticos.png" width="50%" /></td>
+# Operadores Aritméticos 
+
+O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
+
+<td style="width: 50%;"><img src="/img/Operadores_aritméticos.png" width="50%" /></td>
 
 Para usar o operador de multiplicação, é necessário usar uma barra invertida antes do sinal de multiplicação \*, usando o comando de expressão aritméticas expr ou a expansão aritimética $( ( expressão ) ).
+
 Exemplos:
 
 	echo `expr 3 + 2`
@@ -628,18 +632,18 @@ Exemplos:
 	VL=5
 	echo $(($VL**2))
 
-# Operadores Relacionais em Shell Script
+## Operadores Relacionais 
 
-<td style="width: 50%;"><img src="/img/operadores_Relacionais.png" width="50%" /></td>
+<td style="width: 50%;"><img src="/img/Operadores_relacionais.png" width="50%" /></td>
+
+Exemplos: 
 
 
-# Operadores Lógicos em Shell Script
-
-
+## Operadores Lógicos
 
 Uma condição lógica é criada, quando dois ou mais condicionados produzem um único resultado baseado neles. Aqui um resultado de condição também pode inverter o resultado de outra condição.
 
-<td style="width: 80%;"><img src="/img/operadores_lógicos.png" width="80%" /></td>
+<td style="width: 80%;"><img src="/img/Operadores_lógicos.png" width="80%" /></td>
 
 As operações lógicas OR & AND são muito úteis quando várias condições são usadas em nossos scripts.
 
