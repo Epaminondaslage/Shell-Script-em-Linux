@@ -878,7 +878,24 @@ o comando "ps" lista os processos
         root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
         root@orangepione:/home/aluno# 
 	
-Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill
+Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill. Para encerramos um processo é necessário apenas digitar Kill PID onde PID é o numero do processo. o Parametro -9 força sua inte
+
+	root@orangepione:/home/aluno# ./pisca.sh
+	^Z
+	[1]+  Stopped                 ./pisca.sh
+	root@orangepione:/home/aluno# ps 
+	  PID TTY          TIME CMD
+ 	1582 pts/0    00:00:00 bash
+	 1871 pts/0    00:00:00 pisca.sh
+ 	1897 pts/0    00:00:00 sleep
+ 	1898 pts/0    00:00:00 ps
+	root@orangepione:/home/aluno# kill -9 1871
+	root@orangepione:/home/aluno# ps
+ 	 PID TTY          TIME CMD
+	 1582 pts/0    00:00:00 bash
+	 1910 pts/0    00:00:00 ps
+	[1]+  Killed                  ./pisca.sh
+	root@orangepione:/home/aluno#
 
 
 
