@@ -25,14 +25,18 @@
 * [O comando case](#O-comando-case)
 * [Loops condicionais](#Loops-condicionais)
 * [Loop while](#Loop-while)
+* [Operadores Aritméticos em Shell Script](#Operadores-Aritméticos-em-Shell-Script)
+* [Operadores Relacionais em Shell Script](#Operadores-Relacionais-em-Shell-Script)
+* [Operadores Lógicos em Shell Script](#Operadores-Lógicos-em-Shell-Script)
 * [Funções](#Funções)
-* [Shell em Orangepi one](#Shell-em-Orangepi-one)
-* [Acrescentado comando trtrap para remover a exportação dos pinos](#Acrescentado-comando-trtrap-para-remover-a-exportação-dos-pinos)
+* [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
+* [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
 * [Status do Projeto](#Status-do-Projeto)
-* [Bibliogafia](#Bibliogafia)
-
+* [Bibliografia](#Bibliografia)
 
 # Shell Script no Linux com OrangePi One
+
+Orange Pi One is an open-source single-board computer. It is highly compact with a dimension of 69X48mm. It can run Android 4.4, Ubuntu, Debian Image. 
           	
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
 
@@ -601,6 +605,97 @@ Vejamos um outro exemplo com contador na Listagem 14.
 
 Listagem 14. Exemplo de uso do loop while com contador
 
+# Operadores Aritméticos em Shell Script
+
+O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
+Operadores aritméticos
+
+*img operadores_aritiméticos.png
+
+Para usar o operador de multiplicação, é necessário usar uma barra invertida antes do sinal de multiplicação \*, usando o comando de expressão aritméticas expr ou a expansão aritimética $( ( expressão ) ).
+Exemplos:
+
+	echo `expr 3 + 2`
+	echo $( (3+2) )
+	echo `expr 3 + 2 \* 3`
+	echo $( (3+2*3) )
+	echo `expr $( (3 +2) ) \* 3`
+	echo $( (3+2*3) )
+
+	echo `expr 3 % 2`
+	echo $((3 % 2))
+
+	VL=5
+	echo $(($VL**2))
+
+# Operadores Relacionais em Shell Script
+
+
+
+# Operadores Lógicos em Shell Script
+
+Uma condição lógica é criada, quando dois ou mais condicionados produzem um único resultado baseado neles. Aqui um resultado de condição também pode inverter o resultado de outra condição.
+
+As operações lógicas OR & AND são muito úteis quando várias condições são usadas em nossos scripts.
+
+	* OR é usado entre duas ou várias condições. Retorna verdadeiro se qualquer uma das condições retornar como verdadeiro. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como false
+    
+	* AND é usado entre duas ou várias condições. Ele retorna true somente se todas as condições retornarem como true. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como verdadeira
+
+* Usando OR lógico (||) em scripts de shell
+
+O OR lógico no script bash é usado com o operador -o. Segue um pequeno script de shell que mostrará como usar o operador lógico OR (||) entre duas condições.
+
+	#!/bin/bash
+	
+	# Um shell script que solicita dois números
+	# Verifica se o primeiro número é menor que 10 e o segundo é maior que 20
+	
+	read -p "Entre o Primeiro número: " first
+	read -p "Entre o Segundo número: " second
+	if [ $first -le 10 ] || [ $second -gt 20 ]
+	  then
+    		echo "Apenas uma condição é verdadeira"
+	  else
+    		echo "Ambas condições são falsas"
+	fi
+* Usando o AND lógico (&&) em scripts de shell
+
+O AND lógico no script bash é usado com o operador -a. Abaixo, o script de shell mostrará como usar o AND lógico ( && ) entre duas condições.
+
+	#!/bin/bash
+ 
+	# Um shell script que solicita dois número
+	# Verifica se o primeiro número é menor que 10 e o segundo é maior que 20
+
+	read -p "Entre o Primeiro número: " first
+	read -p "Entre o Segundo número: " second
+         
+	if [ $first -le 10 ]  && [ $second -gt 20 ]
+	   then
+    		echo "As duas condições são verdadeiras"
+	   else
+    		echo "Ao menos uma condição é falsa"
+	fi
+
+* Usando múltiplos OR & AND lógicos
+
+Agora, use os vários operadores lógicos em uma única instrução. O exemplo abaixo o ajudará a entender como usar vários operadores lógicos em uma única instrução.
+
+	#!/bin/bash
+ 
+	# Um Script que solicita um número
+	# Verifica se o número está entre 10 - 20 ou se o número está entre 100 - 200
+ 
+	read -p "Entre um número: " num
+ 
+	if ([ $num -ge 10 ] && [ $num -le 20 ]) || ([ $num -ge 100 ] && [ $num -le 200 ])
+	   then
+		echo "O número ($num) está entre 10-20 ou 100-200"
+	   else
+	   	echo "O número ($num) não está entre 10-20 nem entre 100-200"
+	fi
+
 # Funções
 
 O uso de funções é imprescindível para separar, organizar e estruturar a lógica de qualquer algoritmo, seja em shell script ou qualquer outra linguagem de programação. Sua sintaxe é muito simples:
@@ -696,8 +791,117 @@ Listagem 16. Exemplo de uso de argumentos em scripts
 </tbody>
 </table>
 
-Conforme vimos no artigo, shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
-Lendo um pino de I/O por interrupção no Linux
+# Gerenciando a execução de um script
+
+* Executando um Script Bash
+
+Existem várias maneiras de executar um script Bash. Alguns deles são dados a seguir:
+
+* Usando bash ou sh.
+* Usando a fonte.
+* Executando diretamente em um ambiente bash.
+    
+Para fazer alguns desses métodos funcionarem, o script deve ter um shebang como cabeçalho para indicar que é um script de shell ou script bash neste caso. Portanto, certifique-se de incluir o comando abaixo na parte superior do arquivo.
+
+	#!/bin/bash
+
+Este comando fará o script rodar sob o interpretador bash. Recomenda-se escrever o cabeçalho shebang mesmo que funcione sem eles.
+
+* Usando bash ou sh
+
+Esta é a maneira mais padrão de executar o script bash. Para Linux e macOS, o bash é instalado por padrão. Neste método, digitamos bash seguido do nome do arquivo com extensão, ou seja, sh neste caso. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	bash filename.sh
+
+Também podemos usar sh para executar o script, pois ele direcionará para o shell padrão no ambiente de configuração. 
+
+	sh filename.sh
+	
+Se você não estiver na mesma pasta / diretório que o script, certifique-se de especificar o caminho relativo para o script.
+
+* Usando a fonte
+
+Este método é bastante fácil de executar um script bash, e todos eles são bastante simples. Precisamos apenas digitar “source” antes do nome do arquivo / script com uma extensão. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	source filename.sh
+	
+* Especificando o caminho para o script e chmod
+
+Este é um método independente para executar um script bash. Temos que executar o script como um executável, podemos executar o script em qualquer lugar, desde que tenhamos um shell bash em algum lugar do ambiente. Para torná-lo executável, precisamos ter certeza de que temos os direitos para executar o arquivo como um executável. Usaremos chmod para alterar os direitos no arquivo / script. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	chmod +x filename.sh  
+
+O comando acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
+
+Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
+
+	./filename.sh
+	
+* Executando um script em background
+
+Os processos podem ser executados de duas formas: em foreground (primeiro plano) ou background (segundo plano). Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário.
+
+* Enviando um comando para segundo plano
+
+Existem várias maneiras para enviar um comando para segundo plano, porém, a mais simples é colocando um & (E comercial) ao final do comando. Por exemplo:
+
+	root@orangepione:/home/aluno# ./pisca.sh &
+	[1] 1287
+
+Perceba também que existe um sinal de – ou + na frente do número do processo, isso simplesmente indica que o processo com sinal de + foi iniciado por último e ele será trazido para o primeiro plano caso você digite apenas “fg”. O processo com um sinal de menos apenas indica que ele foi iniciado antes do processo com sinal de +. Se você iniciar mais tarefas, a próxima terá um sinal de +, a que estava com sinal de + ficará com um sinal de – e a primeira tarefa iniciada não terá nenhum sinal.
+
+Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o número do processo que deseja). Você pode parar temporariamente a aplicação pressionando as teclas “CTRL” + “Z” do seu teclado. E o shell está livre para que eu possa digitar novamente. Verifique que se você digitar “jobs” novamente, verá que a tarefa não está executando. Utilize o comando “bg” para continuar executando a tarefa em segundo plano. Veja:
+
+	root@orangepione:/home/aluno# 
+	root@orangepione:/home/aluno# ./pisca.sh &
+	[1] 1287
+	root@orangepione:/home/aluno# fg
+	./pisca.sh
+	^Z
+	[1]+  Stopped                 ./pisca.sh
+	root@orangepione:/home/aluno# 
+	root@orangepione:/home/aluno# bg
+        [1]+ ./pisca.sh &
+
+* Listando os processos em execução - Comando "ps" 
+
+	root@orangepione:/home/aluno# ps
+  	PID TTY          TIME CMD
+ 	1215 pts/0    00:00:00 bash
+ 	1287 pts/0    00:00:00 testa.sh
+ 	1497 pts/0    00:00:00 sleep
+ 	1498 pts/0    00:00:00 ps
+	root@orangepione:/home/aluno# 
+
+        root@orangepione:/home/aluno# ps aux|grep testa.sh
+        root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
+        root@orangepione:/home/aluno# 
+	
+* Encerrando um processo
+
+Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill. Para encerramos um processo é necessário apenas digitar Kill PID onde PID é o numero do processo. o Parametro -9 força sua inte
+
+	root@orangepione:/home/aluno# ./pisca.sh
+	^Z
+	[1]+  Stopped                 ./pisca.sh
+	root@orangepione:/home/aluno# ps 
+	  PID TTY          TIME CMD
+ 	1582 pts/0    00:00:00 bash
+	 1871 pts/0    00:00:00 pisca.sh
+ 	1897 pts/0    00:00:00 sleep
+ 	1898 pts/0    00:00:00 ps
+	root@orangepione:/home/aluno# kill -9 1871
+	root@orangepione:/home/aluno# ps
+ 	 PID TTY          TIME CMD
+	 1582 pts/0    00:00:00 bash
+	 1910 pts/0    00:00:00 ps
+	[1]+  Killed                  ./pisca.sh
+	root@orangepione:/home/aluno#
+
+
+Shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Linux/Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
+
+# Lendo um pino de IO por interrupção no Linux
 
 O acesso a pinos de I/O (GPIO) no Linux é feito através de arquivos exportados no diretório /sys/class/gpio/. Para acessar um pino de I/O, o primeiro passo é exportá-lo escrevendo o número do pino de I/O no arquivo export. Depois é necessário configurar a direção do pino de I/O no arquivo direction e por fim ler ou alterar o estado do pino de I/O no arquivo value.
 
@@ -707,9 +911,8 @@ Por exemplo, para acionar o GPIO 53:
 	# echo out > /sys/class/gpio/gpio53/direction
 	# echo 1 > /sys/class/gpio/gpio53/value
 
-# Shell em Orangepi one
 
-Exemplo básico da utilização de shell script
+* Exemplo básico da utilização de shell script no OrangePi
 
 Pisca_led - Fica alternando o nível logico do pino PA12 a cada 1 segundo
 Botao - Ao ser pressionado o botão (PA11) o led (PA06) desliga. A leitura do valor de entrada do pino PA11 é realizada por Poll, num intervalo de 500 ms, evitando assim que seja consumido 100% do processador.
@@ -774,7 +977,7 @@ Destaca-se que outra maneira de executar esse código será a análise da troca 
 
 Listagem 17. Exemplo em script pisca_led.sh
 
-# Acrescentado comando trtrap para remover a exportação dos pinos
+* Acrescentado comando trtrap para remover a exportação dos pinos
 
 	#!/bin/sh
 	echo 11 > /sys/class/gpio/export
@@ -809,13 +1012,31 @@ Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nív
 <table border="0">
 <tbody>
 <tr>
-<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/pull-up.jpg" alt="" width="50%" /></td>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/pull-up.jpg" alt="" width="80%" /></td>
 </tr>
 <tr>
-<td style="text-align: center;">Figura 11: Resistor de Pull Up.</td>
+<td style="text-align: center;">Figura 11: Resistor de Pull-Up.</td>
 </tr>
 </tbody>
 </table>
+
+# Pull-down
+
+A Figura 12 ilustra o esquema de ligação padrão para esta configuração. Quando o botão estiver solto, o Gnd fluirá pelo resistor R1 chegando na porta digital. Quando o botão for pressionado, o Vcc fluirá pelo contato da chave — sem maiores resistências — alcançando o pino do microcontrolador. 
+
+Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nível lógico 0 (Gnd), por essa razão a nomenclatura pull-down (puxar para baixo): normalmente para baixo/nível lógico 0. Contudo, enquanto a chave for pressionada, o microcontrolador identificará nível lógico 1 .
+
+<table border="0">
+<tbody>
+<tr>
+<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/Pull-down.jpg" alt="" width="80%" /></td>
+</tr>
+<tr>
+<td style="text-align: center;">Figura 11: Resistor de Pull-down.</td>
+</tr>
+</tbody>
+</table>
+
 
 
 # Status do Projeto
@@ -823,7 +1044,27 @@ Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nív
 Atualizado em Julho de 2022
 
 # Bibliografia
-
-- Adaptado de https://www.devmedia.com.br/introducao-ao-shell-script-no-linux/25778 
-
+- http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-One.html
+- https://www.devmedia.com.br/introducao-ao-shell-script-no-linux/25778 
+- https://embarcados.com.br/orange-pi-one-gpios-shell-script/
+- https://sergioprado.org/lendo-um-pino-de-io-por-interrupcao-no-linux/
+- https://sergioprado.org/interface-gpio-kernel-linux/
+- https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-gpio.git/
+- https://linux-sunxi.org/GPIO
+- https://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/a
+- https://m.youtube.com/watch?v=WCOHCHmrxaA
+- https://forum.armbian.com/topic/7067-orange-pi-pc-how-to-use-gpio-for-push-buttons-tutorial/
+- https://stackoverflow.com/questions/46463724/accessing-gpio-on-orangepi-pc-plus-h3-on-armbian-3-4-113-and-newer
+- https://opi-gpio.readthedocs.io/en/latest/api-documentation.html
+- https://www.mhavila.com.br/topicos/unix/shscript.html 
+- https://pypi.org/project/OPi.GPIO/
+- https://learn.adafruit.com/circuitpython-on-orangepi-linux
+- https://www.instructables.com/Orange-Pi-One-Python-GPIO-basic/
+- http://www.orangepi.org/orangepibbsen/forum.php?mod=viewthread&tid=4996
+- https://www.armbian.com/orange-pi-one/
+- https://github.com/armbian/build 
+- https://www.dobitaobyte.com.br/varios-modos-de-interagir-com-o-gpio-do-raspberry-pi/
+- https://tecadmin.net/use-logical-or-and-in-shell-script/
+- https://acervolima.com/como-executar-o-script-bash-no-linux/
+- https://gnulinuxbr.wordpress.com/2010/04/07/operadores-shell-script/
 
