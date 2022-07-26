@@ -263,24 +263,7 @@ Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui u
 	[1]+  Killed                  ./pisca.sh
 	root@orangepione:/home/aluno#
 
-
 Shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Linux/Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
-
-# Concedendo permissões ao arquivo
-
-Para editar o arquivo, precisamos dar permissão de escrita a ele. O comando  chmod é utilizado para setar permissões em arquivos e diretórios. O valor 777 concede todos os direitos (read, write, execute) para o usuário, o grupo e os outros. Ao invés de 777, outro modo de fazer isso é digitando +rwx.
-
-chmod 777 exemplo1.sh.
-chmod +x exemplo1.sh  
-
-Os comandos acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
-
-Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
-
-	./filename.sh
-
-O caractere ! força o vi a executar o que está sendo pedido (no caso, executar o chmod). 
-O caractere % faz referência ao arquivo atual. Pode-se também, ao invés de utilizá-lo, fornecer o nome do arquivo.
 
 ## Exemplo da edição e execução de um arquivo
 
@@ -323,6 +306,22 @@ Listagem 1. Código do exemplo1.sh
 Este código nos fornece algumas informações sobre o usuário, algumas informações da máquina e sobre o local de armazenamento do nosso script.
 
 Para salvarmos o arquivo digitamos ESC e depois “:wq” para gravar as alterações e sair.
+
+# Concedendo permissões ao arquivo
+
+Para editar o arquivo, precisamos dar permissão de escrita a ele. O comando  chmod é utilizado para setar permissões em arquivos e diretórios. O valor 777 concede todos os direitos (read, write, execute) para o usuário, o grupo e os outros. Ao invés de 777, outro modo de fazer isso é digitando +rwx.
+
+chmod 777 exemplo1.sh.
+chmod +x exemplo1.sh  
+
+Os comandos acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
+
+Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
+
+	./filename.sh
+
+O caractere ! força o vi a executar o que está sendo pedido (no caso, executar o chmod). 
+O caractere % faz referência ao arquivo atual. Pode-se também, ao invés de utilizá-lo, fornecer o nome do arquivo.
 
 # Inserindo comentários
 
