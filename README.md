@@ -25,6 +25,7 @@
 * [O comando case](#O-comando-case)
 * [Loops condicionais](#Loops-condicionais)
 * [Loop while](#Loop-while)
+* [Operadores lógicos em Shell Script](Operadores-lógicos-em-Shell-Script)
 * [Funções](#Funções)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
@@ -601,6 +602,70 @@ Vejamos um outro exemplo com contador na Listagem 14.
 	done
 
 Listagem 14. Exemplo de uso do loop while com contador
+
+# Operadores lógicos em Shell Script
+
+Uma condição lógica é criada, quando dois ou mais condicionados produzem um único resultado baseado neles. Aqui um resultado de condição também pode inverter o resultado de outra condição.
+
+As operações lógicas OR & AND são muito úteis quando várias condições são usadas em nossos scripts.
+
+	* OR é usado entre duas ou várias condições. Retorna verdadeiro se qualquer uma das condições retornar como verdadeiro. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como false
+    
+	* AND é usado entre duas ou várias condições. Ele retorna true somente se todas as condições retornarem como true. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como verdadeira
+
+* Usando OR lógico (||) em scripts de shell
+
+O OR lógico no script bash é usado com o operador -o. Segue um pequeno script de shell que mostrará como usar o operador lógico OR (||) entre duas condições.
+
+	#!/bin/bash
+	
+	# Um shell script que solicita dois números
+	# Verifica se o primeiro número é menor que 10 e o segundo é maior que 20
+	
+	read -p "Entre o Primeiro número: " first
+	read -p "Entre o Segundo número: " second
+	if [ $first -le 10 ] || [ $second -gt 20 ]
+	  then
+    		echo "Apenas uma condição é verdadeira"
+	  else
+    		echo "Ambas condições são falsas"
+	fi
+* Usando o AND lógico (&&) em scripts de shell
+
+O AND lógico no script bash é usado com o operador -a. Abaixo, o script de shell mostrará como usar o AND lógico ( && ) entre duas condições.
+
+	#!/bin/bash
+ 
+	# Um shell script que solicita dois número
+	# Verifica se o primeiro número é menor que 10 e o segundo é maior que 20
+
+	read -p "Entre o Primeiro número: " first
+	read -p "Entre o Segundo número: " second
+         
+	if [ $first -le 10 ]  && [ $second -gt 20 ]
+	   then
+    		echo "As duas condições são verdadeiras"
+	   else
+    		echo "Ao menos uma condição é falsa"
+	fi
+
+* Usando múltiplos OR & AND lógicos
+
+Agora, use os vários operadores lógicos em uma única instrução. O exemplo abaixo o ajudará a entender como usar vários operadores lógicos em uma única instrução.
+
+	#!/bin/bash
+ 
+	# Um Script que solicita um número
+	# Verifica se o número está entre 10 - 20 ou se o número está entre 100 - 200
+ 
+	read -p "Entre um número: " num
+ 
+	if ([ $num -ge 10 ] && [ $num -le 20 ]) || ([ $num -ge 100 ] && [ $num -le 200 ])
+	   then
+		echo "O número ($num) está entre 10-20 ou 100-200"
+	   else
+	   	echo "O número ($num) não está entre 10-20 nem entre 100-200"
+	fi
 
 # Funções
 
