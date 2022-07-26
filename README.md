@@ -13,7 +13,6 @@
 * [Comandos básicos do editor vim](#Comandos-básicos-do-editor-vim)
 * [Comandos básicos do editor joe](#Comandos-básicos-do-editor-joe)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
-* [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
 * [Inserindo comentários](#Inserindo-comentários)
 * [Declarando e utilizando variáveis](#Declarando-e-utilizando-variáveis)
 * [Atribuindo saídas de comandos a variáveis](#Atribuindo-saídas-de-comandos-a-variáveis)
@@ -200,11 +199,49 @@ Este método é bastante fácil de executar um script bash, e todos eles são ba
 	
 ## Especificando o caminho para o script e chmod
 
-Este é um método independente para executar um script bash. Temos que executar o script como um executável, podemos executar o script em qualquer lugar, desde que tenhamos um shell bash em algum lugar do ambiente. Para torná-lo executável, precisamos ter certeza de que temos os direitos para executar o arquivo como um executável. Usaremos chmod para alterar os direitos no arquivo / script. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
-	
-## Executando um script em background
+### path
 
-Os processos podem ser executados de duas formas: em foreground (primeiro plano) ou background (segundo plano). Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário.
+Path é o caminho de procura dos arquivos/comandos executáveis. O path (caminho) é armazenado na variável de ambiente PATH. Você pode ver o conteúdo desta variável com o comando echo $PATH.
+
+Por exemplo, o caminho /usr/local/bin:/usr/bin:/bin:/usr/bin/X11 significa que se você digitar o comando ls, o interpretador de comandos iniciará a procura do programa ls no diretório /usr/local/bin, caso não encontre o arquivo no diretório /usr/local/bin ele inicia a procura em /usr/bin, até que encontre o arquivo procurado.
+
+Caso o interpretador de comandos chegue até o último diretório do path e não encontre o arquivo/comando digitado, é mostrada a seguinte mensagem:
+
+	bash: ls: command not found (comando não encontrado).
+
+O caminho de diretórios vem configurado na instalação do Linux, mas pode ser alterado no arquivo /etc/profile. Caso deseje alterar o caminho para todos os usuários, este arquivo é o melhor lugar, pois ele é lido por todos os usuários no momento do login.
+
+Este é um método independente para executar um script bash. Temos que executar o script como um executável, podemos executar o script em qualquer lugar, desde que tenhamos um shell bash em algum lugar do ambiente. Para torná-lo executável, precisamos ter certeza de que temos os direitos para executar o arquivo como um executável. Usaremos chmod para alterar os direitos no arquivo / script. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+### Concedendo permissões ao arquivo
+
+Para editar o arquivo, precisamos dar permissão de escrita a ele. O comando  chmod é utilizado para setar permissões em arquivos e diretórios. O valor 777 concede todos os direitos (read, write, execute) para o usuário, o grupo e os outros. Ao invés de 777, outro modo de fazer isso é digitando +rwx.
+
+chmod 777 exemplo1.sh.
+chmod +x exemplo1.sh  
+
+Os comandos acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
+
+Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
+
+	./filename.sh
+
+O caractere ! força o vi a executar o que está sendo pedido (no caso, executar o chmod). 
+O caractere % faz referência ao arquivo atual. Pode-se também, ao invés de utilizá-lo, fornecer o nome do arquivo.
+	
+## Executando um script
+
+ Um programa pode ser executado de duas formas:
+
+* Primeiro Plano - Também chamado de foreground. Quando você deve esperar o término da execução de um programa para executar um novo comando. Somente é mostrado o aviso de comando após o término de execução do comando/programa.
+
+* Segundo Plano - Também chamado de background. Quando você não precisa esperar o término da execução de um programa para executar um novo comando. Após iniciar um programa em background, é mostrado um número PID (identificação do Processo) e o aviso de comando é novamente mostrado, permitindo o uso normal do sistema.
+
+Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário. O programa executado em background continua sendo executado internamente. Após ser concluído, o sistema retorna uma mensagem de pronto acompanhado do número PID do processo que terminou.
+
+Para iniciar um programa em primeiro plano, basta digitar seu nome normalmente. Para iniciar um programa em segundo plano, acrescente o caracter "&" após o final do comando.
+
+OBS: Mesmo que um usuário execute um programa em segundo plano e saia do sistema, o programa continuará sendo executado até que seja concluído ou finalizado pelo usuário que iniciou a execução (ou pelo usuário root). 
 
 ## Enviando um comando para segundo plano
 
@@ -306,22 +343,6 @@ Listagem 1. Código do exemplo1.sh
 Este código nos fornece algumas informações sobre o usuário, algumas informações da máquina e sobre o local de armazenamento do nosso script.
 
 Para salvarmos o arquivo digitamos ESC e depois “:wq” para gravar as alterações e sair.
-
-# Concedendo permissões ao arquivo
-
-Para editar o arquivo, precisamos dar permissão de escrita a ele. O comando  chmod é utilizado para setar permissões em arquivos e diretórios. O valor 777 concede todos os direitos (read, write, execute) para o usuário, o grupo e os outros. Ao invés de 777, outro modo de fazer isso é digitando +rwx.
-
-chmod 777 exemplo1.sh.
-chmod +x exemplo1.sh  
-
-Os comandos acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
-
-Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
-
-	./filename.sh
-
-O caractere ! força o vi a executar o que está sendo pedido (no caso, executar o chmod). 
-O caractere % faz referência ao arquivo atual. Pode-se também, ao invés de utilizá-lo, fornecer o nome do arquivo.
 
 # Inserindo comentários
 
