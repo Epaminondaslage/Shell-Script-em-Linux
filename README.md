@@ -31,8 +31,9 @@
 * [Status do Projeto](#Status-do-Projeto)
 * [Bibliogafia](#Bibliogafia)
 
-
 # Shell Script no Linux com OrangePi One
+
+Orange Pi One is an open-source single-board computer. It is highly compact with a dimension of 69X48mm. It can run Android 4.4, Ubuntu, Debian Image. 
           	
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
 
@@ -840,7 +841,25 @@ Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nív
 Atualizado em Julho de 2022
 
 # Bibliografia
-
-- Adaptado de https://www.devmedia.com.br/introducao-ao-shell-script-no-linux/25778 
-
+- http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-One.html
+- https://www.devmedia.com.br/introducao-ao-shell-script-no-linux/25778 
+- https://embarcados.com.br/orange-pi-one-gpios-shell-script/
+- https://sergioprado.org/lendo-um-pino-de-io-por-interrupcao-no-linux/
+- https://sergioprado.org/interface-gpio-kernel-linux/
+- https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-gpio.git/
+- https://linux-sunxi.org/GPIO
+- https://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/a
+- https://m.youtube.com/watch?v=WCOHCHmrxaA
+- https://forum.armbian.com/topic/7067-orange-pi-pc-how-to-use-gpio-for-push-buttons-tutorial/
+- https://stackoverflow.com/questions/46463724/accessing-gpio-on-orangepi-pc-plus-h3-on-armbian-3-4-113-and-newer
+- https://opi-gpio.readthedocs.io/en/latest/api-documentation.html
+- https://www.mhavila.com.br/topicos/unix/shscript.html 
+- https://pypi.org/project/OPi.GPIO/
+- https://learn.adafruit.com/circuitpython-on-orangepi-linux
+- https://www.instructables.com/Orange-Pi-One-Python-GPIO-basic/
+- http://www.orangepi.org/orangepibbsen/forum.php?mod=viewthread&tid=4996
+- https://www.armbian.com/orange-pi-one/
+- https://github.com/armbian/build 
+- https://www.dobitaobyte.com.br/varios-modos-de-interagir-com-o-gpio-do-raspberry-pi/
+- https://tecadmin.net/use-logical-or-and-in-shell-script/
 
