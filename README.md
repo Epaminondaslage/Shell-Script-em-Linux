@@ -610,7 +610,7 @@ Listagem 14. Exemplo de uso do loop while com contador
 O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
 Operadores aritméticos
 
-*img operadores_aritiméticos.png
+<td style="width: 50%;"><img src="/img/operadores_aritméticos.png" width="50%" /></td>
 
 Para usar o operador de multiplicação, é necessário usar uma barra invertida antes do sinal de multiplicação \*, usando o comando de expressão aritméticas expr ou a expansão aritimética $( ( expressão ) ).
 Exemplos:
@@ -630,17 +630,24 @@ Exemplos:
 
 # Operadores Relacionais em Shell Script
 
+<td style="width: 50%;"><img src="/img/operadores_Relacionais.png" width="50%" /></td>
 
 
 # Operadores Lógicos em Shell Script
 
+
+
 Uma condição lógica é criada, quando dois ou mais condicionados produzem um único resultado baseado neles. Aqui um resultado de condição também pode inverter o resultado de outra condição.
+
+<td style="width: 80%;"><img src="/img/operadores_lógicos.png" width="80%" /></td>
 
 As operações lógicas OR & AND são muito úteis quando várias condições são usadas em nossos scripts.
 
 	* OR é usado entre duas ou várias condições. Retorna verdadeiro se qualquer uma das condições retornar como verdadeiro. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como false
     
 	* AND é usado entre duas ou várias condições. Ele retorna true somente se todas as condições retornarem como true. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como verdadeira
+	
+	* !  (não) – Verdadeiro se a não é verdadeiro
 
 * Usando OR lógico (||) em scripts de shell
 
