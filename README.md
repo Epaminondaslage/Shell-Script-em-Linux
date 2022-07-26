@@ -1,7 +1,7 @@
 <td style="width: 20%;"><img src="/img/Logo_CEFET-MG.png" width="20%" /></td>
 
-# Introdução ao Shell Script no Linux
-<p><strong><span style="color: #0000ff;">Internet das Coisas - Kit de desenvolvimento SBC com Linux</span></strong></p>
+# Introdução ao Shell Script no Linux do OrangePi One
+<p><strong><span style="color: #0000ff;">Internet das Coisas - Kit de desenvolvimento SBC com Linux- OrangePi One</span></strong></p>
 <p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
@@ -9,30 +9,29 @@
 
 * [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi-One)
 * [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
-* [Criação do shell script](#Criação-do-shell-script)
+* [Criando shell script](#Criando-shell-script)
 * [Comandos básicos do editor vim](#Comandos-básicos-do-editor-vim)
 * [Comandos básicos do editor joe](#Comandos-básicos-do-editor-joe)
-* [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
-* [Edição e execução do arquivo](#Edição-e-execução-do-arquivo)
+* [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Inserindo comentários](#Inserindo-comentários)
 * [Declarando e utilizando variáveis](#Declarando-e-utilizando-variáveis)
 * [Atribuindo saídas de comandos a variáveis](#Atribuindo-saídas-de-comandos-a-variáveis)
 * [Capturando a entrada de dados do usuário](#Capturando-a-entrada-de-dados-do-usuário)
 * [Comandos de seleção ou de tomada de decisão](#Comandos-de-seleção-ou-de-tomada-de-decisão)
-* [O comando if](#o-comando-if)
-* [O comando else](#o-comando-else)
+* [O comando if](#O-comando-if)
+* [O comando else](#O-comando-else)
 * [O comando elif](#O-comando-elif)
 * [O comando case](#O-comando-case)
 * [Loops condicionais](#Loops-condicionais)
 * [Loop while](#Loop-while)
-* [Operadores Aritméticos em Shell Script](#Operadores-Aritméticos-em-Shell-Script)
-* [Operadores Relacionais em Shell Script](#Operadores-Relacionais-em-Shell-Script)
-* [Operadores Lógicos em Shell Script](#Operadores-Lógicos-em-Shell-Script)
+* [Operadores em Shell Script](#Operadores-em-Shell-Script)
+* [Operadores Aritméticos](#Operadores-Aritméticos)
+* [Operadores Relacionais](#Operadores-Relacionais)
+* [Operadores Lógicos](#Operadores-Lógicos)
 * [Funções](#Funções)
-* [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
 * [Status do Projeto](#Status-do-Projeto)
-* [Bibliografia](#Bibliografia)
+* [Referências](#Referências)
 
 # Shell Script no Linux com OrangePi One
 
@@ -59,14 +58,14 @@ Para executar estes shell scripts vamos usar o Kit GPIO SBC Linux conforme Figur
 </tbody>
 </table>
 
-# Introdução ao Scripts em Shell
+## Introdução ao Scripts em Shell
 
 Podemos utilizar a criação de arquivos de scripts para tornar mais simples as execuções de tarefas repetitivas no dia a dia. Muito tempo do programador é empregado em ações desse tipo, como abrir os mesmos programas todos os dias; esvaziar a lixeira e diretórios temp para economizar espaço em disco; etc.
 Um script nada mais é do que um algoritmo projetado para realizar uma determinada tarefa, utilizando os comandos específicos do bash e os executáveis do sistema operacional.
 
-    Lembre-se de executar os comandos como usuário comum e não como root, visto que, como root tudo será aceito e, dependendo do que você fizer, isto pode gerar danos ao sistema operacional. Uma maneira fácil de verificar é abrir o terminal e se o símbolo antes do cursor é o $, você está como usuário comum, mas se é o #, você está como root. Para sair do modo root, digite exit
+Lembre-se de executar os comandos como usuário comum e não como root, visto que, como root tudo será aceito e, dependendo do que você fizer, isto pode gerar danos ao sistema operacional. Uma maneira fácil de verificar é abrir o terminal e se o símbolo antes do cursor é o $, você está como usuário comum, mas se é o #, você está como root. Para sair do modo root, digite exit
     
-    Devemos portando criar um usuário para que possamos trabalhar com segurança. O comando "adduser" serve para adicionar um usuário ou um grupo ao sistema, onde será criado um diretório com o nome do usuário, com uma entrada para o usuário no arquivo /etc/passwd (senhas). A utilização do comando adduser necessita do uso do comando sudo (deve estar com previlégio de root).
+Devemos portando criar um usuário para que possamos trabalhar com segurança. O comando "adduser" serve para adicionar um usuário ou um grupo ao sistema, onde será criado um diretório com o nome do usuário, com uma entrada para o usuário no arquivo /etc/passwd (senhas). A utilização do comando adduser necessita do uso do comando sudo (deve estar com previlégio de root).
     
 Além disso, quando é adicionado um novo usuário, é criado, por padrão, um grupo com o nome do mesmo usuário. Caso seja criado um novo grupo, o comando adduser cria uma entrada para o grupo no arquivo /etc/group. 
     
@@ -105,7 +104,7 @@ Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "ce
 </tbody>
 </table>
 
-# Criação do shell script
+## Criando shell script
 
 Em primeiro lugar precisaremos de um arquivo para escrever o nosso script. Podemos fazer isso via terminal ou via modo gráfico, sendo que, no último caso, basta apenas clicar com o botão direito do mouse em um diretório desejado e escolher criar novo arquivo de texto ou criar novo documento.
 
@@ -113,7 +112,7 @@ Para criar um arquivo via terminal, basta abrir o mesmo e digitar vi exemplo1.sh
 
 O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o comando touch cria um arquivo, mas não o abre. Posteriormente é possível abri-lo com um editor de sua preferência.
 
-# Comandos básicos do editor vim
+### Comandos básicos do editor vim
 
 <table border="0">
 <tbody>
@@ -137,7 +136,7 @@ O comando vi cria e abre um arquivo para leitura/escrita no terminal, enquanto o
 </tbody>
 </table>
  
-# Comandos básicos do editor joe
+### Comandos básicos do editor joe
 
 Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo para instalar o editor de textos. 
 
@@ -154,24 +153,154 @@ Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo
 </tbody>
 </table>
 
-# Concedendo permissões ao arquivo
+## Gerenciando a execução de um script
 
-Para editar o arquivo, precisamos dar permissão de escrita a ele.
+Para executar o script, há alguns pontos a considerar:
 
-Para a primeira alternativa, em que o vi abriu direto o arquivo, precisamos pressionar ESC para editá-lo, assim, ao se fazer isso, o caractere : aparece, então digite 
+* Se você tiver salvo o seu arquivo no diretório atual, basta executá-lo digitando no prompt: ./exemplo1.sh
+* Se você tiver salvo o seu arquivo em outro diretório qualquer, você precisará informar o path completo até ele. Considerando que ele esteja em /tmp/scripts: /tmp/scripts/exemplo1.sh
+* O comando echo exibe na tela a string entre aspas duplas. Caso você não queira que ela fique entre aspas duplas, simplesmente não as forneça no comando echo; 
+* O comando whoami exibe o usuário logado no sistema;
+* O comando uptime exibe a hora atual, o tempo decorrido desde que o computador foi ligado, o número de usuários logados e uma média do número de processos carregados nos últimos um, cinco e 15 minutos;
+* O comando pwd exibe o diretório no qual o arquivo está rodando.
+* Toda string que contiver espaços deve estar entre aspas duplas.
 
-	!chmod777%
+### Executando um Script Bash
 
-Para a segunda alternativa, em que o touch não abriu o arquivo criado, basta digitar: 
+Existem várias maneiras de executar um script Bash. Alguns deles são dados a seguir:
+
+* Usando bash ou sh.
+* Usando a fonte.
+* Executando diretamente em um ambiente bash.
+    
+Para fazer alguns desses métodos funcionarem, o script deve ter um shebang como cabeçalho para indicar que é um script de shell ou script bash neste caso. Portanto, certifique-se de incluir o comando abaixo na parte superior do arquivo.
+
+	#!/bin/bash
+
+Este comando fará o script rodar sob o interpretador bash. Recomenda-se escrever o cabeçalho shebang mesmo que funcione sem eles.
+
+### Usando bash ou sh
+
+Esta é a maneira mais padrão de executar o script bash. Para Linux e macOS, o bash é instalado por padrão. Neste método, digitamos bash seguido do nome do arquivo com extensão, ou seja, sh neste caso. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	bash filename.sh
+
+Também podemos usar sh para executar o script, pois ele direcionará para o shell padrão no ambiente de configuração. 
+
+	sh filename.sh
 	
-	chmod 777 exemplo1.sh.
+Se você não estiver na mesma pasta / diretório que o script, certifique-se de especificar o caminho relativo para o script.
 
-O chmod é utilizado para setar permissões em arquivos e diretórios. O valor 777 concede todos os direitos (read, write, execute) para o usuário, o grupo e os outros. Ao invés de 777, outro modo de fazer isso é digitando +rwx.
+### Usando a fonte
+
+Este método é bastante fácil de executar um script bash, e todos eles são bastante simples. Precisamos apenas digitar “source” antes do nome do arquivo / script com uma extensão. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	source filename.sh
+	
+## Especificando o caminho para o script e chmod
+
+### path
+
+Path é o caminho de procura dos arquivos/comandos executáveis. O path (caminho) é armazenado na variável de ambiente PATH. Você pode ver o conteúdo desta variável com o comando echo $PATH.
+
+Por exemplo, o caminho /usr/local/bin:/usr/bin:/bin:/usr/bin/X11 significa que se você digitar o comando ls, o interpretador de comandos iniciará a procura do programa ls no diretório /usr/local/bin, caso não encontre o arquivo no diretório /usr/local/bin ele inicia a procura em /usr/bin, até que encontre o arquivo procurado.
+
+Caso o interpretador de comandos chegue até o último diretório do path e não encontre o arquivo/comando digitado, é mostrada a seguinte mensagem:
+
+	bash: ls: command not found (comando não encontrado).
+
+O caminho de diretórios vem configurado na instalação do Linux, mas pode ser alterado no arquivo /etc/profile. Caso deseje alterar o caminho para todos os usuários, este arquivo é o melhor lugar, pois ele é lido por todos os usuários no momento do login.
+
+Este é um método independente para executar um script bash. Temos que executar o script como um executável, podemos executar o script em qualquer lugar, desde que tenhamos um shell bash em algum lugar do ambiente. Para torná-lo executável, precisamos ter certeza de que temos os direitos para executar o arquivo como um executável. Usaremos chmod para alterar os direitos no arquivo / script. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+### Concedendo permissões ao arquivo
+
+Para editar o arquivo, precisamos dar permissão de escrita a ele. O comando  chmod é utilizado para setar permissões em arquivos e diretórios. O valor 777 concede todos os direitos (read, write, execute) para o usuário, o grupo e os outros. Ao invés de 777, outro modo de fazer isso é digitando +rwx.
+
+chmod 777 exemplo1.sh.
+chmod +x exemplo1.sh  
+
+Os comandos acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
+
+Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
+
+	./filename.sh
 
 O caractere ! força o vi a executar o que está sendo pedido (no caso, executar o chmod). 
 O caractere % faz referência ao arquivo atual. Pode-se também, ao invés de utilizá-lo, fornecer o nome do arquivo.
+	
+## Executando um script
 
-# Edição e execução do arquivo
+ Um programa pode ser executado de duas formas:
+
+* Primeiro Plano - Também chamado de foreground. Quando você deve esperar o término da execução de um programa para executar um novo comando. Somente é mostrado o aviso de comando após o término de execução do comando/programa.
+
+* Segundo Plano - Também chamado de background. Quando você não precisa esperar o término da execução de um programa para executar um novo comando. Após iniciar um programa em background, é mostrado um número PID (identificação do Processo) e o aviso de comando é novamente mostrado, permitindo o uso normal do sistema.
+
+Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário. O programa executado em background continua sendo executado internamente. Após ser concluído, o sistema retorna uma mensagem de pronto acompanhado do número PID do processo que terminou.
+
+Para iniciar um programa em primeiro plano, basta digitar seu nome normalmente. Para iniciar um programa em segundo plano, acrescente o caracter "&" após o final do comando.
+
+OBS: Mesmo que um usuário execute um programa em segundo plano e saia do sistema, o programa continuará sendo executado até que seja concluído ou finalizado pelo usuário que iniciou a execução (ou pelo usuário root). 
+
+### Enviando um comando para segundo plano
+
+Existem várias maneiras para enviar um comando para segundo plano, porém, a mais simples é colocando um & (E comercial) ao final do comando. Por exemplo:
+
+	root@orangepione:/home/aluno# ./pisca.sh &
+	[1] 1287
+
+Perceba também que existe um sinal de – ou + na frente do número do processo, isso simplesmente indica que o processo com sinal de + foi iniciado por último e ele será trazido para o primeiro plano caso você digite apenas “fg”. O processo com um sinal de menos apenas indica que ele foi iniciado antes do processo com sinal de +. Se você iniciar mais tarefas, a próxima terá um sinal de +, a que estava com sinal de + ficará com um sinal de – e a primeira tarefa iniciada não terá nenhum sinal.
+
+Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o número do processo que deseja). Você pode parar temporariamente a aplicação pressionando as teclas “CTRL” + “Z” do seu teclado. E o shell está livre para que eu possa digitar novamente. Verifique que se você digitar “jobs” novamente, verá que a tarefa não está executando. Utilize o comando “bg” para continuar executando a tarefa em segundo plano. Veja:
+
+	root@orangepione:/home/aluno# 
+	root@orangepione:/home/aluno# ./pisca.sh &
+	[1] 1287
+	root@orangepione:/home/aluno# fg
+	./pisca.sh
+	^Z
+	[1]+  Stopped                 ./pisca.sh
+	root@orangepione:/home/aluno# 
+	root@orangepione:/home/aluno# bg
+        [1]+ ./pisca.sh &
+
+### Listando os processos em execução - Comando "ps" 
+
+	root@orangepione:/home/aluno# ps
+  	PID TTY          TIME CMD
+ 	1215 pts/0    00:00:00 bash
+ 	1287 pts/0    00:00:00 testa.sh
+ 	1497 pts/0    00:00:00 sleep
+ 	1498 pts/0    00:00:00 ps
+        root@orangepione:/home/aluno# ps aux|grep testa.sh
+        root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
+        root@orangepione:/home/aluno# 
+	
+### Encerrando um processo
+
+Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill. Para encerramos um processo é necessário apenas digitar Kill PID onde PID é o numero do processo. o Parametro -9 força sua inte
+
+	root@orangepione:/home/aluno# ./pisca.sh
+	^Z
+	[1]+  Stopped                 ./pisca.sh
+	root@orangepione:/home/aluno# ps 
+	  PID TTY          TIME CMD
+ 	1582 pts/0    00:00:00 bash
+	 1871 pts/0    00:00:00 pisca.sh
+ 	1897 pts/0    00:00:00 sleep
+ 	1898 pts/0    00:00:00 ps
+	root@orangepione:/home/aluno# kill -9 1871
+	root@orangepione:/home/aluno# ps
+ 	 PID TTY          TIME CMD
+	 1582 pts/0    00:00:00 bash
+	 1910 pts/0    00:00:00 ps
+	[1]+  Killed                  ./pisca.sh
+	root@orangepione:/home/aluno#
+
+Shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Linux/Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
+
+## Exemplo da edição e execução de um arquivo
 
 Utilizaremos o vi, no terminal, mas você pode escolher qualquer outro editor, gráfico ou não.
 
@@ -212,16 +341,6 @@ Listagem 1. Código do exemplo1.sh
 Este código nos fornece algumas informações sobre o usuário, algumas informações da máquina e sobre o local de armazenamento do nosso script.
 
 Para salvarmos o arquivo digitamos ESC e depois “:wq” para gravar as alterações e sair.
-
-Para executar o script, há alguns pontos a considerar:
-
-* Se você tiver salvo o seu arquivo no diretório atual, basta executá-lo digitando no prompt: ./exemplo1.sh
-* Se você tiver salvo o seu arquivo em outro diretório qualquer, você precisará informar o path completo até ele. Considerando que ele esteja em /tmp/scripts: /tmp/scripts/exemplo1.sh
-* O comando echo exibe na tela a string entre aspas duplas. Caso você não queira que ela fique entre aspas duplas, simplesmente não as forneça no comando echo; 
-* O comando whoami exibe o usuário logado no sistema;
-* O comando uptime exibe a hora atual, o tempo decorrido desde que o computador foi ligado, o número de usuários logados e uma média do número de processos carregados nos últimos um, cinco e 15 minutos;
-* O comando pwd exibe o diretório no qual o arquivo está rodando.
-* Toda string que contiver espaços deve estar entre aspas duplas.
 
 # Inserindo comentários
 
@@ -370,7 +489,7 @@ Veja a seguir os parâmetros mais comuns utilizados com o comando test:
 * d nome_do_arquivo: verifica se nome_do_arquivo é um diretório;
 * f nome_do_arquivo: verifica se nome_do_arquivo é um arquivo regular (texto, imagem, programa, docs, planilhas).
 
-# O comando else
+## O comando else
 
 Existe a possibilidade de também tratar o caso em que o nosso teste falha. Para isso temos o comando else, cuja sintaxe é:
 
@@ -401,7 +520,7 @@ Vejamos um exemplo na Listagem 7 que verifica se um número digitado pelo usuár
 
 Listagem 7. Utilizando o condicional if...then...else
 
-# O comando elif
+## O comando elif
 
 Há casos em que temos mais de uma condição a ser testada, todas correlacionadas. Para isso temos o comando elif, cuja sintaxe é:
 
@@ -458,7 +577,7 @@ Nota: O bash não tem suporte nativo a divisões em ponto flutuante, apenas divi
 Nota: Observe a linha: result=$((10/2))
 Veja que utilizamos dois conjuntos de parênteses para encapsular a operação de divisão. Em shell script precisamos realizar operações matemáticas entre parênteses.
 
-# O comando case
+## O comando case
 
 O comando case tem a mesma funcionalidade do if...then...elif, com a diferença de sua sintaxe ser mais compacta e enxuta:
 
@@ -506,7 +625,7 @@ Por exemplo, modificando o exemplo anterior temos o código da Listagem 9.
 
 Listagem 9. Utilizando o comando case
 
-# LOOPS Condicionais
+# Loops Condicionais
 
 Loops são muito úteis para ficar iterando sobre determinadas ações até que uma condição seja satisfeita e interrompa o laço.
 O primeiro deles é o for, cuja sintaxe é:
@@ -605,14 +724,16 @@ Vejamos um outro exemplo com contador na Listagem 14.
 
 Listagem 14. Exemplo de uso do loop while com contador
 
-# Operadores Aritméticos em Shell Script
+# Operadores em Shell Script
 
 O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
-Operadores aritméticos
 
-<td style="width: 50%;"><img src="/img/operadores_aritméticos.png" width="50%" /></td>
+## Operadores Aritméticos 
+
+<td style="width: 20%;"><img src="/img/Operadores_aritméticos.png" width="20%" /></td>
 
 Para usar o operador de multiplicação, é necessário usar uma barra invertida antes do sinal de multiplicação \*, usando o comando de expressão aritméticas expr ou a expansão aritimética $( ( expressão ) ).
+
 Exemplos:
 
 	echo `expr 3 + 2`
@@ -628,28 +749,30 @@ Exemplos:
 	VL=5
 	echo $(($VL**2))
 
-# Operadores Relacionais em Shell Script
+## Operadores Relacionais 
 
-<td style="width: 50%;"><img src="/img/operadores_Relacionais.png" width="50%" /></td>
+<td style="width: 70%;"><img src="/img/Operadores_relacionais.png" width="70%" /></td>
 
+Exemplos: 
+alefjowjfjh sdfsdfsdf sdfgs d fsdfsdf sdfsf
+sdfsdflkjijfjiejhijferijjijerhjijfjerijfhjiehf
+wefjoiwejfijhweihfuihweuifhiuewhfiowejfhjwehf
 
-# Operadores Lógicos em Shell Script
-
-
+## Operadores Lógicos
 
 Uma condição lógica é criada, quando dois ou mais condicionados produzem um único resultado baseado neles. Aqui um resultado de condição também pode inverter o resultado de outra condição.
 
-<td style="width: 80%;"><img src="/img/operadores_lógicos.png" width="80%" /></td>
+<td style="width: 20%;"><img src="/img/Operadores_logicos.png" width="20%" /></td>
 
 As operações lógicas OR & AND são muito úteis quando várias condições são usadas em nossos scripts.
 
-	* OR é usado entre duas ou várias condições. Retorna verdadeiro se qualquer uma das condições retornar como verdadeiro. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como false
+* OR é usado entre duas ou várias condições. Retorna verdadeiro se qualquer uma das condições retornar como verdadeiro. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como false
     
-	* AND é usado entre duas ou várias condições. Ele retorna true somente se todas as condições retornarem como true. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como verdadeira
+* AND é usado entre duas ou várias condições. Ele retorna true somente se todas as condições retornarem como true. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como verdadeira
 	
-	* !  (não) – Verdadeiro se a não é verdadeiro
+* !  (não) – Verdadeiro se a não é verdadeiro
 
-* Usando OR lógico (||) em scripts de shell
+### Usando OR lógico (||)
 
 O OR lógico no script bash é usado com o operador -o. Segue um pequeno script de shell que mostrará como usar o operador lógico OR (||) entre duas condições.
 
@@ -666,7 +789,7 @@ O OR lógico no script bash é usado com o operador -o. Segue um pequeno script 
 	  else
     		echo "Ambas condições são falsas"
 	fi
-* Usando o AND lógico (&&) em scripts de shell
+### Usando o AND lógico (&&)
 
 O AND lógico no script bash é usado com o operador -a. Abaixo, o script de shell mostrará como usar o AND lógico ( && ) entre duas condições.
 
@@ -685,7 +808,7 @@ O AND lógico no script bash é usado com o operador -a. Abaixo, o script de she
     		echo "Ao menos uma condição é falsa"
 	fi
 
-* Usando múltiplos OR & AND lógicos
+### Usando múltiplos OR & AND lógicos
 
 Agora, use os vários operadores lógicos em uma única instrução. O exemplo abaixo o ajudará a entender como usar vários operadores lógicos em uma única instrução.
 
@@ -797,116 +920,6 @@ Listagem 16. Exemplo de uso de argumentos em scripts
 </tr>
 </tbody>
 </table>
-
-# Gerenciando a execução de um script
-
-* Executando um Script Bash
-
-Existem várias maneiras de executar um script Bash. Alguns deles são dados a seguir:
-
-* Usando bash ou sh.
-* Usando a fonte.
-* Executando diretamente em um ambiente bash.
-    
-Para fazer alguns desses métodos funcionarem, o script deve ter um shebang como cabeçalho para indicar que é um script de shell ou script bash neste caso. Portanto, certifique-se de incluir o comando abaixo na parte superior do arquivo.
-
-	#!/bin/bash
-
-Este comando fará o script rodar sob o interpretador bash. Recomenda-se escrever o cabeçalho shebang mesmo que funcione sem eles.
-
-* Usando bash ou sh
-
-Esta é a maneira mais padrão de executar o script bash. Para Linux e macOS, o bash é instalado por padrão. Neste método, digitamos bash seguido do nome do arquivo com extensão, ou seja, sh neste caso. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
-
-	bash filename.sh
-
-Também podemos usar sh para executar o script, pois ele direcionará para o shell padrão no ambiente de configuração. 
-
-	sh filename.sh
-	
-Se você não estiver na mesma pasta / diretório que o script, certifique-se de especificar o caminho relativo para o script.
-
-* Usando a fonte
-
-Este método é bastante fácil de executar um script bash, e todos eles são bastante simples. Precisamos apenas digitar “source” antes do nome do arquivo / script com uma extensão. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
-
-	source filename.sh
-	
-* Especificando o caminho para o script e chmod
-
-Este é um método independente para executar um script bash. Temos que executar o script como um executável, podemos executar o script em qualquer lugar, desde que tenhamos um shell bash em algum lugar do ambiente. Para torná-lo executável, precisamos ter certeza de que temos os direitos para executar o arquivo como um executável. Usaremos chmod para alterar os direitos no arquivo / script. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
-
-	chmod +x filename.sh  
-
-O comando acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
-
-Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
-
-	./filename.sh
-	
-* Executando um script em background
-
-Os processos podem ser executados de duas formas: em foreground (primeiro plano) ou background (segundo plano). Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário.
-
-* Enviando um comando para segundo plano
-
-Existem várias maneiras para enviar um comando para segundo plano, porém, a mais simples é colocando um & (E comercial) ao final do comando. Por exemplo:
-
-	root@orangepione:/home/aluno# ./pisca.sh &
-	[1] 1287
-
-Perceba também que existe um sinal de – ou + na frente do número do processo, isso simplesmente indica que o processo com sinal de + foi iniciado por último e ele será trazido para o primeiro plano caso você digite apenas “fg”. O processo com um sinal de menos apenas indica que ele foi iniciado antes do processo com sinal de +. Se você iniciar mais tarefas, a próxima terá um sinal de +, a que estava com sinal de + ficará com um sinal de – e a primeira tarefa iniciada não terá nenhum sinal.
-
-Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o número do processo que deseja). Você pode parar temporariamente a aplicação pressionando as teclas “CTRL” + “Z” do seu teclado. E o shell está livre para que eu possa digitar novamente. Verifique que se você digitar “jobs” novamente, verá que a tarefa não está executando. Utilize o comando “bg” para continuar executando a tarefa em segundo plano. Veja:
-
-	root@orangepione:/home/aluno# 
-	root@orangepione:/home/aluno# ./pisca.sh &
-	[1] 1287
-	root@orangepione:/home/aluno# fg
-	./pisca.sh
-	^Z
-	[1]+  Stopped                 ./pisca.sh
-	root@orangepione:/home/aluno# 
-	root@orangepione:/home/aluno# bg
-        [1]+ ./pisca.sh &
-
-* Listando os processos em execução - Comando "ps" 
-
-	root@orangepione:/home/aluno# ps
-  	PID TTY          TIME CMD
- 	1215 pts/0    00:00:00 bash
- 	1287 pts/0    00:00:00 testa.sh
- 	1497 pts/0    00:00:00 sleep
- 	1498 pts/0    00:00:00 ps
-	root@orangepione:/home/aluno# 
-
-        root@orangepione:/home/aluno# ps aux|grep testa.sh
-        root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
-        root@orangepione:/home/aluno# 
-	
-* Encerrando um processo
-
-Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill. Para encerramos um processo é necessário apenas digitar Kill PID onde PID é o numero do processo. o Parametro -9 força sua inte
-
-	root@orangepione:/home/aluno# ./pisca.sh
-	^Z
-	[1]+  Stopped                 ./pisca.sh
-	root@orangepione:/home/aluno# ps 
-	  PID TTY          TIME CMD
- 	1582 pts/0    00:00:00 bash
-	 1871 pts/0    00:00:00 pisca.sh
- 	1897 pts/0    00:00:00 sleep
- 	1898 pts/0    00:00:00 ps
-	root@orangepione:/home/aluno# kill -9 1871
-	root@orangepione:/home/aluno# ps
- 	 PID TTY          TIME CMD
-	 1582 pts/0    00:00:00 bash
-	 1910 pts/0    00:00:00 ps
-	[1]+  Killed                  ./pisca.sh
-	root@orangepione:/home/aluno#
-
-
-Shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Linux/Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
 
 # Lendo um pino de IO por interrupção no Linux
 
@@ -1050,7 +1063,7 @@ Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nív
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 Atualizado em Julho de 2022
 
-# Bibliografia
+# Referências
 - http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-One.html
 - https://www.devmedia.com.br/introducao-ao-shell-script-no-linux/25778 
 - https://embarcados.com.br/orange-pi-one-gpios-shell-script/
