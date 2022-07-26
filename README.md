@@ -12,6 +12,7 @@
 * [Criação do shell script](#Criação-do-shell-script)
 * [Comandos básicos do editor vim](#Comandos-básicos-do-editor-vim)
 * [Comandos básicos do editor joe](#Comandos-básicos-do-editor-joe)
+* [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Concedendo permissões ao arquivo](#Concedendo-permissões-ao-arquivo)
 * [Edição e execução do arquivo](#Edição-e-execução-do-arquivo)
 * [Inserindo comentários](#Inserindo-comentários)
@@ -30,7 +31,6 @@
 * [Operadores Relacionais](#Operadores-Relacionais)
 * [Operadores Lógicos](#Operadores-Lógicos)
 * [Funções](#Funções)
-* [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
 * [Status do Projeto](#Status-do-Projeto)
 * [Bibliografia](#Bibliografia)
@@ -155,19 +155,120 @@ Caso o SO Linux não tenha o  joe instalado, é necessário dar o comando abaixo
 </tbody>
 </table>
 
+# Gerenciando a execução de um script
+
+## Executando um Script Bash
+
+Existem várias maneiras de executar um script Bash. Alguns deles são dados a seguir:
+
+* Usando bash ou sh.
+* Usando a fonte.
+* Executando diretamente em um ambiente bash.
+    
+Para fazer alguns desses métodos funcionarem, o script deve ter um shebang como cabeçalho para indicar que é um script de shell ou script bash neste caso. Portanto, certifique-se de incluir o comando abaixo na parte superior do arquivo.
+
+	#!/bin/bash
+
+Este comando fará o script rodar sob o interpretador bash. Recomenda-se escrever o cabeçalho shebang mesmo que funcione sem eles.
+
+## Usando bash ou sh
+
+Esta é a maneira mais padrão de executar o script bash. Para Linux e macOS, o bash é instalado por padrão. Neste método, digitamos bash seguido do nome do arquivo com extensão, ou seja, sh neste caso. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	bash filename.sh
+
+Também podemos usar sh para executar o script, pois ele direcionará para o shell padrão no ambiente de configuração. 
+
+	sh filename.sh
+	
+Se você não estiver na mesma pasta / diretório que o script, certifique-se de especificar o caminho relativo para o script.
+
+## Usando a fonte
+
+Este método é bastante fácil de executar um script bash, e todos eles são bastante simples. Precisamos apenas digitar “source” antes do nome do arquivo / script com uma extensão. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+
+	source filename.sh
+	
+* Especificando o caminho para o script e chmod
+
+Este é um método independente para executar um script bash. Temos que executar o script como um executável, podemos executar o script em qualquer lugar, desde que tenhamos um shell bash em algum lugar do ambiente. Para torná-lo executável, precisamos ter certeza de que temos os direitos para executar o arquivo como um executável. Usaremos chmod para alterar os direitos no arquivo / script. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
+	
+## Executando um script em background
+
+Os processos podem ser executados de duas formas: em foreground (primeiro plano) ou background (segundo plano). Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário.
+
+## Enviando um comando para segundo plano
+
+Existem várias maneiras para enviar um comando para segundo plano, porém, a mais simples é colocando um & (E comercial) ao final do comando. Por exemplo:
+
+	root@orangepione:/home/aluno# ./pisca.sh &
+	[1] 1287
+
+Perceba também que existe um sinal de – ou + na frente do número do processo, isso simplesmente indica que o processo com sinal de + foi iniciado por último e ele será trazido para o primeiro plano caso você digite apenas “fg”. O processo com um sinal de menos apenas indica que ele foi iniciado antes do processo com sinal de +. Se você iniciar mais tarefas, a próxima terá um sinal de +, a que estava com sinal de + ficará com um sinal de – e a primeira tarefa iniciada não terá nenhum sinal.
+
+Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o número do processo que deseja). Você pode parar temporariamente a aplicação pressionando as teclas “CTRL” + “Z” do seu teclado. E o shell está livre para que eu possa digitar novamente. Verifique que se você digitar “jobs” novamente, verá que a tarefa não está executando. Utilize o comando “bg” para continuar executando a tarefa em segundo plano. Veja:
+
+	root@orangepione:/home/aluno# 
+	root@orangepione:/home/aluno# ./pisca.sh &
+	[1] 1287
+	root@orangepione:/home/aluno# fg
+	./pisca.sh
+	^Z
+	[1]+  Stopped                 ./pisca.sh
+	root@orangepione:/home/aluno# 
+	root@orangepione:/home/aluno# bg
+        [1]+ ./pisca.sh &
+
+## Listando os processos em execução - Comando "ps" 
+
+	root@orangepione:/home/aluno# ps
+  	PID TTY          TIME CMD
+ 	1215 pts/0    00:00:00 bash
+ 	1287 pts/0    00:00:00 testa.sh
+ 	1497 pts/0    00:00:00 sleep
+ 	1498 pts/0    00:00:00 ps
+	root@orangepione:/home/aluno# 
+
+        root@orangepione:/home/aluno# ps aux|grep testa.sh
+        root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
+        root@orangepione:/home/aluno# 
+	
+## Encerrando um processo
+
+Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill. Para encerramos um processo é necessário apenas digitar Kill PID onde PID é o numero do processo. o Parametro -9 força sua inte
+
+	root@orangepione:/home/aluno# ./pisca.sh
+	^Z
+	[1]+  Stopped                 ./pisca.sh
+	root@orangepione:/home/aluno# ps 
+	  PID TTY          TIME CMD
+ 	1582 pts/0    00:00:00 bash
+	 1871 pts/0    00:00:00 pisca.sh
+ 	1897 pts/0    00:00:00 sleep
+ 	1898 pts/0    00:00:00 ps
+	root@orangepione:/home/aluno# kill -9 1871
+	root@orangepione:/home/aluno# ps
+ 	 PID TTY          TIME CMD
+	 1582 pts/0    00:00:00 bash
+	 1910 pts/0    00:00:00 ps
+	[1]+  Killed                  ./pisca.sh
+	root@orangepione:/home/aluno#
+
+
+Shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Linux/Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
+
 # Concedendo permissões ao arquivo
 
-Para editar o arquivo, precisamos dar permissão de escrita a ele.
+Para editar o arquivo, precisamos dar permissão de escrita a ele. O comando  chmod é utilizado para setar permissões em arquivos e diretórios. O valor 777 concede todos os direitos (read, write, execute) para o usuário, o grupo e os outros. Ao invés de 777, outro modo de fazer isso é digitando +rwx.
 
-Para a primeira alternativa, em que o vi abriu direto o arquivo, precisamos pressionar ESC para editá-lo, assim, ao se fazer isso, o caractere : aparece, então digite 
+chmod 777 exemplo1.sh.
+chmod +x exemplo1.sh  
 
-	!chmod777%
+Os comandos acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
 
-Para a segunda alternativa, em que o touch não abriu o arquivo criado, basta digitar: 
-	
-	chmod 777 exemplo1.sh.
+Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
 
-O chmod é utilizado para setar permissões em arquivos e diretórios. O valor 777 concede todos os direitos (read, write, execute) para o usuário, o grupo e os outros. Ao invés de 777, outro modo de fazer isso é digitando +rwx.
+	./filename.sh
 
 O caractere ! força o vi a executar o que está sendo pedido (no caso, executar o chmod). 
 O caractere % faz referência ao arquivo atual. Pode-se também, ao invés de utilizá-lo, fornecer o nome do arquivo.
@@ -802,116 +903,6 @@ Listagem 16. Exemplo de uso de argumentos em scripts
 </tr>
 </tbody>
 </table>
-
-# Gerenciando a execução de um script
-
-* Executando um Script Bash
-
-Existem várias maneiras de executar um script Bash. Alguns deles são dados a seguir:
-
-* Usando bash ou sh.
-* Usando a fonte.
-* Executando diretamente em um ambiente bash.
-    
-Para fazer alguns desses métodos funcionarem, o script deve ter um shebang como cabeçalho para indicar que é um script de shell ou script bash neste caso. Portanto, certifique-se de incluir o comando abaixo na parte superior do arquivo.
-
-	#!/bin/bash
-
-Este comando fará o script rodar sob o interpretador bash. Recomenda-se escrever o cabeçalho shebang mesmo que funcione sem eles.
-
-* Usando bash ou sh
-
-Esta é a maneira mais padrão de executar o script bash. Para Linux e macOS, o bash é instalado por padrão. Neste método, digitamos bash seguido do nome do arquivo com extensão, ou seja, sh neste caso. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
-
-	bash filename.sh
-
-Também podemos usar sh para executar o script, pois ele direcionará para o shell padrão no ambiente de configuração. 
-
-	sh filename.sh
-	
-Se você não estiver na mesma pasta / diretório que o script, certifique-se de especificar o caminho relativo para o script.
-
-* Usando a fonte
-
-Este método é bastante fácil de executar um script bash, e todos eles são bastante simples. Precisamos apenas digitar “source” antes do nome do arquivo / script com uma extensão. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
-
-	source filename.sh
-	
-* Especificando o caminho para o script e chmod
-
-Este é um método independente para executar um script bash. Temos que executar o script como um executável, podemos executar o script em qualquer lugar, desde que tenhamos um shell bash em algum lugar do ambiente. Para torná-lo executável, precisamos ter certeza de que temos os direitos para executar o arquivo como um executável. Usaremos chmod para alterar os direitos no arquivo / script. Em um terminal, execute o seguinte código substituindo o nome do arquivo pelo nome do arquivo do seu script bash.
-
-	chmod +x filename.sh  
-
-O comando acima nos permitirá executar o arquivo. Portanto, ele muda o modo do arquivo, o arquivo deve ser somente leitura, executável ou qualquer outro modo para arquivos. Se você estiver usando Linux e não for o usuário root, simplesmente use sudo antes do comando chmod. O comando + x garantirá que o arquivo seja executável por todos no ambiente.
-
-Depois de verificar a permissão do arquivo, podemos simplesmente executar o arquivo da seguinte maneira. O comando abaixo leva em consideração que você está no mesmo diretório que o arquivo / script bash.
-
-	./filename.sh
-	
-* Executando um script em background
-
-Os processos podem ser executados de duas formas: em foreground (primeiro plano) ou background (segundo plano). Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário.
-
-* Enviando um comando para segundo plano
-
-Existem várias maneiras para enviar um comando para segundo plano, porém, a mais simples é colocando um & (E comercial) ao final do comando. Por exemplo:
-
-	root@orangepione:/home/aluno# ./pisca.sh &
-	[1] 1287
-
-Perceba também que existe um sinal de – ou + na frente do número do processo, isso simplesmente indica que o processo com sinal de + foi iniciado por último e ele será trazido para o primeiro plano caso você digite apenas “fg”. O processo com um sinal de menos apenas indica que ele foi iniciado antes do processo com sinal de +. Se você iniciar mais tarefas, a próxima terá um sinal de +, a que estava com sinal de + ficará com um sinal de – e a primeira tarefa iniciada não terá nenhum sinal.
-
-Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o número do processo que deseja). Você pode parar temporariamente a aplicação pressionando as teclas “CTRL” + “Z” do seu teclado. E o shell está livre para que eu possa digitar novamente. Verifique que se você digitar “jobs” novamente, verá que a tarefa não está executando. Utilize o comando “bg” para continuar executando a tarefa em segundo plano. Veja:
-
-	root@orangepione:/home/aluno# 
-	root@orangepione:/home/aluno# ./pisca.sh &
-	[1] 1287
-	root@orangepione:/home/aluno# fg
-	./pisca.sh
-	^Z
-	[1]+  Stopped                 ./pisca.sh
-	root@orangepione:/home/aluno# 
-	root@orangepione:/home/aluno# bg
-        [1]+ ./pisca.sh &
-
-* Listando os processos em execução - Comando "ps" 
-
-	root@orangepione:/home/aluno# ps
-  	PID TTY          TIME CMD
- 	1215 pts/0    00:00:00 bash
- 	1287 pts/0    00:00:00 testa.sh
- 	1497 pts/0    00:00:00 sleep
- 	1498 pts/0    00:00:00 ps
-	root@orangepione:/home/aluno# 
-
-        root@orangepione:/home/aluno# ps aux|grep testa.sh
-        root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
-        root@orangepione:/home/aluno# 
-	
-* Encerrando um processo
-
-Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill. Para encerramos um processo é necessário apenas digitar Kill PID onde PID é o numero do processo. o Parametro -9 força sua inte
-
-	root@orangepione:/home/aluno# ./pisca.sh
-	^Z
-	[1]+  Stopped                 ./pisca.sh
-	root@orangepione:/home/aluno# ps 
-	  PID TTY          TIME CMD
- 	1582 pts/0    00:00:00 bash
-	 1871 pts/0    00:00:00 pisca.sh
- 	1897 pts/0    00:00:00 sleep
- 	1898 pts/0    00:00:00 ps
-	root@orangepione:/home/aluno# kill -9 1871
-	root@orangepione:/home/aluno# ps
- 	 PID TTY          TIME CMD
-	 1582 pts/0    00:00:00 bash
-	 1910 pts/0    00:00:00 ps
-	[1]+  Killed                  ./pisca.sh
-	root@orangepione:/home/aluno#
-
-
-Shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Linux/Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
 
 # Lendo um pino de IO por interrupção no Linux
 
