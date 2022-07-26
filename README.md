@@ -9,7 +9,7 @@
 
 * [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi-One)
 * [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
-* [Criação do shell script](#Criação-do-shell-script)
+* [Criando shell script](#Criando-shell-script)
 * [Comandos básicos do editor vim](#Comandos-básicos-do-editor-vim)
 * [Comandos básicos do editor joe](#Comandos-básicos-do-editor-joe)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
@@ -104,7 +104,7 @@ Portanto pode-se sair da sessão e fazer ssh com o usuário "aluno"  e senha "ce
 </tbody>
 </table>
 
-# Criação do shell script
+# Criando shell script
 
 Em primeiro lugar precisaremos de um arquivo para escrever o nosso script. Podemos fazer isso via terminal ou via modo gráfico, sendo que, no último caso, basta apenas clicar com o botão direito do mouse em um diretório desejado e escolher criar novo arquivo de texto ou criar novo documento.
 
