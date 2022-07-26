@@ -605,15 +605,14 @@ Vejamos um outro exemplo com contador na Listagem 14.
 	done
 
 Listagem 14. Exemplo de uso do loop while com contador
+
 # Operadores em Shell Script
 
 O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
 
 # Operadores Aritméticos 
 
-O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
-
-<td style="width: 50%;"><img src="/img/Operadores_aritméticos.png" width="50%" /></td>
+<td style="width: 20%;"><img src="/img/Operadores_aritméticos.png" width="20%" /></td>
 
 Para usar o operador de multiplicação, é necessário usar uma barra invertida antes do sinal de multiplicação \*, usando o comando de expressão aritméticas expr ou a expansão aritimética $( ( expressão ) ).
 
@@ -634,26 +633,28 @@ Exemplos:
 
 ## Operadores Relacionais 
 
-<td style="width: 50%;"><img src="/img/Operadores_relacionais.png" width="50%" /></td>
+<td style="width: 20%;"><img src="/img/Operadores_relacionais.png" width="20%" /></td>
 
 Exemplos: 
-
+alefjowjfjh sdfsdfsdf sdfgs d fsdfsdf sdfsf
+sdfsdflkjijfjiejhijferijjijerhjijfjerijfhjiehf
+wefjoiwejfijhweihfuihweuifhiuewhfiowejfhjwehf
 
 ## Operadores Lógicos
 
 Uma condição lógica é criada, quando dois ou mais condicionados produzem um único resultado baseado neles. Aqui um resultado de condição também pode inverter o resultado de outra condição.
 
-<td style="width: 80%;"><img src="/img/Operadores_lógicos.png" width="80%" /></td>
+<td style="width: 20%;"><img src="/img/Operadores_logicos.png" width="20%" /></td>
 
 As operações lógicas OR & AND são muito úteis quando várias condições são usadas em nossos scripts.
 
-	* OR é usado entre duas ou várias condições. Retorna verdadeiro se qualquer uma das condições retornar como verdadeiro. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como false
+* OR é usado entre duas ou várias condições. Retorna verdadeiro se qualquer uma das condições retornar como verdadeiro. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como false
     
-	* AND é usado entre duas ou várias condições. Ele retorna true somente se todas as condições retornarem como true. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como verdadeira
+* AND é usado entre duas ou várias condições. Ele retorna true somente se todas as condições retornarem como true. A primeira condição é sempre verificada, mas a segunda condição é verificada apenas se a primeira condição for retornada como verdadeira
 	
-	* !  (não) – Verdadeiro se a não é verdadeiro
+* !  (não) – Verdadeiro se a não é verdadeiro
 
-* Usando OR lógico (||) em scripts de shell
+### Usando OR lógico (||) em scripts de shell
 
 O OR lógico no script bash é usado com o operador -o. Segue um pequeno script de shell que mostrará como usar o operador lógico OR (||) entre duas condições.
 
@@ -670,7 +671,7 @@ O OR lógico no script bash é usado com o operador -o. Segue um pequeno script 
 	  else
     		echo "Ambas condições são falsas"
 	fi
-* Usando o AND lógico (&&) em scripts de shell
+### Usando o AND lógico (&&) em scripts de shell
 
 O AND lógico no script bash é usado com o operador -a. Abaixo, o script de shell mostrará como usar o AND lógico ( && ) entre duas condições.
 
@@ -689,7 +690,7 @@ O AND lógico no script bash é usado com o operador -a. Abaixo, o script de she
     		echo "Ao menos uma condição é falsa"
 	fi
 
-* Usando múltiplos OR & AND lógicos
+### Usando múltiplos OR & AND lógicos
 
 Agora, use os vários operadores lógicos em uma única instrução. O exemplo abaixo o ajudará a entender como usar vários operadores lógicos em uma única instrução.
 
