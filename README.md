@@ -25,8 +25,9 @@
 * [O comando case](#O-comando-case)
 * [Loops condicionais](#Loops-condicionais)
 * [Loop while](#Loop-while)
-* [Operadores aritméticos em Shell Script](#Operadores-aritiméticos-em-Shell-Script)
-* [Operadores lógicos em Shell Script](#Operadores-lógicos-em-Shell-Script)
+* [Operadores Aritméticos em Shell Script](#Operadores-Aritiméticos-em-Shell-Script)
+* [Operadores Relacionais em Shell Script](#Operadores-Relacionais-em-Shell-Script)
+* [Operadores Lógicos em Shell Script](#Operadores-Lógicos-em-Shell-Script)
 * [Funções](#Funções)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
@@ -603,7 +604,8 @@ Vejamos um outro exemplo com contador na Listagem 14.
 	done
 
 Listagem 14. Exemplo de uso do loop while com contador
-# Operadores lógicos em Shell Script
+
+# Operadores Aritméticos em Shell Script
 
 O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
 Operadores aritméticos
@@ -626,12 +628,11 @@ Exemplos:
 	VL=5
 	echo $(($VL**2))
 
-* Operadores Relacionais
+# Operadores Relacionais em Shell Script
 
 
 
-
-# Operadores lógicos em Shell Script
+# Operadores Lógicos em Shell Script
 
 Uma condição lógica é criada, quando dois ou mais condicionados produzem um único resultado baseado neles. Aqui um resultado de condição também pode inverter o resultado de outra condição.
 
