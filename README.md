@@ -26,10 +26,9 @@
 * [Loops condicionais](#Loops-condicionais)
 * [Loop while](#Loop-while)
 * [Funções](#Funções)
+* [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Shell em Orangepi one](#Shell-em-Orangepi-one)
 * [Acrescentado comando trtrap para remover a exportação dos pinos](#Acrescentado-comando-trtrap-para-remover-a-exportação-dos-pinos)
-* [Executando um script em background](#Executando-um-script-em-background)
-* 
 * [Status do Projeto](#Status-do-Projeto)
 * [Bibliogafia](#Bibliogafia)
 
@@ -699,6 +698,75 @@ Listagem 16. Exemplo de uso de argumentos em scripts
 </tbody>
 </table>
 
+# Gerenciando a execução de um script
+
+* Executando um script em background
+
+Os processos podem ser executados de duas formas: em foreground (primeiro plano) ou background (segundo plano). Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário.
+
+* Enviando um comando para segundo plano
+
+Existem várias maneiras para enviar um comando para segundo plano, porém, a mais simples é colocando um & (E comercial) ao final do comando. Por exemplo:
+
+	root@orangepione:/home/aluno# ./pisca.sh &
+	[1] 1287
+
+
+Perceba também que existe um sinal de – ou + na frente do número do processo, isso simplesmente indica que o processo com sinal de + foi iniciado por último e ele será trazido para o primeiro plano caso você digite apenas “fg”. O processo com um sinal de menos apenas indica que ele foi iniciado antes do processo com sinal de +. Se você iniciar mais tarefas, a próxima terá um sinal de +, a que estava com sinal de + ficará com um sinal de – e a primeira tarefa iniciada não terá nenhum sinal.
+
+Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o número do processo que deseja). Você pode parar temporariamente a aplicação pressionando as teclas “CTRL” + “Z” do seu teclado. E o shell está livre para que eu possa digitar novamente. Verifique que se você digitar “jobs” novamente, verá que a tarefa não está executando. Utilize o comando “bg” para continuar executando a tarefa em segundo plano. Veja:
+
+	root@orangepione:/home/aluno# 
+	root@orangepione:/home/aluno# ./pisca.sh &
+	[1] 1287
+	root@orangepione:/home/aluno# fg
+	./pisca.sh
+	^Z
+	[1]+  Stopped                 ./pisca.sh
+	root@orangepione:/home/aluno# 
+	root@orangepione:/home/aluno# bg
+        [1]+ ./pisca.sh &
+
+* Listando os processos em execução - Comando "ps" 
+
+	root@orangepione:/home/aluno# ps
+  	PID TTY          TIME CMD
+ 	1215 pts/0    00:00:00 bash
+ 	1287 pts/0    00:00:00 testa.sh
+ 	1497 pts/0    00:00:00 sleep
+ 	1498 pts/0    00:00:00 ps
+	root@orangepione:/home/aluno# 
+
+        root@orangepione:/home/aluno# ps aux|grep testa.sh
+        root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
+        root@orangepione:/home/aluno# 
+	
+* Encerrando um processo
+
+Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill. Para encerramos um processo é necessário apenas digitar Kill PID onde PID é o numero do processo. o Parametro -9 força sua inte
+
+	root@orangepione:/home/aluno# ./pisca.sh
+	^Z
+	[1]+  Stopped                 ./pisca.sh
+	root@orangepione:/home/aluno# ps 
+	  PID TTY          TIME CMD
+ 	1582 pts/0    00:00:00 bash
+	 1871 pts/0    00:00:00 pisca.sh
+ 	1897 pts/0    00:00:00 sleep
+ 	1898 pts/0    00:00:00 ps
+	root@orangepione:/home/aluno# kill -9 1871
+	root@orangepione:/home/aluno# ps
+ 	 PID TTY          TIME CMD
+	 1582 pts/0    00:00:00 bash
+	 1910 pts/0    00:00:00 ps
+	[1]+  Killed                  ./pisca.sh
+	root@orangepione:/home/aluno#
+
+
+
+
+
+
 Conforme vimos no artigo, shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
 Lendo um pino de I/O por interrupção no Linux
 
@@ -836,66 +904,6 @@ Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nív
 </tr>
 </tbody>
 </table>
-
-# Executando um script em background
-
-Os processos podem ser executados de duas formas: em foreground (primeiro plano) ou background (segundo plano). Os processos executado em foreground são aqueles que necessitam de interação direta com o usuário, incluindo troca de informações. Os processo em background não necessitam desta interação com o usuário.
-
-* Enviando um comando para segundo plano
-
-Existem várias maneiras para enviar um comando para segundo plano, porém, a mais simples é colocando um & (E comercial) ao final do comando. Por exemplo:
-
-	root@orangepione:/home/aluno# ./pisca.sh &
-	[1] 1287
-
-
-Perceba também que existe um sinal de – ou + na frente do número do processo, isso simplesmente indica que o processo com sinal de + foi iniciado por último e ele será trazido para o primeiro plano caso você digite apenas “fg”. O processo com um sinal de menos apenas indica que ele foi iniciado antes do processo com sinal de +. Se você iniciar mais tarefas, a próxima terá um sinal de +, a que estava com sinal de + ficará com um sinal de – e a primeira tarefa iniciada não terá nenhum sinal.
-
-Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o número do processo que deseja). Você pode parar temporariamente a aplicação pressionando as teclas “CTRL” + “Z” do seu teclado. E o shell está livre para que eu possa digitar novamente. Verifique que se você digitar “jobs” novamente, verá que a tarefa não está executando. Utilize o comando “bg” para continuar executando a tarefa em segundo plano. Veja:
-
-	root@orangepione:/home/aluno# 
-	root@orangepione:/home/aluno# ./pisca.sh &
-	[1] 1287
-	root@orangepione:/home/aluno# fg
-	./pisca.sh
-	^Z
-	[1]+  Stopped                 ./pisca.sh
-	root@orangepione:/home/aluno# 
-	root@orangepione:/home/aluno# bg
-        [1]+ ./pisca.sh &
-
-o comando "ps" lista os processos 
-
-	root@orangepione:/home/aluno# ps
-  	PID TTY          TIME CMD
- 	1215 pts/0    00:00:00 bash
- 	1287 pts/0    00:00:00 testa.sh
- 	1497 pts/0    00:00:00 sleep
- 	1498 pts/0    00:00:00 ps
-	root@orangepione:/home/aluno# 
-
-        root@orangepione:/home/aluno# ps aux|grep testa.sh
-        root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
-        root@orangepione:/home/aluno# 
-	
-Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui um número de identificação (ID) único. Para encerrar (matar) um processo utilizamos o comando kill. Para encerramos um processo é necessário apenas digitar Kill PID onde PID é o numero do processo. o Parametro -9 força sua inte
-
-	root@orangepione:/home/aluno# ./pisca.sh
-	^Z
-	[1]+  Stopped                 ./pisca.sh
-	root@orangepione:/home/aluno# ps 
-	  PID TTY          TIME CMD
- 	1582 pts/0    00:00:00 bash
-	 1871 pts/0    00:00:00 pisca.sh
- 	1897 pts/0    00:00:00 sleep
- 	1898 pts/0    00:00:00 ps
-	root@orangepione:/home/aluno# kill -9 1871
-	root@orangepione:/home/aluno# ps
- 	 PID TTY          TIME CMD
-	 1582 pts/0    00:00:00 bash
-	 1910 pts/0    00:00:00 ps
-	[1]+  Killed                  ./pisca.sh
-	root@orangepione:/home/aluno#
 
 
 
