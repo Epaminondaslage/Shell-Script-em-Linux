@@ -273,8 +273,6 @@ Se você quiser trazer uma tarefa para primeiro plano, digite fg %N (onde N é o
  	1287 pts/0    00:00:00 testa.sh
  	1497 pts/0    00:00:00 sleep
  	1498 pts/0    00:00:00 ps
-	root@orangepione:/home/aluno# 
-
         root@orangepione:/home/aluno# ps aux|grep testa.sh
         root      1287  0.0  0.1   3720   672 pts/0    S+   09:28   0:00 grep --color=auto testa.sh
         root@orangepione:/home/aluno# 
