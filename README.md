@@ -27,8 +27,7 @@
 * [Loop while](#Loop-while)
 * [Funções](#Funções)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
-* [Shell em Orangepi one](#Shell-em-Orangepi-one)
-* [Acrescentado comando trtrap para remover a exportação dos pinos](#Acrescentado-comando-trtrap-para-remover-a-exportação-dos-pinos)
+* [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-I/O-por-interrupção-no-Linux)
 * [Status do Projeto](#Status-do-Projeto)
 * [Bibliogafia](#Bibliogafia)
 
@@ -763,12 +762,10 @@ Dentro do Linux, as tarefas são chamadas de processos, e cada um deles possui u
 	root@orangepione:/home/aluno#
 
 
+Shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Linux/Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
 
 
-
-
-Conforme vimos no artigo, shell scripts são a melhor maneira de automatizar tarefas diárias em sistemas Unix-like. Além de práticos, nos poupam muito tempo, além de possuírem uma sintaxe simples e permitir processar desde pequenas quantidades de dados até executar tarefas mais robustas.
-Lendo um pino de I/O por interrupção no Linux
+# Lendo um pino de I/O por interrupção no Linux
 
 O acesso a pinos de I/O (GPIO) no Linux é feito através de arquivos exportados no diretório /sys/class/gpio/. Para acessar um pino de I/O, o primeiro passo é exportá-lo escrevendo o número do pino de I/O no arquivo export. Depois é necessário configurar a direção do pino de I/O no arquivo direction e por fim ler ou alterar o estado do pino de I/O no arquivo value.
 
@@ -778,9 +775,8 @@ Por exemplo, para acionar o GPIO 53:
 	# echo out > /sys/class/gpio/gpio53/direction
 	# echo 1 > /sys/class/gpio/gpio53/value
 
-# Shell em Orangepi one
 
-Exemplo básico da utilização de shell script
+* Exemplo básico da utilização de shell script no OrangePi
 
 Pisca_led - Fica alternando o nível logico do pino PA12 a cada 1 segundo
 Botao - Ao ser pressionado o botão (PA11) o led (PA06) desliga. A leitura do valor de entrada do pino PA11 é realizada por Poll, num intervalo de 500 ms, evitando assim que seja consumido 100% do processador.
@@ -845,7 +841,7 @@ Destaca-se que outra maneira de executar esse código será a análise da troca 
 
 Listagem 17. Exemplo em script pisca_led.sh
 
-# Acrescentado comando trtrap para remover a exportação dos pinos
+* Acrescentado comando trtrap para remover a exportação dos pinos
 
 	#!/bin/sh
 	echo 11 > /sys/class/gpio/export
