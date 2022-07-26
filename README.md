@@ -25,7 +25,7 @@
 * [O comando case](#O-comando-case)
 * [Loops condicionais](#Loops-condicionais)
 * [Loop while](#Loop-while)
-* [Operadores lógicos em Shell Script](Operadores-lógicos-em-Shell-Script)
+* [Operadores lógicos em Shell Script](#Operadores-lógicos-em-Shell-Script)
 * [Funções](#Funções)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
 * [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
