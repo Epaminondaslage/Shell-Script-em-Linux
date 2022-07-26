@@ -25,7 +25,7 @@
 * [O comando case](#O-comando-case)
 * [Loops condicionais](#Loops-condicionais)
 * [Loop while](#Loop-while)
-* [Operadores Aritméticos em Shell Script](#Operadores-Aritiméticos-em-Shell-Script)
+* [Operadores Aritméticos em Shell Script](#Operadores-Aritméticos-em-Shell-Script)
 * [Operadores Relacionais em Shell Script](#Operadores-Relacionais-em-Shell-Script)
 * [Operadores Lógicos em Shell Script](#Operadores-Lógicos-em-Shell-Script)
 * [Funções](#Funções)
