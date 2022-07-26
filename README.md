@@ -25,6 +25,7 @@
 * [O comando case](#O-comando-case)
 * [Loops condicionais](#Loops-condicionais)
 * [Loop while](#Loop-while)
+* [Operadores aritméticos em Shell Script](#Operadores-aritiméticos-em-Shell-Script)
 * [Operadores lógicos em Shell Script](#Operadores-lógicos-em-Shell-Script)
 * [Funções](#Funções)
 * [Gerenciando a execução de um script](#Gerenciando-a-execução-de-um-script)
@@ -602,6 +603,33 @@ Vejamos um outro exemplo com contador na Listagem 14.
 	done
 
 Listagem 14. Exemplo de uso do loop while com contador
+# Operadores lógicos em Shell Script
+
+O shell possui os principais operadores utilizados em linguagem de programação semelhantes ao shell como C, Perl, Php com exceção dos operadores de incremento (++ e – -). Abaixo seguem os operadores aritméticos, comparação, lógicos e bit-a-bit usados pelo shell para a criação de variáveis, operações aritméticas, comparações e teste lógicos.
+Operadores aritméticos
+
+*img operadores_aritiméticos.png
+
+Para usar o operador de multiplicação, é necessário usar uma barra invertida antes do sinal de multiplicação \*, usando o comando de expressão aritméticas expr ou a expansão aritimética $( ( expressão ) ).
+Exemplos:
+
+	echo `expr 3 + 2`
+	echo $( (3+2) )
+	echo `expr 3 + 2 \* 3`
+	echo $( (3+2*3) )
+	echo `expr $( (3 +2) ) \* 3`
+	echo $( (3+2*3) )
+
+	echo `expr 3 % 2`
+	echo $((3 % 2))
+
+	VL=5
+	echo $(($VL**2))
+
+* Operadores Relacionais
+
+
+
 
 # Operadores lógicos em Shell Script
 
@@ -1037,4 +1065,5 @@ Atualizado em Julho de 2022
 - https://www.dobitaobyte.com.br/varios-modos-de-interagir-com-o-gpio-do-raspberry-pi/
 - https://tecadmin.net/use-logical-or-and-in-shell-script/
 - https://acervolima.com/como-executar-o-script-bash-no-linux/
+- https://gnulinuxbr.wordpress.com/2010/04/07/operadores-shell-script/
 
