@@ -1086,5 +1086,28 @@ Atualizado em Julho de 2022
 - https://www.dobitaobyte.com.br/varios-modos-de-interagir-com-o-gpio-do-raspberry-pi/
 - https://tecadmin.net/use-logical-or-and-in-shell-script/
 - https://acervolima.com/como-executar-o-script-bash-no-linux/
-- https://gnulinuxbr.wordpress.com/2010/04/07/operadores-shell-script/
+- https://gnulinuxbr.wordpress.com/2010/04/07/operadores-shell-script
 
+
+Existem as variáveis de shell e de ambiente. A diferença entre elas é que a primeira está disponível apenas no shell atual, enquanto a segunda está presente em um determinado programa ou em programas-filhos. 
+
+Variáveis de ambiente
+
+    * LANG: determina a configuração atual de idioma e localização;
+    * HOME: mostra o diretório de base do usuário;
+    * PATH: dá a lista de diretórios que o sistema operacional verifica ao procurar por algum comando;
+    * SHELL: apresenta o shell responsável por processar os comandos;
+    * PWD: mostra o diretório de trabalho atual;
+    * USER: configura o usuário conectado;
+    * TERM: mostra o terminal que está sendo utilizado;
+    * MAIL: configura o caminho para o e-mail do usuário
+
+Variáveis de shell
+
+    * IFS: quando utilizada no campo interno, tem a função de separar entradas na linha de comando;
+    * UID: mostra a identidade do usuário que estiver utilizando no momento;
+    * HOSTNAME: nome do host da máquina;
+    * HISTFILESIZE: mostra o número de linhas de histórico de comando que estão armazenadas;
+    * SHELLOPTS: exibe as opções de shell que podem ser definidas ao utilizar a opção “set”;
+    * DIRSTACK: mostra os diretórios com os comandos pushd e popd;
+    * BASH_VERSION: versão do bash.
