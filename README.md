@@ -1021,7 +1021,7 @@ Destaca-se que outra maneira de executar esse código será a análise da troca 
 
 Listagem 17. Exemplo em script pisca_led.sh
 
-* Acrescentado comando trtrap para remover a exportação dos pinos
+Acrescentado comando trtrap para remover a exportação dos pinos
 
 	#!/bin/sh
 	echo 11 > /sys/class/gpio/export
