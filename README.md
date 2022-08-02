@@ -30,6 +30,7 @@
 * [Operadores Lógicos](#Operadores-Lógicos)
 * [Funções](#Funções)
 * [Lendo um pino de I/O por interrupção no Linux](#Lendo-um-pino-de-IO-por-interrupção-no-Linux)
+* [Exemplos de scripts](#Exemplos-de-scripts)
 * [Status do Projeto](#Status-do-Projeto)
 * [Referências](#Referências)
 
@@ -1045,6 +1046,13 @@ Listagem 17. Exemplo em script pisca_led.sh
 	done
 
 Listagem 18. Exemplo de uso script botão.sh
+
+# Exemplos de scripts
+
+	* Portão-eletronico
+	* Luzes-de-garagem
+	* Partida-de-um-motor
+	* Pisca-Pisca
 
 # Status do Projeto
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
