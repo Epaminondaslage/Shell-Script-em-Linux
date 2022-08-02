@@ -5,7 +5,7 @@
 <p><strong><span style="color: #0000ff;">Prof Epaminondas Lage</span></strong></p>
 <a href="http://lattes.cnpq.br/7787341723868111"> Currículo Lattes LAGE, E. S.</a> 
 
-# Índice deste Repositório
+# Índice
 
 * [Shell Script no Linux com OrangePi One](#Shell-Script-no-Linux-com-OrangePi-One)
 * [Introdução ao Scripts em Shell](#Introdução-ao-Scripts-em-Shell)
@@ -401,6 +401,29 @@ Vejamos um exemplo na Listagem 4.
 	echo “O nome da variável é \$nome”
 
 Listagem 4. Printando o nome de uma variável ao invés de seu conteúdo
+
+Existem as variáveis de shell e de ambiente. A diferença entre elas é que a primeira está disponível apenas no shell atual, enquanto a segunda está presente em um determinado programa ou em programas-filhos. 
+
+## Variáveis de ambiente
+
+    * LANG: determina a configuração atual de idioma e localização;
+    * HOME: mostra o diretório de base do usuário;
+    * PATH: dá a lista de diretórios que o sistema operacional verifica ao procurar por algum comando;
+    * SHELL: apresenta o shell responsável por processar os comandos;
+    * PWD: mostra o diretório de trabalho atual;
+    * USER: configura o usuário conectado;
+    * TERM: mostra o terminal que está sendo utilizado;
+    * MAIL: configura o caminho para o e-mail do usuário
+
+## Variáveis de shell
+
+    * IFS: quando utilizada no campo interno, tem a função de separar entradas na linha de comando;
+    * UID: mostra a identidade do usuário que estiver utilizando no momento;
+    * HOSTNAME: nome do host da máquina;
+    * HISTFILESIZE: mostra o número de linhas de histórico de comando que estão armazenadas;
+    * SHELLOPTS: exibe as opções de shell que podem ser definidas ao utilizar a opção “set”;
+    * DIRSTACK: mostra os diretórios com os comandos pushd e popd;
+    * BASH_VERSION: versão do bash.
 
 # Atribuindo saídas de comandos a variáveis
 
@@ -1023,42 +1046,6 @@ Listagem 17. Exemplo em script pisca_led.sh
 
 Listagem 18. Exemplo de uso script botão.sh
 
-# Pull-up
-
-O esquema de ligação padrão para esta configuração é ilustrado pela Figura 11. Quando o botão estiver solto, o Vcc fluirá pelo resistor R1 chegando na porta digital. Quando o botão for pressionado, o Gnd fluirá pelo contato da chave — sem maiores resistências — alcançando o pino do microcontrolador.
-
-Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nível lógico 1, por isso a nomenclatura pull-up (puxar para cima): normalmente para cima/nível lógico High. Todavia, enquanto a chave for pressionada, o microcontrolador reconhecerá nível lógico 0.
-
-<table border="0">
-<tbody>
-<tr>
-<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/pull-up.jpg" alt="" width="80%" /></td>
-</tr>
-<tr>
-<td style="text-align: center;">Figura 11: Resistor de Pull-Up.</td>
-</tr>
-</tbody>
-</table>
-
-# Pull-down
-
-A Figura 12 ilustra o esquema de ligação padrão para esta configuração. Quando o botão estiver solto, o Gnd fluirá pelo resistor R1 chegando na porta digital. Quando o botão for pressionado, o Vcc fluirá pelo contato da chave — sem maiores resistências — alcançando o pino do microcontrolador. 
-
-Na prática, quando o botão estiver solto, o microcontrolador reconhecerá nível lógico 0 (Gnd), por essa razão a nomenclatura pull-down (puxar para baixo): normalmente para baixo/nível lógico 0. Contudo, enquanto a chave for pressionada, o microcontrolador identificará nível lógico 1 .
-
-<table border="0">
-<tbody>
-<tr>
-<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/Pull-down.jpg" alt="" width="80%" /></td>
-</tr>
-<tr>
-<td style="text-align: center;">Figura 11: Resistor de Pull-down.</td>
-</tr>
-</tbody>
-</table>
-
-
-
 # Status do Projeto
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 Atualizado em Julho de 2022
@@ -1086,5 +1073,5 @@ Atualizado em Julho de 2022
 - https://www.dobitaobyte.com.br/varios-modos-de-interagir-com-o-gpio-do-raspberry-pi/
 - https://tecadmin.net/use-logical-or-and-in-shell-script/
 - https://acervolima.com/como-executar-o-script-bash-no-linux/
-- https://gnulinuxbr.wordpress.com/2010/04/07/operadores-shell-script/
+- https://gnulinuxbr.wordpress.com/2010/04/07/operadores-shell-script
 
