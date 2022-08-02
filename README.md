@@ -1023,6 +1023,7 @@ Listagem 17. Exemplo em script pisca_led.sh
 
 * Acrescentado comando trtrap para remover a exportação dos pinos
 
+
 	#!/bin/sh
 	echo 11 > /sys/class/gpio/export
 	echo in > /sys/class/gpio/gpio11/direction
