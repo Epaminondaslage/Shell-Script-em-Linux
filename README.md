@@ -963,18 +963,6 @@ Botao - Ao ser pressionado o botão (PA11) o led (PA06) desliga. A leitura do va
 
 No primeiro exemplo, temos o pino PA12 configurado como saída e nele temos um led vermelho conectado para ilustrar melhor o funcionamento do script.
 
-
-<table border="0">
-<tbody>
-<tr>
-<td><img style="display: block; margin-left: auto; margin-right: auto;" src="/img/gpio_orangepione.png" alt="" width="50%" /></td>
-</tr>
-<tr>
-<td style="text-align: center;">Figura 10: Distribuição das GPIOs na barra de pinos da Orange Pi One.</td>
-</tr>
-</tbody>
-</table>
-
 Um detalhe importante, que merece ser ressaltado, é o funcionamento do export das GPIO. Como não temos um mapeamento interno no kernel delas, o export deve ser realizado como base no port e pino. Eis que, desta forma, teremos uma conta que deve ser realizada para descobrirmos o valor correto da GPIO.
  
 xx corresponde à conta abaixo:
