@@ -1,4 +1,4 @@
-<td style="width: 20%;"><img src="/img/Logo_CEFET-MG.png" width="20%" /></td>
+<td style="width: 20%;"><img src="/img/top_bash.png" width="100%" /></td>
 
 # Introdução ao Shell Script no Linux do OrangePi One
 <p><strong><span style="color: #0000ff;">Internet das Coisas - Kit de desenvolvimento SBC com Linux- OrangePi One</span></strong></p>
